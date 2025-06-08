@@ -1,7 +1,8 @@
 <template>
     <div class="
-     relative bg-white flex h-12 w-full justify-between shadow-black/40 shadow-xs">
+     absolute z-10 bg-white flex h-12 w-full justify-between shadow-black/40 shadow-xs">
         <div class="p-2 mx-6 w-46">
+            <a href="#"></a>
             <a href="#">
                 <img src="../img/blog header.svg" alt="">
             </a>
