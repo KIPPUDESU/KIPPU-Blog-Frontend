@@ -3,18 +3,17 @@
     flex flex-col items-center mx-6 my-2 z-50 w-60 h-68 bg-white
     transition-all duration-600 ease-in-out
     "
-    :class="PlaneOrSolid ? '' : ' shadow-lg shadow-black/20 rounded-lg'"
+    :class="PlaneOrSolid ? '' : ' shadow-lg shadow-black/30'"
     >
-        <div class="flex p-4 justify-center items-center w-60">
+        <div class="flex m-4 justify-center items-center w-52 h-38 overflow-hidden">
             <img 
-            class="w-52 transition-all duration-600 ease-in-out" 
-            :class="PlaneOrSolid ? '' : 'shadow-black/20 shadow-lg rounded-lg'"
-            src="../img/hatune.png" alt="">
+            class=" transition-all duration-600 ease-in-out overflow-hidden" 
+            :class="PlaneOrSolid ? '' : 'rounded-lg'"
+            src="../img/egudown.png" alt="">
         </div>
         <div class="
         w-54 h-18 px-2 py-1 
         transition-all duration-600 ease-in-out"
-        :class="PlaneOrSolid ? '' : 'bg-gradient-to-l from-white/80 to-gray-100/80 backdrop-blur-2xl shadow-black/20 shadow-lg rounded-lg'"
         >
             <h1 class="text-[18px] font-bold text-gray-900/90">你好我是切符</h1>
             <span class="text-[14px] font-bold text-gray-800/90">日常</span>
