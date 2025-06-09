@@ -1,33 +1,45 @@
 <template>
-  <div class="relative bg-gray-300/20">
-    <div class="relative mt-0 w-full h-100 bg-gray-300/">
-      <div class="relative w-full h-100 overflow-hidden">
-      <img 
-      class="absolute transition-all duration-600 ease-in-out"
+  <!-- 全页面容器 -->
+  <div class="relative bg-gray-300/10">
+      <!-- 首页容器 -->
+    <div class="relative mt-0 w-full h-100">
+      <!-- 首页图容器 -->
+      <div 
+      class="relative w-full h-100 overflow-hidden transition-all duration-600 ease-in-out"
       :class="ChengeStore.PlaneOrSolid?
-      'bottom-100' : '-bottom-60'
+      'shadow-[inset_0_-4px_6px_rgba(0,0,0,0.0)]' : 'shadow-[inset_0_-4px_6px_rgba(0,0,0,0.2)]'">
+      <img 
+      class="absolute transition-all duration-600 ease-in-out
+      w-260"
+      :class="ChengeStore.PlaneOrSolid?
+      'bottom-100' : '-bottom-195'
       "
-      src="../img/KIPPUMIG.jpg" alt="">
+      src="../img/egugang.png" alt="">
       </div>
+      <!-- 顶部横线 -->
       <div 
       class="
-      transition-all duration-600 ease-in-out w-364
+      transition-all duration-600 ease-in-out w-364 rounded-2xl
       absolute left-1/2 -translate-x-1/2 z-10 h-0.5 bg-gray-300"
       :class="ChengeStore.PlaneOrSolid?
       'top-13' : '-top-13' "
       ></div>
+      <!-- 左侧文字容器 -->
       <div 
       class="transition-all duration-600 ease-in-out
-      flex flex-col
+      flex flex-col bg-gray-300/0
       absolute  mx-20 z-10 font-bold text-black/60
       "
       :class="ChengeStore.PlaneOrSolid? 'top-32' : '-top-80' ">
       <h1 class="text-[70px]">ターゲット は</h1>
+      <!-- 文字中割线 -->
+      <div class="w-120 h-1 bg-black/50 rounded-md"></div>
       <h1 class="text-[80px]">Full Stack Developer</h1>
       </div>
+      <!-- 右侧文字容器 -->
       <div 
       class="transition-all duration-800 ease-in-out
-      absolute z-10 flex flex-col right-0
+      absolute z-10 flex flex-col right-0 rounded-l-lg
       "
       :class="ChengeStore.PlaneOrSolid?
       'bottom-0 h-66 w-140' : 
