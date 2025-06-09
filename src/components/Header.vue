@@ -1,6 +1,11 @@
 <template>
-    <div class="
-     absolute z-10 bg-white flex h-12 w-full justify-between shadow-black/40 shadow-xs">
+    <div 
+    class="
+     transition-all duration-600 ease-in-out
+     absolute z-10 flex w-full justify-between
+     shadow-black/20 shadow-lg"
+    :class="ChengeStore.PlaneOrSolid ? 'h-92 bg-gradient-to-br from-white/50 to-gray-100/50 backdrop-blur-sm' : 'h-12 bg-white/30 backdrop-blur-xs'" 
+     >
         <div class="p-2 mx-6 w-46">
             <a href="#"></a>
             <a href="#">
@@ -13,3 +18,9 @@
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+import { useTestStore } from '#imports'
+
+const ChengeStore = useTestStore()
+</script>

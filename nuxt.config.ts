@@ -4,5 +4,9 @@ export default defineNuxtConfig({
   srcDir: 'src/',
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    'pinia-plugin-persistedstate',
+  ],
 })
