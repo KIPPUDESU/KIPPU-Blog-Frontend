@@ -5,16 +5,17 @@
     <div class="relative mt-0 w-full h-100">
       <!-- 首页图容器 -->
       <div 
-      class="relative w-full h-100 overflow-hidden transition-all duration-600 ease-in-out"
-      :class="ChengeStore.PlaneOrSolid?
-      'shadow-[inset_0_-4px_6px_rgba(0,0,0,0.0)]' : 'shadow-[inset_0_-4px_6px_rgba(0,0,0,0.2)]'">
+      class="relative w-full h-100 overflow-hidden">
+      <!-- 填充父容器的透明absolute添加图片上层添加shadow-inner -->
+      <div class="absolute z-10 inset-0 transition-all duration-600 ease-in-out" :class="ChengeStore.PlaneOrSolid?
+      'shadow-[inset_0_-4px_6px_rgba(0,0,0,0.0)]' : 'shadow-[inset_0_-5px_6px_rgba(0,0,0,0.2)]'"></div>
       <img 
       class="absolute transition-all duration-600 ease-in-out
       w-260"
       :class="ChengeStore.PlaneOrSolid?
       'bottom-100' : '-bottom-195'
       "
-      src="../img/egugang.png" alt="">
+      src="../public/img/egugang.png" alt="">
       </div>
       <!-- 顶部横线 -->
       <div 
@@ -27,7 +28,7 @@
       <!-- 左侧文字容器 -->
       <div 
       class="transition-all duration-600 ease-in-out
-      flex flex-col bg-gray-300/0
+      flex flex-col bg-gray-300/0 Noto-Sans
       absolute  mx-20 z-10 font-bold text-black/60
       "
       :class="ChengeStore.PlaneOrSolid? 'top-32' : '-top-80' ">
@@ -43,7 +44,7 @@
       "
       :class="ChengeStore.PlaneOrSolid?
       'bottom-0 h-66 w-140' : 
-      'bottom-10 h-54 w-160 bg-gray-500/10 backdrop-blur-xs shadow-black/20 shadow-lg'
+      'bottom-10 h-56 w-160 bg-gray-500/10 backdrop-blur-xs shadow-black/20 shadow-lg'
       "
       >
         <a href="#" @click="ChengeStore.KippuChenge">
@@ -64,33 +65,6 @@
     <ArticleCard 
     :PlaneOrSolid="ChengeStore.PlaneOrSolid"
     />
-    <ArticleCard 
-    :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-    />
-    <ArticleCard 
-    :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-    />
-    <ArticleCard 
-    :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-    />
-    <ArticleCard 
-    :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-    />
-    <ArticleCard 
-    :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-    />
-    <ArticleCard 
-    :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-    />
-    <ArticleCard 
-    :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-    />
-    <ArticleCard 
-    :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-    />
-    <ArticleCard 
-    :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-    />
     </div>
   </div>
 </template>
@@ -100,3 +74,19 @@ import { useTestStore } from '#imports'
 
 const ChengeStore = useTestStore()
 </script>
+
+<!-- <style> -->
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap') */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); */
+
+/* .Noto-Sans {
+  font-family: 'Noto Sans JP', sans-serif;
+} */
+ /* .Noto-Sans {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+} */
+
+<!-- </style> -->

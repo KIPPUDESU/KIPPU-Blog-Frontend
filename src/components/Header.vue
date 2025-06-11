@@ -10,7 +10,7 @@
         <div class="p-2 mx-6 w-46">
             <a href="#"></a>
             <a href="#">
-                <img src="../img/blog header.svg" alt="">
+                <img src="../public/img/blog-header.svg" alt="">
             </a>
         </div>
         <div class="flex h-12 w-40 p-0.5 mx-4">
