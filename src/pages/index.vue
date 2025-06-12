@@ -28,32 +28,32 @@
       <!-- 左侧文字容器 -->
       <div 
       class="transition-all duration-600 ease-in-out
-      flex flex-col bg-gray-300/0 Noto-Sans
-      absolute  mx-20 z-10 font-bold text-black/60
+      flex flex-col bg-gray-300/0 Noto-Sans 
+      absolute xl:mx-20 md:mx-6 z-10 font-bold text-black/60
       "
-      :class="ChengeStore.PlaneOrSolid? 'top-32' : '-top-80' ">
-      <h1 class="text-[70px]">ターゲット は</h1>
+      :class="ChengeStore.PlaneOrSolid? 'xl:top-32 md:top-62' : '-top-80' ">
+      <h1 class="xl:text-[70px] md:text-[40px]">ターゲット は</h1>
       <!-- 文字中割线 -->
-      <div class="w-120 h-1 bg-black/50 rounded-md"></div>
-      <h1 class="text-[80px]">Full Stack Developer</h1>
+      <div class="xl:w-120 md:w-70 xl:h-1 md:h-0.5 bg-black/50 rounded-md"></div>
+      <h1 class="xl:text-[80px] md:text-[40px]">Full Stack Developer</h1>
       </div>
       <!-- 右侧文字容器 -->
       <div 
-      class="transition-all duration-800 ease-in-out
+      class="transition-all duration-800 ease-in-out bg-red-200/0
       absolute z-10 flex flex-col right-0 rounded-l-lg
       "
       :class="ChengeStore.PlaneOrSolid?
-      'bottom-0 h-66 w-140' : 
-      'bottom-10 h-56 w-160 bg-gray-500/10 backdrop-blur-xs shadow-black/20 shadow-lg'
+      'bottom-0 xl:h-66 md:h-50 xl:w-140 md:w-114' : 
+      'bottom-10 xl:h-58 md:h-44 xl:w-160 md:w-120 bg-gray-500/10 backdrop-blur-xs shadow-black/20 shadow-lg'
       "
       >
         <a href="#" @click="ChengeStore.KippuChenge">
-        <h1 class="absolute right-20 text-[92px] font-bold">KIPPU</h1>
+        <h1 class="absolute xl:right-20 md:right-6 xl:text-[92px] md:text-[70px] font-bold">KIPPU</h1>
         </a>
-        <div>
-        <p class="absolute right-20 top-32 text-gray-600 font-bold">这里是很短的简介，也可以很长，我不知道怎么样，就先这样</p>
-         <p class="absolute right-20 top-38 text-gray-600 font-bold">这里是很短的简介，也可以很长，我不知道怎么样，就先这样</p>
-          <p class="absolute right-20 top-44 text-gray-600 font-bold">这里是很短的简介，也可以很长，我不知道怎么样，就先这样</p>
+        <div class="absolute xl:top-32 md:top-24 text-gray-600 xl:text-[16px] md:text-[14px] xl:right-20 md:right-6">
+        <p class=" top-32 font-bold">这里是很短的简介，也可以很长，我不知道怎么样，就先这样</p>
+         <p class=" top-38 font-bold">这里是很短的简介，也可以很长，我不知道怎么样，就先这样</p>
+          <p class=" top-44 font-bold">这里是很短的简介，也可以很长，我不知道怎么样，就先这样</p>
         </div>
       </div>
     </div>
