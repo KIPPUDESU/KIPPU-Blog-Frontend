@@ -76,8 +76,9 @@
   :PlaneOrSolid="ChengeStore.PlaneOrSolid"
   />
 </div>
+<!-- 分页按钮 -->
 <div 
-class="flex justify-between w-full h-28 items-center
+class="flex justify-between w-full h-46 items-center
 bg-blue-200/0 transition-all duration-800 ease-in-out"
 :class="DownOrUp ? 'px-12' : 'px-14'"
 >
@@ -96,11 +97,15 @@ bg-blue-200/0 transition-all duration-800 ease-in-out"
   <NuxtLink>← Older Posts</NuxtLink>
   </div>
   <!-- 占位分隔 -->
-  <div></div>
+  <div class="flex justify-center w-200 h-40 bg-red-400/0">
+    <img
+    class="h-40"
+    src="../public/img/egutenshi.png" alt="">
+  </div>
   <div 
   class="flex rounded-lg
   transition-all duration-500 ease-in-out
-  justify-center items-center font-medium
+  justify-center items-center font-bold text-gray-600
   bg-gradient-to-br "
   :class="
   DownOrUp ? 
@@ -109,7 +114,13 @@ bg-blue-200/0 transition-all duration-800 ease-in-out"
   @mouseenter="PostsDown"
   @mouseleave="PostsUp"
   >
-  <NuxtLink>Newer Posts →</NuxtLink>
+  <NuxtLink class="flex flex-nowrap items-center gap-3">Newer Posts 
+    <a href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+        <polyline points="4,2 12,8 4,14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </NuxtLink>
   </div>
 </div>
 </template>
