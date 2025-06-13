@@ -3,7 +3,7 @@
     v-for="(card, index) in cards"
     :key="index"
     class="
-    flex flex-col items-center mx-6 my-2 z-50 w-60 h-68 bg-white
+    flex flex-col items-center mx-6 my-4 z-50 w-60 h-68 bg-white
     transition-all duration-600 ease-in-out
     "
     :class="PlaneOrSolid ? '' : ' shadow-lg shadow-black/30'"

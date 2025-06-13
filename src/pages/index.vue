@@ -36,6 +36,8 @@
       <!-- 文字中割线 -->
       <div class="xl:w-120 lg:w-98 xl:h-1 lg:h-1 bg-black/50 rounded-md"></div>
       <h1 class="xl:text-[80px] lg:text-[64px]">Full Stack Developer</h1>
+      <div class="">
+      </div>
       </div>
       <!-- 右侧文字容器 -->
       <div 
@@ -57,22 +59,79 @@
         </div>
       </div>
     </div>
-    <div class="relative my-4 w-full h-1 px-14">
-      <!-- 分割线 -->
-      <!-- <div class="bg-gray-300 h-0.5"></div> -->
-    </div>
-    <div class="flex flex-wrap justify-center relative bg-blue-300/ w-full h-max">
-    <ArticleCard 
-    :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-    />
-    </div>
+    
   </div>
+
+<!-- 做一下分割 -->
+
+<!-- 这里做分隔行 -->
+<div class="relative my-4 w-full h-1 px-10 bg-red-400/0">
+  <!-- 分割线 -->
+  <!-- <div class="bg-gray-300/0 h-0.5"></div> -->
+</div>
+
+<!-- 这里做分页 -->
+<div class="flex flex-wrap relative justify-center bg-blue-300/0 w-full h-max">
+  <ArticleCard 
+  :PlaneOrSolid="ChengeStore.PlaneOrSolid"
+  />
+</div>
+<div 
+class="flex justify-between w-full h-28 items-center
+bg-blue-200/0 transition-all duration-800 ease-in-out"
+:class="DownOrUp ? 'px-12' : 'px-14'"
+>
+  <div 
+  class="flex rounded-lg
+  transition-all duration-800 ease-in-out
+  justify-center items-center font-extralight
+  bg-gradient-to-br"
+  :class="
+  DownOrUp ? 
+  'from-pink-300/80 to-white shadow-black/12 shadow-xl py-2 px-6 w-54 h-13 text-[22px]' : ' from-pink-300/40 to-white backdrop-blur-sm shadow-black/20 shadow-lg py-2 px-4 w-60 h-12 text-[20px]'
+  "
+  @mouseenter="PostsDown"
+  @mouseleave="PostsUp"
+  >
+  <NuxtLink>← Older Posts</NuxtLink>
+  </div>
+  <!-- 占位分隔 -->
+  <div></div>
+  <div 
+  class="py-2 px-4 w-60 flex rounded-lg
+  transition-all duration-800 ease-in-out
+  text-[20px] justify-center items-center font-extralight
+  bg-gradient-to-br "
+  :class="ChengeStore.PlaneOrSolid?
+  'from-pink-300/80 to-white' : 'from-pink-300/40 to-white shadow-black/20 shadow-lg'
+  "
+  @mouseenter="PostsDown"
+  @mouseleave="PostsUp"
+  >
+  <NuxtLink>Newer Posts →</NuxtLink>
+  </div>
+</div>
 </template>
 
 <script setup lang="ts">
-import { useTestStore } from '#imports'
+import { ref } from 'vue'
 
+// 全局状态管理
+import { useTestStore } from '#imports'
+// 把useTestStore存入ChengeStore
 const ChengeStore = useTestStore()
+
+const DownOrUp = ref(false)
+
+function PostsDown(key:string) {
+  // NowKey.value = key
+  DownOrUp.value = true
+}
+
+function PostsUp() {
+  DownOrUp.value = false
+  // NowKey.value = null
+}
 </script>
 
 <!-- <style> -->

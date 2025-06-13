@@ -3,6 +3,7 @@ export const useTestStore = defineStore(
   () => {
     const PlaneOrSolid = ref(false)
 
+    // 定义的全局的方法，引用全局 useTestStore 就能使用
     const KippuChenge = () => {
       PlaneOrSolid.value = !PlaneOrSolid.value
     }

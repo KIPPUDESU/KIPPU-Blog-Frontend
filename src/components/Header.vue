@@ -21,7 +21,9 @@
 </template>
 
 <script setup lang="ts">
-import { useTestStore } from '#imports'
 
+// 全局
+import { useTestStore } from '#imports'
 const ChengeStore = useTestStore()
+
 </script>
