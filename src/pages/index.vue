@@ -83,12 +83,12 @@ bg-blue-200/0 transition-all duration-800 ease-in-out"
 >
   <div 
   class="flex rounded-lg
-  transition-all duration-800 ease-in-out
-  justify-center items-center font-extralight
-  bg-gradient-to-br"
+  transition-all duration-500 ease-in-out
+  justify-center items-center font-medium
+  bg-gradient-to-br "
   :class="
   DownOrUp ? 
-  'from-pink-300/80 to-white shadow-black/12 shadow-xl py-2 px-6 w-54 h-13 text-[22px]' : ' from-pink-300/40 to-white backdrop-blur-sm shadow-black/20 shadow-lg py-2 px-4 w-60 h-12 text-[20px]'
+  'from-pink-300/50 to-white shadow-black/30 shadow-inner/80 py-2 px-6 w-54 h-13 text-[22px]' : ' from-pink-300/50 to-white shadow-black/0 shadow-inner/0 py-2 px-4 w-60 h-12 text-[20px]'
   "
   @mouseenter="PostsDown"
   @mouseleave="PostsUp"
@@ -98,12 +98,13 @@ bg-blue-200/0 transition-all duration-800 ease-in-out"
   <!-- 占位分隔 -->
   <div></div>
   <div 
-  class="py-2 px-4 w-60 flex rounded-lg
-  transition-all duration-800 ease-in-out
-  text-[20px] justify-center items-center font-extralight
+  class="flex rounded-lg
+  transition-all duration-500 ease-in-out
+  justify-center items-center font-medium
   bg-gradient-to-br "
-  :class="ChengeStore.PlaneOrSolid?
-  'from-pink-300/80 to-white' : 'from-pink-300/40 to-white shadow-black/20 shadow-lg'
+  :class="
+  DownOrUp ? 
+  'from-pink-300/50 to-white shadow-black/30 shadow-inner/80 py-2 px-6 w-54 h-13 text-[22px]' : ' from-pink-300/50 to-white shadow-black/0 shadow-inner/0 py-2 px-4 w-60 h-12 text-[20px]'
   "
   @mouseenter="PostsDown"
   @mouseleave="PostsUp"

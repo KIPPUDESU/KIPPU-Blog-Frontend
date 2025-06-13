@@ -3,19 +3,24 @@
     v-for="(card, index) in cards"
     :key="index"
     class="
-    flex flex-col items-center mx-6 my-4 z-50 w-60 h-68 bg-white
-    transition-all duration-600 ease-in-out
+    flex flex-col items-center mx-6 my-4 z-50 w-60 h-68 bg-white rounded-lg
+    transition-all duration-400 ease-in-out
+    hover:my-2 hover:py-2 hover:w-64 hover:h-74 hover:bg-gray-200/20
     "
-    :class="PlaneOrSolid ? '' : ' shadow-lg shadow-black/30'"
+    :class="PlaneOrSolid ? '' : ' shadow-lg shadow-black/40 hover:shadow-black/50'"
     >
-        <div class="flex m-4 justify-center items-center w-52 h-38 overflow-hidden">
+        <div 
+        class="flex mx-4 mt-6 justify-center items-center w-52 h-38 overflow-hidden
+        transition-all duration-600 ease-in-out
+        hover:mx-2 hover:mt-4 hover:w-56 hover:h-42 hover:shadow-lg hover:shadow-black/20
+        ">
             <img 
             class=" transition-all duration-600 ease-in-out overflow-hidden" 
             :class="PlaneOrSolid ? '' : 'rounded-lg'"
             :src="card.CardImg" alt="">
         </div>
         <div class="
-        w-54 h-18 px-2 py-1 
+        w-54 h-18 px-2 mt-3
         transition-all duration-600 ease-in-out"
         >
             <h1 class="text-[18px] font-bold text-gray-900/90">{{ card.title }}</h1>
