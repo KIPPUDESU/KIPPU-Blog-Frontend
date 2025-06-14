@@ -3,20 +3,25 @@
     v-for="(card, index) in cards"
     :key="index"
     class="
-    flex flex-col items-center mx-6 my-4 z-50 w-60 h-68 bg-white rounded-lg
-    transition-all duration-400 ease-in-out
-    hover:my-2 hover:py-2 hover:w-64 hover:h-74 hover:bg-gray-200/20
+    flex flex-col items-center mx-6 my-4 z-50 w-60 h-68
+    bg-gradient-to-b 
+    transition-all duration-600 ease-in-out
+    hover:my-2 hover:py-2 hover:w-64 hover:h-74
+    hover:bg-gradient-to-b
     "
-    :class="PlaneOrSolid ? '' : ' shadow-lg shadow-black/40 hover:shadow-black/50'"
+    :class="PlaneOrSolid ? 
+    'from-gray-200/60 to-white/20 hover:from-blue-200/50 hover:to-white/20' : ' shadow-lg shadow-black/40 hover:shadow-black/50 rounded-lg from-gray-100/50 to-white/20 hover:from-blue-100/50 hover:to-white/20'"
     >
         <div 
-        class="flex mx-4 mt-6 justify-center items-center w-52 h-38 overflow-hidden
+        class="flex justify-center items-center overflow-hidden
         transition-all duration-600 ease-in-out
-        hover:mx-2 hover:mt-4 hover:w-56 hover:h-42 hover:shadow-lg hover:shadow-black/20
-        ">
+        hover:mx-2 hover:mt-4 hover:w-56 hover:h-42 
+        hover:shadow-lg hover:shadow-black/20 hover:rounded-none
+        "
+        :class="PlaneOrSolid ? 'w-51 h-37 mx-5 mt-7' : 'rounded-lg w-52 h-38  mx-4 mt-6'"
+        >
             <img 
             class=" transition-all duration-600 ease-in-out overflow-hidden" 
-            :class="PlaneOrSolid ? '' : 'rounded-lg'"
             :src="card.CardImg" alt="">
         </div>
         <div class="

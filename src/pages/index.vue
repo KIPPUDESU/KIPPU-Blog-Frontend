@@ -7,7 +7,8 @@
       <div 
       class="relative h-100 overflow-hidden">
       <!-- 填充父容器的透明absolute添加图片上层添加shadow-inner -->
-      <div class="absolute z-10 w-full h-full transition-all duration-600 ease-in-out" :class="ChengeStore.PlaneOrSolid?
+      <div class="absolute z-10 w-full h-full transition-all duration-600 ease-in-out" 
+      :class="ChengeStore.PlaneOrSolid?
       'shadow-[inset_0_-4px_6px_rgba(0,0,0,0.0)]' : 'shadow-[inset_0_-5px_6px_rgba(0,0,0,0.2)]'"></div>
       <img 
       class="absolute transition-all duration-600 ease-in-out
@@ -81,43 +82,65 @@
 class="flex justify-between w-full h-46 items-center
 bg-blue-200/0 transition-all duration-800 ease-in-out"
 :class="DownOrUp ? 'px-12' : 'px-14'"
+@mouseenter="PostsDown"
+@mousedown="PostsUp"
 >
+  <!-- 左 -->
   <div 
-  class="flex rounded-lg
+  class="flex py-2 px-4 w-60 h-12
+  hover:py-2 hover:px-6 hover:w-56 hover:h-13
+  shadow-black/0 shadow-inner/0 text-[20px] text-gray-500
+  hover:shadow-black/30 hover:shadow-inner/80 hover:text-[22px] hover:text-gray-600
+  bg-gradient-to-br from-pink-300/60 to-white
+  hover:from-pink-300/70 hover:to-white
   transition-all duration-500 ease-in-out
-  justify-center items-center font-medium
-  bg-gradient-to-br "
-  :class="
-  DownOrUp ? 
-  'from-pink-300/50 to-white shadow-black/30 shadow-inner/80 py-2 px-6 w-54 h-13 text-[22px]' : ' from-pink-300/50 to-white shadow-black/0 shadow-inner/0 py-2 px-4 w-60 h-12 text-[20px]'
-  "
-  @mouseenter="PostsDown"
-  @mouseleave="PostsUp"
-  >
-  <NuxtLink>← Older Posts</NuxtLink>
+  justify-center items-center font-bold
+  ">
+  <NuxtLink class="flex flex-nowrap items-center gap-3">
+    <!-- ← ← ← -->
+    <a href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+        <g transform="scale(-1,1) translate(-16,0)">
+          <polyline 
+            points="4,2 12,8 4,14" 
+            fill="none" 
+            stroke="gray" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"/>
+        </g>
+      </svg>
+    </a>
+    Older Posts</NuxtLink>
   </div>
-  <!-- 占位分隔 -->
+  <!-- 占位分隔图片 -->
   <div class="flex justify-center w-200 h-40 bg-red-400/0">
     <img
     class="h-40"
     src="../public/img/egutenshi.png" alt="">
   </div>
+  <!-- 右 -->
   <div 
-  class="flex rounded-lg
+  class="flex py-2 px-4 w-60 h-12
+  hover:py-2 hover:px-6 hover:w-56 hover:h-13
+  shadow-black/0 shadow-inner/0 text-[20px] text-gray-500
+  hover:shadow-black/30 hover:shadow-inner/80 hover:text-[22px] hover:text-gray-600
+  bg-gradient-to-br from-pink-300/60 to-white
+  hover:from-pink-300/70 hover:to-white
   transition-all duration-500 ease-in-out
-  justify-center items-center font-bold text-gray-600
-  bg-gradient-to-br "
-  :class="
-  DownOrUp ? 
-  'from-pink-300/50 to-white shadow-black/30 shadow-inner/80 py-2 px-6 w-54 h-13 text-[22px]' : ' from-pink-300/50 to-white shadow-black/0 shadow-inner/0 py-2 px-4 w-60 h-12 text-[20px]'
-  "
-  @mouseenter="PostsDown"
-  @mouseleave="PostsUp"
-  >
+  justify-center items-center font-bold
+  ">
   <NuxtLink class="flex flex-nowrap items-center gap-3">Newer Posts 
+    <!-- → → → -->
     <a href="#">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-        <polyline points="4,2 12,8 4,14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline 
+            points="4,2 12,8 4,14" 
+            fill="none" 
+            stroke="gray" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"/>
       </svg>
     </a>
   </NuxtLink>
@@ -135,11 +158,11 @@ const ChengeStore = useTestStore()
 
 const DownOrUp = ref(false)
 
-function PostsDown(key:string) {
+// 两个方法
+function PostsDown() {
   // NowKey.value = key
   DownOrUp.value = true
 }
-
 function PostsUp() {
   DownOrUp.value = false
   // NowKey.value = null
