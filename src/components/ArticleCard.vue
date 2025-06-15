@@ -1,7 +1,8 @@
 <template>
+    <!-- 纯展示组件，只接收 props -->
+    <!-- v-for="(card, index) in cards"
+    :key="index" -->
     <div 
-    v-for="(card, index) in cards"
-    :key="index"
     class="
     flex flex-col items-center mx-6 my-4 z-50 w-60 h-68
     bg-gradient-to-b 
@@ -22,7 +23,7 @@
         >
             <img 
             class=" transition-all duration-600 ease-in-out overflow-hidden" 
-            :src="card.CardImg" alt="">
+            :src="card.CardImg" alt="图片" loading="lazy">
         </div>
         <div class="
         w-54 h-18 px-2 mt-3
@@ -36,8 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
+// 定义
 interface Card {
     CardImg: string
     title: string
@@ -45,72 +45,11 @@ interface Card {
     TimeData: string
 }
 
-const cards = ref<Card[]>([
-    {
-        CardImg: "/img/egudown.png",
-        title: "你好我是切符",
-        classify: "日常",
-        TimeData: "2025.06.11"
-    },
-    {
-        CardImg: "/img/egudown.png",
-        title: "你好我是切符",
-        classify: "日常",
-        TimeData: "2025.06.11"
-    },
-    {
-        CardImg: "/img/egudown.png",
-        title: "你好我是切符",
-        classify: "日常",
-        TimeData: "2025.06.11"
-    },
-    {
-        CardImg: "/img/egudown.png",
-        title: "你好我是切符",
-        classify: "日常",
-        TimeData: "2025.06.11"
-    },
-    {
-        CardImg: "/img/egudown.png",
-        title: "你好我是切符",
-        classify: "日常",
-        TimeData: "2025.06.11"
-    },
-    {
-        CardImg: "/img/egudown.png",
-        title: "你好我是切符",
-        classify: "日常",
-        TimeData: "2025.06.11"
-    },
-    {
-        CardImg: "/img/egudown.png",
-        title: "你好我是切符",
-        classify: "日常",
-        TimeData: "2025.06.11"
-    },
-    {
-        CardImg: "/img/egudown.png",
-        title: "你好我是切符",
-        classify: "日常",
-        TimeData: "2025.06.11"
-    },
-    {
-        CardImg: "/img/egudown.png",
-        title: "你好我是切符",
-        classify: "日常",
-        TimeData: "2025.06.11"
-    },
-    {
-        CardImg: "/img/egudown.png",
-        title: "你好我是切符",
-        classify: "日常",
-        TimeData: "2025.06.11"
-    },
-])
-
-const { PlaneOrSolid } = defineProps<Props>()
-
-interface Props {
+// 接收被父组件从 content 结构的数据
+const props = defineProps<{
+    // 自定义接口
+    card: Card
+    to: string
     PlaneOrSolid: boolean
-}
+}>()
 </script>

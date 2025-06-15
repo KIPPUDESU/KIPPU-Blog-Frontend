@@ -1,7 +1,7 @@
 <template>
   <!-- 全页面容器 -->
   <div class="relative bg-gray-300/10">
-      <!-- 首页容器 -->
+      <!-- 首页 Banner 容器 -->
     <div class="relative w-full h-100">
       <!-- 首页图容器 -->
       <div 
@@ -63,7 +63,7 @@
     
   </div>
 
-<!-- 做一下分割 -->
+<!-- 做一下分割 hr -->
 
 <!-- 这里做分隔行 -->
 <div class="relative my-4 w-full h-1 px-10 bg-red-400/0">
@@ -72,8 +72,18 @@
 </div>
 
 <!-- 这里做分页 -->
+<!-- 文章预览卡片 -->
 <div class="flex flex-wrap relative justify-center bg-blue-300/0 w-full h-max">
-  <ArticleCard 
+  <ArticleCard
+  v-for="item in articles"
+  :key="item.id"
+  :card="{
+    CardImg:  item.image  || '/default.jpg',
+    title:    item.title,
+    classify: item.classify || '暂未分类',
+    TimeData: formatDate(item.date)
+  }"
+  :to="`/article/${item.slug}`"
   :PlaneOrSolid="ChengeStore.PlaneOrSolid"
   />
 </div>
@@ -83,7 +93,7 @@ class="flex justify-between w-full h-46 items-center
 bg-blue-200/0 transition-all duration-800 ease-in-out"
 :class="DownOrUp ? 'px-12' : 'px-14'"
 @mouseenter="PostsDown"
-@mousedown="PostsUp"
+@mouseleave="PostsUp"
 >
   <!-- 左 -->
   <div 
@@ -96,9 +106,10 @@ bg-blue-200/0 transition-all duration-800 ease-in-out"
   transition-all duration-500 ease-in-out
   justify-center items-center font-bold
   ">
-  <NuxtLink class="flex flex-nowrap items-center gap-3">
+  <!-- :to="`/?page=${pageNum - 1}`" -->
+  <NuxtLink class="flex flex-nowrap items-center gap-3"
+  >
     <!-- ← ← ← -->
-    <a href="#">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
         <g transform="scale(-1,1) translate(-16,0)">
           <polyline 
@@ -110,7 +121,6 @@ bg-blue-200/0 transition-all duration-800 ease-in-out"
             stroke-linejoin="round"/>
         </g>
       </svg>
-    </a>
     Older Posts</NuxtLink>
   </div>
   <!-- 占位分隔图片 -->
@@ -130,9 +140,11 @@ bg-blue-200/0 transition-all duration-800 ease-in-out"
   transition-all duration-500 ease-in-out
   justify-center items-center font-bold
   ">
-  <NuxtLink class="flex flex-nowrap items-center gap-3">Newer Posts 
+  <!-- :to="`/?page=${pageNum + 1}`" -->
+  <NuxtLink class="flex flex-nowrap items-center gap-3"
+  
+  >Newer Posts 
     <!-- → → → -->
-    <a href="#">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
           <polyline 
             points="4,2 12,8 4,14" 
@@ -142,7 +154,6 @@ bg-blue-200/0 transition-all duration-800 ease-in-out"
             stroke-linecap="round" 
             stroke-linejoin="round"/>
       </svg>
-    </a>
   </NuxtLink>
   </div>
 </div>
@@ -150,9 +161,13 @@ bg-blue-200/0 transition-all duration-800 ease-in-out"
 
 <script setup lang="ts">
 import { ref } from 'vue'
-
 // 全局状态管理
 import { useTestStore } from '#imports'
+// vue 响应
+import { computed } from 'vue'
+
+import { queryContent } from '@nuxt/content'
+
 // 把useTestStore存入ChengeStore
 const ChengeStore = useTestStore()
 
@@ -166,6 +181,52 @@ function PostsDown() {
 function PostsUp() {
   DownOrUp.value = false
   // NowKey.value = null
+}
+
+// 关于分页
+// 预览数量
+interface Article {
+  id:       string
+  title:    string
+  classify: string
+  date:     string
+  image?:   string
+  slug:     string
+}
+
+const route = useRoute()
+
+const pageSize = 15
+
+const pageNum  = computed(() => {
+  const p = parseInt(route.query.page as string) || 0
+  return p > 0 ? p : 0
+})
+
+// 拉取文章存入 data 等待解构(异步)
+const { data: articles } = await useAsyncData(
+  'article-page-${pageNum.value}',
+  () =>
+  queryContent('blog')
+    .sort({ key: 'date', order: 'desc' })
+    .skip(pageNum.value * pageSize)
+    .limit(pageSize)
+    .fetch()
+)
+
+// 拉总数
+const { data: totalCount } = await useAsyncData(
+  'articles-total-count',
+  () => queryContent('blog').only(['_path']).fetch().then(arr => arr.length)
+)
+
+// 格式化日期
+function formatDate(input: string|Date) {
+  return new Intl.DateTimeFormat('zh-CN', {
+    year:  'numeric',
+    month: '2-digit',
+    day:   '2-digit'
+  }).format(new Date(input)).replace(/\//g, '.')
 }
 </script>
 

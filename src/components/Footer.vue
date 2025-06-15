@@ -1,9 +1,10 @@
 <template>
-    <div class="relative flex justify-center items-center h-35 bg-blue-200/50">
+    <div class="relative flex flex-col justify-center items-center h-44 bg-blue-200/50">
         <div 
-        class="flex flex-row bg-white w-200 h-20 px-22 rounded-3xl
+        class="flex flex-row bg-white w-200 h-20 mt-2 px-22 rounded-3xl
         border-4 border-black/20
         justify-between items-center">
+            <!-- GitHub -->
             <div class="flex relative bg-black/0 rounded-4xl w-12 h-12">
                 <a href="https://github.com/KIPPUDESU" target="_blank">
                     <svg 
@@ -16,6 +17,7 @@
                     </svg>
                 </a>
             </div>
+            <!-- 推特 -->
             <div class="flex relative bg-black/0 rounded-4xl w-12 h-12">
                 <a href="https://x.com/aKIPPUz" target="_blank">
                     <svg 
@@ -26,6 +28,7 @@
                     </svg>
                 </a>
             </div>
+            <!-- Telegram -->
             <div class="flex relative bg-black/0 rounded-4xl w-12 h-12">
                 <a href="https://t.me/aKIPPUDESUz" target="_blank">
                     <svg
@@ -37,6 +40,7 @@
                     </svg>
                 </a>
             </div>
+            <!-- Discord -->
             <div class="flex relative bg-black/0 rounded-4xl w-12 h-12">
                 <a href="https://discord.gg/F22fCZtr" target="_blank1">
                     <svg 
@@ -48,6 +52,9 @@
                     </svg>
                 </a>
             </div>
+        </div>
+        <div class="relative mt-2 flex text-lg text-gray-500">
+            版权所有 © KIPPU 2025
         </div>
     </div>
 </template>
