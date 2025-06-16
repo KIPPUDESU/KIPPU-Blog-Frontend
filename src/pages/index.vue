@@ -74,18 +74,7 @@
 <!-- 这里做分页 -->
 <!-- 文章预览卡片 -->
 <div class="flex flex-wrap relative justify-center bg-blue-300/0 w-full h-max">
-  <ArticleCard
-  v-for="item in articles"
-  :key="item.id"
-  :card="{
-    CardImg:  item.image  || '/default.jpg',
-    title:    item.title,
-    classify: item.classify || '暂未分类',
-    TimeData: formatDate(item.date)
-  }"
-  :to="`/article/${item.slug}`"
-  :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-  />
+  <!-- <ArticleCard /> -->
 </div>
 <!-- 分页按钮 -->
 <div 
@@ -164,9 +153,9 @@ import { ref } from 'vue'
 // 全局状态管理
 import { useTestStore } from '#imports'
 // vue 响应
-import { computed } from 'vue'
+// import { computed } from 'vue'
 
-import { queryContent } from '@nuxt/content'
+// import { queryContent } from '@nuxt/content'
 
 // 把useTestStore存入ChengeStore
 const ChengeStore = useTestStore()
@@ -181,52 +170,6 @@ function PostsDown() {
 function PostsUp() {
   DownOrUp.value = false
   // NowKey.value = null
-}
-
-// 关于分页
-// 预览数量
-interface Article {
-  id:       string
-  title:    string
-  classify: string
-  date:     string
-  image?:   string
-  slug:     string
-}
-
-const route = useRoute()
-
-const pageSize = 15
-
-const pageNum  = computed(() => {
-  const p = parseInt(route.query.page as string) || 0
-  return p > 0 ? p : 0
-})
-
-// 拉取文章存入 data 等待解构(异步)
-const { data: articles } = await useAsyncData(
-  'article-page-${pageNum.value}',
-  () =>
-  queryContent('blog')
-    .sort({ key: 'date', order: 'desc' })
-    .skip(pageNum.value * pageSize)
-    .limit(pageSize)
-    .fetch()
-)
-
-// 拉总数
-const { data: totalCount } = await useAsyncData(
-  'articles-total-count',
-  () => queryContent('blog').only(['_path']).fetch().then(arr => arr.length)
-)
-
-// 格式化日期
-function formatDate(input: string|Date) {
-  return new Intl.DateTimeFormat('zh-CN', {
-    year:  'numeric',
-    month: '2-digit',
-    day:   '2-digit'
-  }).format(new Date(input)).replace(/\//g, '.')
 }
 </script>
 
