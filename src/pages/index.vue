@@ -50,13 +50,33 @@
       'bottom-10 xl:h-58 lg:h-54 xl:w-166 lg:w-120 bg-gray-500/10 backdrop-blur-xs shadow-black/20 shadow-lg'
       "
       >
-        <a href="#" @click="ChengeStore.KippuChenge">
-        <h1 class="absolute xl:right-18 lg:right-12 xl:text-[92px] lg:text-[84px] font-bold">KIPPU</h1>
+        <a class="" href="#" @click="ChengeStore.KippuChenge">
+        <h1 
+        ref="glowWrapper" 
+        class="
+        absolute -top-1 xl:right-18 lg:right-12 font-bold
+        hover:-top-1.5 hover:xl:right-17.5 hover:lg:right-115
+        xl:text-[92px] lg:text-[84px] 
+        hover:xl:text-[93px] hover:lg:text-[85px]
+        transition-all duration-800 ease-in-out
+        [background-clip:text]
+        [-webkit-text-fill-color:transparent]
+        inline-block text-transparent
+        transition-[background-position_--x_--y]_duration-200
+        bg-black/90"
+        @mouseenter="onEnter"
+        @mousemove="onMove"
+        @mouseleave="onLeave"
+        ">KIPPU</h1>
         </a>
-        <div class="absolute flex flex-col gap-1 items-end xl:top-30 lg:top-28 text-gray-700 xl:text-[16px] lg:text-[14px] xl:right-18 lg:right-12">
-        <p class="font-bold">前端开发 [>>] 后端开发 / 平面设计 / 写手 / 轻亚文化 / 兴趣使然</p>
-         <p class="font-bold">16 November 2005 — my first commit, the day I became me</p>
-          <p class="font-bold">よければメールでやりとりしましょう: <a href="">KIPPUDESU@OUTLOOK.COM</a></p>
+        <div       
+        class="
+        absolute flex flex-col gap-1 items-end font-bold text-gray-700
+        xl:top-30 lg:top-28 xl:text-[16px] lg:text-[14px] xl:right-18 lg:right-12
+        ">
+        <p class="">前端开发 [>>] 后端开发 / 平面设计 / 写手 / 轻亚文化 / 兴趣使然</p>
+         <p class="">16 November 2005 — my first commit, the day I became me</p>
+          <p class="">よければメールでやりとりしましょう: <a href="">KIPPUDESU@OUTLOOK.COM</a></p>
         </div>
       </div>
     </div>
@@ -150,6 +170,7 @@ bg-blue-200/0 transition-all duration-800 ease-in-out"
 import { ref } from 'vue'
 // 全局状态管理
 import { useTestStore } from '#imports'
+import { onMounted, onBeforeUnmount } from 'vue'
 // vue 响应
 // import { computed } from 'vue'
 
@@ -169,6 +190,48 @@ function PostsUp() {
   DownOrUp.value = false
   // NowKey.value = null
 }
+
+// 路径光晕
+// 绑定和解绑事件
+const glowWrapper = ref<HTMLElement>()
+
+// 统一的光晕 CSS 文本
+const gradient = 'radial-gradient(circle 350px at var(--x) var(--y), rgba(248, 248, 248, 0.2), transparent 30%)'
+
+// 鼠标进入时开启光晕
+const onEnter = () => {
+  const el = glowWrapper.value!
+  // 初始化位置
+  el.style.setProperty('--x', '50%')
+  el.style.setProperty('--y', '50%')
+  // 打开光晕
+  el.style.backgroundImage = gradient
+}
+
+// 鼠标移动时：更新坐标
+const onMove = (e: MouseEvent) => {
+  const el = glowWrapper.value!
+  const r = el.getBoundingClientRect()
+  const x = ((e.clientX - r.left)  / r.width ) * 100
+  const y = ((e.clientY - r.top)   / r.height) * 100
+  el.style.setProperty('--x', `${x}%`)
+  el.style.setProperty('--y', `${y}%`)
+}
+
+// 鼠标离开时：关闭光晕并重置位置
+const onLeave = () => {
+  const el = glowWrapper.value!
+  el.style.backgroundImage = 'none'
+  el.style.setProperty('--x', '50%')
+  el.style.setProperty('--y', '50%')
+}
+
+onMounted(() => {
+  // 如果想一开始就无光晕，这里不需要设置 backgroundImage
+  const el = glowWrapper.value!
+  el.style.setProperty('--x', '50%')
+  el.style.setProperty('--y', '50%')
+})
 </script>
 
 <!-- <style> -->
