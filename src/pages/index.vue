@@ -2,21 +2,21 @@
   <!-- 全页面容器 -->
   <div class="relative bg-gray-300/10">
       <!-- 首页 Banner 容器 -->
-    <div class="relative w-full h-100">
+    <div class="relative w-full h-106">
       <!-- 首页图容器 -->
       <div 
-      class="relative h-100 overflow-hidden">
+      class="relative bg-gray-200/10 h-106 overflow-hidden">
       <!-- 填充父容器的透明absolute添加图片上层添加shadow-inner -->
       <div class="absolute z-10 w-full h-full transition-all duration-600 ease-in-out" 
       :class="ChengeStore.PlaneOrSolid?
       'shadow-[inset_0_-4px_6px_rgba(0,0,0,0.0)]' : 'shadow-[inset_0_-5px_6px_rgba(0,0,0,0.2)]'"></div>
       <img 
-      class="absolute transition-all duration-600 ease-in-out
-      xl:w-260 lg:w-210"
+      class="absolute transition-all duration-600 ease-in-out -left-4
+      xl:w-256 lg:w-210 "
       :class="ChengeStore.PlaneOrSolid?
-      'bottom-100' : 'xl:-bottom-195 lg:-bottom-150'
+      'bottom-100' : 'xl:-bottom-190 lg:-bottom-144'
       "
-      src="../public/img/egugang.png" alt="">
+      src="/img/egugang.png" alt="">
       </div>
       <!-- 顶部横线 -->
       <div 
@@ -29,54 +29,65 @@
       <!-- 左侧文字容器 -->
       <div 
       class="transition-all duration-600 ease-in-out
-      flex flex-col bg-gray-300/0 Noto-Sans 
+      flex flex-col
       absolute xl:mx-18 lg:mx-12 z-10 font-bold text-black/60
       "
-      :class="ChengeStore.PlaneOrSolid? 'xl:top-32 lg:top-38' : '-top-80' ">
-      <h1 class="xl:text-[70px] lg:text-[64px]">ターゲット は</h1>
+      :class="ChengeStore.PlaneOrSolid? 'xl:top-34 lg:top-38' : '-top-80' ">
+      <h1 class="xl:text-[72px] lg:text-[64px]">ターゲット は</h1>
       <!-- 文字中割线 -->
       <div class="xl:w-120 lg:w-98 xl:h-1 lg:h-1 bg-black/50 rounded-md"></div>
-      <h1 class="xl:text-[80px] lg:text-[64px]">Full Stack Developer</h1>
+      <h1 class="xl:text-[84px] lg:text-[64px]">Full Stack Developer</h1>
       <div class="">
       </div>
       </div>
       <!-- 右侧文字容器 -->
       <div 
-      class="transition-all duration-800 ease-in-out bg-red-200/0
+      class="transition-all duration-800 ease-in-out 
       absolute z-10 flex flex-col right-0 rounded-l-lg
       "
       :class="ChengeStore.PlaneOrSolid?
-      'bottom-0 xl:h-66 lg:h-62 xl:w-150 lg:w-120' : 
-      'bottom-10 xl:h-58 lg:h-54 xl:w-166 lg:w-120 bg-gray-500/10 backdrop-blur-xs shadow-black/20 shadow-lg'
+      'bottom-0 xl:h-68 lg:h-62 xl:w-146 lg:w-120' : 
+      'bottom-12 xl:h-62 lg:h-54 xl:w-156 lg:w-120 backdrop-blur-sm shadow-black/20 shadow-lg bg-gray-200/20'
       "
       >
         <a class="" href="#" @click="ChengeStore.KippuChenge">
         <h1 
         ref="glowWrapper" 
         class="
-        absolute -top-1 xl:right-18 lg:right-12 font-bold
-        hover:-top-1.5 hover:xl:right-17.5 hover:lg:right-115
-        xl:text-[92px] lg:text-[84px] 
-        hover:xl:text-[93px] hover:lg:text-[85px]
         transition-all duration-800 ease-in-out
-        [background-clip:text]
-        [-webkit-text-fill-color:transparent]
-        inline-block text-transparent
-        transition-[background-position_--x_--y]_duration-200
-        bg-black/90"
+        absolute top-1 font-bold
+        hover:top-0.5   
+        hover:xl:text-[93px] hover:lg:text-[85px]
+        bg-clip-text inline-block text-transparent bg-black/90"
+        :class="ChengeStore.PlaneOrSolid? 
+        'xl:right-18 hover:xl:right-17.5 lg:right-12 hover:lg:right-11.5 xl:text-[92px] lg:text-[84px] hover:xl:text-[93px] hover:lg:text-[85px]' : 
+        'xl:right-20 hover:xl:right-19.5 lg:right-14 hover:lg:right-13.5 xl:text-[94px] lg:text-[86px] hover:xl:text-[95.5px] hover:lg:text-[86.5px]' "
         @mouseenter="onEnter"
         @mousemove="onMove"
         @mouseleave="onLeave"
-        ">KIPPU</h1>
+        >KIPPU</h1>
         </a>
         <div       
         class="
-        absolute flex flex-col gap-1 items-end font-bold text-gray-700
-        xl:top-30 lg:top-28 xl:text-[16px] lg:text-[14px] xl:right-18 lg:right-12
+        transition-all duration-800 ease-in-out
+        absolute flex flex-col gap-1 items-end font-medium text-gray-600/90
+        xl:text-[16px] lg:text-[14px]"
+        :class="ChengeStore.PlaneOrSolid?
+        'xl:right-18 lg:right-12 xl:top-30 lg:top-28' : 'xl:right-20 lg:right-14 xl:top-32 lg:top-30'
         ">
-        <p class="">前端开发 [>>] 后端开发 / 平面设计 / 写手 / 轻亚文化 / 兴趣使然</p>
-         <p class="">16 November 2005 — my first commit, the day I became me</p>
-          <p class="">よければメールでやりとりしましょう: <a href="">KIPPUDESU@OUTLOOK.COM</a></p>
+        <p class="flex flex-row">Frontend Dev [<span class="inline-flex xl:text-[11px] justify-center items-center">>></span>] Backend Dev / Graphic Designer / Writing</p>
+         <p class="">16 November 2005 — My first commit, the day I became me</p>
+          <p class="">If okay... mail me, maybe? 💌 : 
+            <a 
+            href="mailto:KIPPUDESU@OUTLOOK.COM?subject=Hello%20Kippu" 
+            target="_blank"
+            class="
+            bg-clip-text text-transparent bg-gradient-to-br
+            hover:from-gray-700/90 hover:to-gray-700/40"
+            :class="ChengeStore.PlaneOrSolid?
+            'from-gray-800/70 to-gray-800/70' : 'from-blue-900/70 to-blue-900/40' "
+            >
+              KIPPUDESU@OUTLOOK.COM</a></p>
         </div>
       </div>
     </div>
@@ -91,7 +102,7 @@
 
 <!-- 这里做分页 -->
 <!-- 文章预览卡片 -->
-<div class="flex flex-wrap relative justify-center bg-blue-300/0 w-full h-max">
+<div class="flex flex-wrap relative justify-center bg-blue-300/0 w-full h-300">
   <!-- <ArticleCard /> -->
 </div>
 <!-- 分页按钮 -->
@@ -114,7 +125,7 @@ bg-blue-200/0 transition-all duration-800 ease-in-out"
   justify-center items-center font-bold
   ">
   <!-- :to="`/?page=${pageNum - 1}`" -->
-  <NuxtLink class="flex flex-nowrap items-center gap-3"
+  <NuxtLink to="/" class="flex flex-nowrap items-center gap-3"
   >
     <!-- ← ← ← -->
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
@@ -148,7 +159,7 @@ bg-blue-200/0 transition-all duration-800 ease-in-out"
   justify-center items-center font-bold
   ">
   <!-- :to="`/?page=${pageNum + 1}`" -->
-  <NuxtLink class="flex flex-nowrap items-center gap-3"
+  <NuxtLink to="/" class="flex flex-nowrap items-center gap-3"
   
   >Newer Posts 
     <!-- → → → -->
@@ -196,7 +207,7 @@ function PostsUp() {
 const glowWrapper = ref<HTMLElement>()
 
 // 统一的光晕 CSS 文本
-const gradient = 'radial-gradient(circle 350px at var(--x) var(--y), rgba(248, 248, 248, 0.2), transparent 30%)'
+const gradient = 'radial-gradient(circle 350px at var(--x) var(--y), rgba(248, 248, 248, 0.25), transparent 30%)'
 
 // 鼠标进入时开启光晕
 const onEnter = () => {

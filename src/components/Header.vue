@@ -5,7 +5,7 @@
      absolute z-10 flex w-full justify-between
      shadow-black/20 shadow-lg"
     :class="ChengeStore.PlaneOrSolid ?
-     'h-100 bg-gradient-to-br from-white/50 to-gray-100/50 backdrop-blur-sm' : 'h-12 bg-gray-300/30 backdrop-blur-md'" 
+     'h-106 bg-gradient-to-br from-white/50 to-gray-100/50 backdrop-blur-sm' : 'h-12 bg-gray-300/30 backdrop-blur-md'" 
      >
      
         <div class="p-2 mx-6 w-46">
