@@ -3,7 +3,7 @@
 title: "这是一篇测试文章"
 classify: "分类"
 date: "2025-06-13"
-image: "/img/public/img/egudown.png"
+image:"/img/egudown.png"
 ---
 
 <!-- 文章正文... -->

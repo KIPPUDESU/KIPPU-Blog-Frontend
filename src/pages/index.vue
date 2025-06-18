@@ -46,10 +46,11 @@
       absolute z-10 flex flex-col right-0 rounded-l-lg
       "
       :class="ChengeStore.PlaneOrSolid?
-      'bottom-0 xl:h-68 lg:h-62 xl:w-146 lg:w-120' : 
+      'bottom-0 xl:h-70 lg:h-62 xl:w-146 lg:w-120' : 
       'bottom-12 xl:h-62 lg:h-54 xl:w-156 lg:w-120 backdrop-blur-sm shadow-black/20 shadow-lg bg-gray-200/20'
       "
       >
+        <!-- 点击大标题 -->
         <a class="" href="#" @click="ChengeStore.KippuChenge">
         <h1 
         ref="glowWrapper" 
@@ -67,10 +68,11 @@
         @mouseleave="onLeave"
         >KIPPU</h1>
         </a>
+        <!-- 小字简介 -->
         <div       
         class="
         transition-all duration-800 ease-in-out
-        absolute flex flex-col gap-1 items-end font-medium text-gray-600/90
+        absolute flex flex-col gap-2 items-end font-medium text-gray-600/90
         xl:text-[16px] lg:text-[14px]"
         :class="ChengeStore.PlaneOrSolid?
         'xl:right-18 lg:right-12 xl:top-30 lg:top-28' : 'xl:right-20 lg:right-14 xl:top-32 lg:top-30'
@@ -89,6 +91,47 @@
             >
               KIPPUDESU@OUTLOOK.COM</a></p>
         </div>
+        <!-- 圆点 -->
+        <div 
+        class="relative flex flex-col 
+        transition-all duration-800 ease-in-out"
+        :class="ChengeStore.PlaneOrSolid?
+        'mt-[126px] ml-6' : 'mt-[134px] ml-12' "
+        >
+          <svg 
+          class="absolute mx-2
+          transition-all duration-600 ease-in-out"
+          :class="ChengeStore.PlaneOrSolid?
+          'w-[0px] h-[0px] top-8' : 'w-[12px] h-[12px] top-0' "
+          viewBox="0 0 12 12" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          >
+           <circle cx="5" cy="5" r="5" fill="#636364"/>
+          </svg>
+          <svg 
+          class="absolute mx-2 top-8
+          transition-all duration-600 ease-in-out"
+          :class="ChengeStore.PlaneOrSolid?
+          'w-[0px] h-[0px]' : 'w-[12px] h-[12px]' "
+          viewBox="0 0 12 12" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          >
+           <circle cx="5" cy="5" r="5" fill="#636364"/>
+          </svg>
+          <svg 
+          class="absolute mx-2
+          transition-all duration-600 ease-in-out"
+          :class="ChengeStore.PlaneOrSolid?
+          'top-8 w-[0px] h-[0px]' : 'top-16 w-[12px] h-[12px]' "
+          viewBox="0 0 12 12" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          >
+           <circle cx="5" cy="5" r="5" fill="#636364"/>
+          </svg>
+        </div>
       </div>
     </div>
     
@@ -103,7 +146,18 @@
 <!-- 这里做分页 -->
 <!-- 文章预览卡片 -->
 <div class="flex flex-wrap relative justify-center bg-blue-300/0 w-full h-300">
-  <!-- <ArticleCard /> -->
+  <ArticleCard
+   v-for="article in articles"
+   :key="article.id"
+   :card="{
+     CardImg: article.image ?? '/default.jpg',
+     title: article.title,
+     classify: article.classify ?? '未分类', 
+     TimeData: article.date
+   }"
+   :PlaneOrSolid="ChengeStore.PlaneOrSolid"
+   :to="`/`"
+  />
 </div>
 <!-- 分页按钮 -->
 <div 
@@ -201,6 +255,14 @@ function PostsUp() {
   DownOrUp.value = false
   // NowKey.value = null
 }
+
+// 卡片渲染数据获取(异步)
+// const { data: articles } = await useAsyncData('article', () => queryContent('blog').find())
+// 以上编写中，最新的 Nuxt Content v3 已经不再提供 queryContent() 
+// 改用基于「集合（collection）」的新 API：
+const { data: articles } = await useAsyncData('article', () => 
+queryCollection('blog').all()
+)
 
 // 路径光晕
 // 绑定和解绑事件
