@@ -148,24 +148,22 @@
 <div class="flex relative justify-center items-center bg-blue-300/0 w-full h-max">
   <div 
    class="
-   flex flex-row absolute z-10 top-6 left-84 w-288 h-246
-   justify-center items-center shadow-black/40 shadow-lg
-   bg-gradient-to-bl from-pink-200/20 to-gray-100/30 rounded-t-xl
-   text-[18px] text-gray-600 
+   flex flex-row absolute z-10 top-6 left-80 w-288 h-246
+   justify-center items-center shadow-black/20 shadow-lg
+   bg-gradient-to-bl from-white/60 via-pink-50/40 to-white/60 rounded-t-xl
    ">
    </div>
    <div 
    class="
-   flex flex-row absolute z-10 top-10 left-84 w-284 h-238
-   justify-center items-center shadow-black/40 shadow-lg
-   bg-gradient-to-bl from-pink-200/30 to-gray-100/30 rounded-t-xl
-   text-[18px] text-gray-600 
+   flex flex-row absolute z-20 top-10 left-80 w-284 h-238
+   justify-center items-center shadow-black/20 shadow-lg backdrop-blur-sm
+   bg-gradient-to-bl from-white/70 to-white/70 rounded-t-xl 
    ">
    </div>
   <div 
-  class="relative flex z-20 flex-wrap justify-center items-center
-   bg-gradient-to-bl from-pink-200/30 to-gray-100/30
-   mx-14 ml-84 mt-14 my-10 py-4 rounded-t-xl shadow-lg shadow-black/40">
+  class="relative flex z-40 flex-wrap justify-center items-center
+   bg-gradient-to-bl from-white/95 to-white/95
+   mx-18 ml-80 mt-14 my-10 py-4 rounded-t-xl shadow-lg shadow-black/20">
   <ArticleCard
    v-for="article in articles"
    :key="article.id"
