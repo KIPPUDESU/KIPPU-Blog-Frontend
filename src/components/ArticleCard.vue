@@ -6,22 +6,24 @@
     <div 
     class="
     flex flex-col items-center mx-4 my-4 z-50 w-58 h-66
-    bg-gradient-to-b 
+    bg-gradient-to-bl 
     transition-all duration-600 ease-in-out
     hover:my-2 hover:py-2 hover:w-62 hover:h-72
-    hover:bg-gradient-to-b
+    hover:bg-gradient-to-bl backdrop-blur-2xl
     "
     :class="PlaneOrSolid ? 
-    'from-gray-200/60 to-white/20 hover:from-blue-200/50 hover:to-white/20' : ' shadow-lg shadow-black/40 hover:shadow-black/50 rounded-lg from-white/50 to-white/50 hover:from-blue-100/50 hover:to-white/20'"
-    >
+    'from-gray-300/40 to-gray-200/40 hover:from-blue-200/70 hover:to-blue-100/70' :
+    'shadow-lg shadow-black/40 hover:shadow-pink-500/50 rounded-lg from-pink-200/30 to-white/30 hover:from-blue-100/60 hover:to-white/60 ring-4 ring-pink-200/50'"
+    >   
+        <!-- 图片容器 -->
         <div 
-        class="flex justify-center items-center overflow-hidden
-        transition-all duration-600 ease-in-out
-        hover:mx-2 hover:mt-4 hover:w-54 hover:h-40 
-        hover:shadow-lg hover:shadow-black/20 hover:rounded-none
-        "
-        :class="PlaneOrSolid ? 'w-49 h-35 mx-5 mt-7' : 'rounded-lg w-50 h-36  mx-4 mt-6'"
-        >
+            class="flex justify-center items-center overflow-hidden
+            transition-all duration-600 ease-in-out
+            hover:mx-2 hover:mt-4 hover:w-54 hover:h-40 
+            hover:shadow-lg hover:shadow-black/20 hover:rounded-none
+            "
+            :class="PlaneOrSolid ? 'w-49 h-35 mx-5 mt-7' : 'rounded-lg w-50 h-36  mx-4 mt-6'"
+            >
             <img 
             class=" transition-all duration-600 ease-in-out overflow-hidden" 
             src="../public/img/egudown.png" alt="图片" loading="lazy">

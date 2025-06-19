@@ -134,7 +134,6 @@
         </div>
       </div>
     </div>
-    
   </div>
 
 <!-- 这里做分隔行 -->
@@ -144,26 +143,57 @@
 <!-- </div> -->
 
 <!-- 这里做分页 -->
+<div class="flex relative justify-center items-center bg-gray-100/50 w-full h-max">
+<!-- 左侧信息容器 -->
+<div 
+  class="
+  absolute flex w-80 h-252 top-0 left-0
+  justify-center bg-blue-900/0">
+    <div 
+    class="
+    absolute top-14 w-40 h-40 rounded-full bg-red-300
+    overflow-hidden shadowlg shadow-black/20 ring-4 ring-gray-400/60
+    ">
+      <img class="" src="../public/img/kippugit.jpg" alt="">
+    </div>
+    <div 
+    class="
+    absolute flex flex-col top-60 w-48 h-10 bg-red-300/0
+    justify-center items-center
+    ">
+      <span class="text-2xl text-gray-800 font-bold">切符</span>
+      <p class="text-md text-gray-600/80 font-extrabold">もっとElegantになりたい</p>
+    </div>
+</div>
+<!-- 右侧分页标题 -->
+<div 
+class="
+absolute flex top-4 left-78 px-2 w-294 h-8
+justify-between items-center">
+  <div class="w-128 h-[0.5px] z-20 bg-black/20 rounded-2xl"></div>
+  <span class="text-black/20 text-[20px]">記事 LIST</span>
+  <div class="w-128 h-[0.5px] z-20 bg-black/20 rounded-2xl"></div>
+</div>
 <!-- 文章预览卡片 -->
-<div class="flex relative justify-center items-center bg-blue-300/0 w-full h-max">
+<div>
   <div 
    class="
-   flex flex-row absolute z-10 top-6 left-80 w-288 h-246
+   flex flex-row absolute z-10 top-14 left-80 w-288 h-246
    justify-center items-center shadow-black/20 shadow-lg
-   bg-gradient-to-bl from-white/60 via-pink-50/40 to-white/60 rounded-t-xl
+   bg-gradient-to-bl from-pink-200/70 via-white/80 to-white/60 rounded-t-xl
    ">
    </div>
    <div 
    class="
-   flex flex-row absolute z-20 top-10 left-80 w-284 h-238
+   flex flex-row absolute z-20 top-18 left-80 w-284 h-238
    justify-center items-center shadow-black/20 shadow-lg backdrop-blur-sm
-   bg-gradient-to-bl from-white/70 to-white/70 rounded-t-xl 
+   bg-gradient-to-bl from-pink-50/60 to-white/70 rounded-t-xl 
    ">
    </div>
   <div 
   class="relative flex z-40 flex-wrap justify-center items-center
-   bg-gradient-to-bl from-white/95 to-white/95
-   mx-18 ml-80 mt-14 my-10 py-4 rounded-t-xl shadow-lg shadow-black/20">
+   bg-gradient-to-bl from-white/95 to-white/95 h-230 w-280
+   mx-18 ml-80 mt-22 my-10 py-4 rounded-t-xl shadow-lg shadow-black/20">
   <ArticleCard
    v-for="article in articles"
    :key="article.id"
@@ -178,9 +208,10 @@
   />
   </div>
 </div>
+</div>
 <!-- 分页按钮 -->
 <div 
-class="flex justify-between w-full h-46 items-center
+class="flex justify-between w-full h-46 items-center mt-12
 bg-blue-200/0 transition-all duration-800 ease-in-out"
 :class="DownOrUp ? 'px-12' : 'px-14'"
 @mouseenter="PostsDown"
