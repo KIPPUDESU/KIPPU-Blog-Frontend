@@ -3,9 +3,9 @@
     class="
      transition-all duration-600 ease-in-out
      absolute z-10 flex w-full justify-between
-     shadow-black/20 shadow-lg"
+     shadow-black/20 shadow-md"
     :class="ChengeStore.PlaneOrSolid ?
-     'h-106 bg-gradient-to-br from-white/50 to-gray-100/50 backdrop-blur-sm' : 'h-12 bg-gray-300/30 backdrop-blur-md'" 
+     'h-106 bg-gradient-to-br from-white/50 to-gray-100/50 backdrop-blur-sm' : 'h-12 bg-gray-300/20 backdrop-blur-lg'" 
      >
      
         <div class="p-2 mx-6 w-46">

@@ -12,11 +12,11 @@
       'shadow-[inset_0_-4px_6px_rgba(0,0,0,0.0)]' : 'shadow-[inset_0_-5px_6px_rgba(0,0,0,0.2)]'"></div>
       <img 
       class="absolute transition-all duration-600 ease-in-out -left-4
-      xl:w-256 lg:w-210 "
+      xl:w-262 lg:w-210 "
       :class="ChengeStore.PlaneOrSolid?
-      'bottom-100' : 'xl:-bottom-190 lg:-bottom-144'
+      'bottom-100' : 'xl:-bottom-192 lg:-bottom-144'
       "
-      src="/img/egugang.png" alt="">
+      src="/img/eguegugang.png" alt="">
       </div>
       <!-- 顶部横线 -->
       <div 
@@ -43,11 +43,11 @@
       <!-- 右侧文字容器 -->
       <div 
       class="transition-all duration-800 ease-in-out 
-      absolute z-10 flex flex-col right-0 rounded-l-lg
+      absolute z-10 flex flex-col right-0 rounded-l-xl
       "
       :class="ChengeStore.PlaneOrSolid?
-      'bottom-0 xl:h-70 lg:h-62 xl:w-146 lg:w-120' : 
-      'bottom-12 xl:h-62 lg:h-54 xl:w-156 lg:w-120 backdrop-blur-sm shadow-black/20 shadow-lg bg-gray-200/20'
+      'bottom-0 xl:h-70 lg:h-62 xl:w-146 lg:w-120 bg-gradient-to-bl from-gray-100-100/0 to-gray-100-100/0' : 
+      'bottom-12 xl:h-62 lg:h-54 xl:w-156 lg:w-120 backdrop-blur-sm shadow-black/20 shadow-lg bg-gradient-to-bl from-blue-100/70 to-bule-100/30'
       "
       >
         <!-- 点击大标题 -->
@@ -138,26 +138,47 @@
   </div>
 
 <!-- 这里做分隔行 -->
-<div class="relative my-4 w-full h-1 px-10 bg-red-400/0">
+<!-- <div class="relative my-4 w-full h-1 px-10 bg-red-400/0"> -->
   <!-- 分割线 -->
   <!-- <div class="bg-gray-300/0 h-0.5"></div> -->
-</div>
+<!-- </div> -->
 
 <!-- 这里做分页 -->
 <!-- 文章预览卡片 -->
-<div class="flex flex-wrap relative justify-center bg-blue-300/0 w-full h-300">
+<div class="flex relative justify-center items-center bg-blue-300/0 w-full h-max">
+  <div 
+   class="
+   flex flex-row absolute z-10 top-6 left-84 w-288 h-246
+   justify-center items-center shadow-black/40 shadow-lg
+   bg-gradient-to-bl from-pink-200/20 to-gray-100/30 rounded-t-xl
+   text-[18px] text-gray-600 
+   ">
+   </div>
+   <div 
+   class="
+   flex flex-row absolute z-10 top-10 left-84 w-284 h-238
+   justify-center items-center shadow-black/40 shadow-lg
+   bg-gradient-to-bl from-pink-200/30 to-gray-100/30 rounded-t-xl
+   text-[18px] text-gray-600 
+   ">
+   </div>
+  <div 
+  class="relative flex z-20 flex-wrap justify-center items-center
+   bg-gradient-to-bl from-pink-200/30 to-gray-100/30
+   mx-14 ml-84 mt-14 my-10 py-4 rounded-t-xl shadow-lg shadow-black/40">
   <ArticleCard
    v-for="article in articles"
    :key="article.id"
    :card="{
-     CardImg: article.image ?? '/default.jpg',
+     CardImg: article.image || '../public/img/egudown.png',
      title: article.title,
-     classify: article.classify ?? '未分类', 
+     classify: article.classify || '未分类', 
      TimeData: article.date
    }"
    :PlaneOrSolid="ChengeStore.PlaneOrSolid"
    :to="`/`"
   />
+  </div>
 </div>
 <!-- 分页按钮 -->
 <div 
