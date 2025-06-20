@@ -57,12 +57,11 @@
         class="
         transition-all duration-800 ease-in-out
         absolute top-1 font-bold
-        hover:top-0.5   
-        hover:xl:text-[93px] hover:lg:text-[85px]
+        object-cover hover:scale-104
         bg-clip-text inline-block text-transparent bg-black/90"
         :class="ChengeStore.PlaneOrSolid? 
-        'xl:right-18 hover:xl:right-17.5 lg:right-12 hover:lg:right-11.5 xl:text-[92px] lg:text-[84px] hover:xl:text-[93px] hover:lg:text-[85px]' : 
-        'xl:right-20 hover:xl:right-19.5 lg:right-14 hover:lg:right-13.5 xl:text-[94px] lg:text-[86px] hover:xl:text-[95.5px] hover:lg:text-[86.5px]' "
+        'xl:right-18 lg:right-12 xl:text-[92px] lg:text-[84px]' : 
+        'xl:right-20 lg:right-14 xl:text-[94px] lg:text-[86px]' "
         @mouseenter="onEnter"
         @mousemove="onMove"
         @mouseleave="onLeave"
@@ -143,57 +142,104 @@
 <!-- </div> -->
 
 <!-- 这里做分页 -->
-<div class="flex relative justify-center items-center bg-gray-100/50 w-full h-max">
+<div class="flex relative justify-center items-center bg-gray-100/0 w-full h-max">
 <!-- 左侧信息容器 -->
 <div 
   class="
-  absolute flex w-80 h-252 top-0 left-0
-  justify-center bg-blue-900/0">
+  absolute flex w-70 h-252 top-0 left-0
+  justify-center rounded-2xl">
     <div 
     class="
-    absolute top-14 w-40 h-40 rounded-full bg-red-300
-    overflow-hidden shadowlg shadow-black/20 ring-4 ring-gray-400/60
+    absolute flex top-14 w-40 h-40 rounded-full justify-center items-center
+    overflow-hidden shadow-lg shadow-black/30 ring-4 ring-gray-300
     ">
-      <img class="" src="../public/img/kippugit.jpg" alt="">
+      <img 
+      class="
+      transition-all duration-600 ease-in-out
+      flex absolute w-full h-full object-cover hover:scale-110
+      " 
+      src="../public/img/egucool.jpg" 
+      alt="KIPPUIMG">
     </div>
     <div 
     class="
-    absolute flex flex-col top-60 w-48 h-10 bg-red-300/0
+    absolute flex flex-col top-62 w-48 h-10 gap-1
     justify-center items-center
     ">
       <span class="text-2xl text-gray-800 font-bold">切符</span>
       <p class="text-md text-gray-600/80 font-extrabold">もっとElegantになりたい</p>
     </div>
 </div>
-<!-- 右侧分页标题 -->
-<div 
-class="
-absolute flex top-4 left-78 px-2 w-294 h-8
-justify-between items-center">
-  <div class="w-128 h-[0.5px] z-20 bg-black/20 rounded-2xl"></div>
-  <span class="text-black/20 text-[20px]">記事 LIST</span>
-  <div class="w-128 h-[0.5px] z-20 bg-black/20 rounded-2xl"></div>
-</div>
 <!-- 文章预览卡片 -->
-<div>
+<div class="">
+  <!-- 左侧分页标题 -->
+  <div 
+  class="
+  absolute flex flex-col top-8 left-72 w-4 h-254
+  justify-between items-center py-6 ">
+    <div class="w-[3px] h-10 z-20 mb-2 bg-black/20 rounded-2xl"></div>
+    <span class="text-black/20 text-[20px]">記</span>
+    <span class="text-black/20 text-[20px]">事</span>
+    <span class="text-black/20 text-[20px]">一</span>
+    <span class="text-black/20 text-[20px]">覧</span>
+    <div class="w-[3px] h-210 z-20 mt-4 bg-black/20 rounded-2xl"></div>
+    <div class="w-2 h-2 mt-4 bg-black/20 rounded-full"></div>
+  </div>
+  <!-- 边角 -->
+  <div>
+    <div class="absolute w-[22px] h-[22px] top-5 left-[294.5px] bg-gray-300/0
+    border-t-[3.5px] border-l-[3.5px] border-gray-300 rounded-tl-xl"></div>
+  </div>
+  <!-- 右侧包围线条 -->
+  <div>
+    <div
+    class="
+    absolute w-284 h-[3px] bg-gray-300 rounded-xl
+    right-12 top-5
+    "></div>
+    <div 
+    class="
+    absolute w-4 h-4 bg-gray-300 rounded-full
+    right-4 top-4
+    "></div>
+    <div
+    class="
+    absolute w-[3px] h-236 bg-gray-300 rounded-xl
+    right-5 top-12
+    "></div>
+    <div 
+    class="
+    w-2 h-2 absolute bg-black/20 rounded-full
+    right-4.5 top-252
+    "></div>
+  </div>
+  <!-- 三层背景容器 -->
   <div 
    class="
-   flex flex-row absolute z-10 top-14 left-80 w-288 h-246
+   flex flex-row absolute z-10 top-10 left-80 w-288 h-246
    justify-center items-center shadow-black/20 shadow-lg
-   bg-gradient-to-bl from-pink-200/70 via-white/80 to-white/60 rounded-t-xl
+   bg-gradient-to-bl from-pink-200/50 to-pink-100/50 rounded-t-xl
    ">
    </div>
    <div 
    class="
-   flex flex-row absolute z-20 top-18 left-80 w-284 h-238
+   transition-all duration-800 ease-in-out
+   flex flex-row absolute z-20 left-80
    justify-center items-center shadow-black/20 shadow-lg backdrop-blur-sm
-   bg-gradient-to-bl from-pink-50/60 to-white/70 rounded-t-xl 
-   ">
+   bg-gradient-to-bl from-gray-50/60 to-white/95 rounded-t-xl"
+   :class="ChengeStore.PlaneOrSolid?
+   'w-288 top-10 h-246' : 'w-284 top-14 h-238' "
+   >
    </div>
   <div 
-  class="relative flex z-40 flex-wrap justify-center items-center
-   bg-gradient-to-bl from-white/95 to-white/95 h-230 w-280
-   mx-18 ml-80 mt-22 my-10 py-4 rounded-t-xl shadow-lg shadow-black/20">
+  class="
+  transition-all duration-800 ease-in-out
+  relative flex z-40 flex-wrap justify-center items-center
+  bg-gradient-to-bl from-white to-white backdrop-blur-2xl
+  ml-80 my-10 py-4 rounded-t-xl shadow-lg shadow-black/20"
+  :class="ChengeStore.PlaneOrSolid?
+  'h-240 w-288 mx-10 mt-10' : 'h-230 w-280 mx-18 mt-18' "
+   >
   <ArticleCard
    v-for="article in articles"
    :key="article.id"
@@ -211,16 +257,16 @@ justify-between items-center">
 </div>
 <!-- 分页按钮 -->
 <div 
-class="flex justify-between w-full h-46 items-center mt-12
-bg-blue-200/0 transition-all duration-800 ease-in-out"
-:class="DownOrUp ? 'px-12' : 'px-14'"
+class="flex justify-between w-288 h-46 items-center mt-12 ml-80
+bg-gray-100/0 transition-all duration-800 ease-in-out"
+:class="DownOrUp ? 'px-10' : 'px-14'"
 @mouseenter="PostsDown"
 @mouseleave="PostsUp"
 >
   <!-- 左 -->
   <div 
-  class="flex py-2 px-4 w-60 h-12
-  hover:py-2 hover:px-6 hover:w-56 hover:h-13
+  class="flex py-2 px-4 w-66 h-12
+  hover:py-2 hover:w-62 hover:h-13
   shadow-black/0 shadow-inner/0 text-[20px] text-gray-500
   hover:shadow-black/30 hover:shadow-inner/80 hover:text-[22px] hover:text-gray-600
   bg-gradient-to-br from-pink-300/60 to-white
@@ -253,8 +299,8 @@ bg-blue-200/0 transition-all duration-800 ease-in-out"
   </div>
   <!-- 右 -->
   <div 
-  class="flex py-2 px-4 w-60 h-12
-  hover:py-2 hover:px-6 hover:w-56 hover:h-13
+  class="flex py-2 px-4 w-66 h-12
+  hover:py-2 hover:w-62 hover:h-13
   shadow-black/0 shadow-inner/0 text-[20px] text-gray-500
   hover:shadow-black/30 hover:shadow-inner/80 hover:text-[22px] hover:text-gray-600
   bg-gradient-to-br from-pink-300/60 to-white

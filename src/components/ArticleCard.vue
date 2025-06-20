@@ -5,15 +5,15 @@
     <!-- 外壳 -->
     <div 
     class="
-    flex flex-col items-center mx-4 my-4 z-50 w-58 h-66
+    flex flex-col items-center my-4 z-50 w-58 h-66
     bg-gradient-to-bl 
     transition-all duration-600 ease-in-out
     hover:my-2 hover:py-2 hover:w-62 hover:h-72
     hover:bg-gradient-to-bl backdrop-blur-2xl
     "
     :class="PlaneOrSolid ? 
-    'from-gray-300/40 to-gray-200/40 hover:from-blue-200/70 hover:to-blue-100/70' :
-    'shadow-lg shadow-black/40 hover:shadow-pink-500/50 rounded-lg from-pink-200/30 to-white/30 hover:from-blue-100/60 hover:to-white/60 ring-4 ring-pink-200/50'"
+    'mx-6 from-gray-200/80 to-gray-100/80 hover:from-blue-200/70 hover:to-blue-100/70' :
+    'mx-4 shadow-lg shadow-black/40 hover:shadow-pink-500/50 rounded-lg from-pink-200/30 to-white/30 hover:from-blue-100/60 hover:to-white/60 ring-4 ring-pink-200/50'"
     >   
         <!-- 图片容器 -->
         <div 
