@@ -1,14 +1,11 @@
-<!-- Frontmatter -->
 ---
-title: "这是一篇测试文章"
-classify: "分类"
+title: "关于MarkDown语法"
+classify: "技术"
 date: "2025-06-13"
-image: "/img/public/img/egudown.png"
+image: "/img/egudown.png"
 ---
-
-<!-- 文章正文... -->
-# 这个md文件用来测试文章的渲染  
-## 一个二级标题
+# 关于MarkDown的一些基本语法  
+## 本文有测试用目的
 ### 一个三级标题  
   
 一个正文  

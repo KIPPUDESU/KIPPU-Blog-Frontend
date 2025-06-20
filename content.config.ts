@@ -4,22 +4,15 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 export default defineContentConfig({
   collections: {
-  // content集合
-    content: defineCollection({
-      type: 'page',
-      source: '**/*.md'
-    }),
   // 新增blog
   blog:defineCollection({
     type: 'page',
-    source: '**/*.md',
+    source: 'blog/*.md',
     schema: z.object({
-        id:     z.string(),      // 这里声明一个 _id 字段
-        title:   z.string(),
+        title:     z.string(),
         date:    z.string(),
         image:   z.string().optional(),
-        classify:z.string().optional(),
-        draft:   z.boolean().optional()
+        classify: z.string().optional(),
       })
   })
   }

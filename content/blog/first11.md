@@ -1,4 +1,3 @@
-<!-- Frontmatter -->
 ---
 title: "这是一篇测试文章"
 classify: "分类"

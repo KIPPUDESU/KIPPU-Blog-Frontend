@@ -47,7 +47,7 @@
       "
       :class="ChengeStore.PlaneOrSolid?
       'bottom-0 xl:h-70 lg:h-62 xl:w-146 lg:w-120 bg-gradient-to-bl from-gray-100-100/0 to-gray-100-100/0' : 
-      'bottom-12 xl:h-62 lg:h-54 xl:w-156 lg:w-120 backdrop-blur-sm shadow-black/20 shadow-lg bg-gradient-to-bl from-blue-100/70 to-bule-100/30'
+      'bottom-12 xl:h-62 lg:h-54 xl:w-156 lg:w-120 backdrop-blur-sm shadow-black/20 shadow-lg bg-gradient-to-bl'
       "
       >
         <!-- 点击大标题 -->
@@ -225,29 +225,29 @@
    class="
    transition-all duration-800 ease-in-out
    flex flex-row absolute z-20 left-80
-   justify-center items-center shadow-black/20 shadow-lg backdrop-blur-sm
+   justify-center items-center shadow-lg backdrop-blur-sm
    bg-gradient-to-bl from-gray-50/60 to-white/95 rounded-t-xl"
    :class="ChengeStore.PlaneOrSolid?
-   'w-288 top-10 h-246' : 'w-284 top-14 h-238' "
+   'w-288 top-10 h-246 shadow-black/0' : 'w-284 top-14 h-238 shadow-black/20' "
    >
    </div>
   <div 
   class="
   transition-all duration-800 ease-in-out
   relative flex z-40 flex-wrap justify-center items-center
-  bg-gradient-to-bl from-white to-white backdrop-blur-2xl
-  ml-80 my-10 py-4 rounded-t-xl shadow-lg shadow-black/20"
+  bg-white
+  ml-80 my-10 py-4 rounded-t-xl shadow-lg"
   :class="ChengeStore.PlaneOrSolid?
-  'h-240 w-288 mx-10 mt-10' : 'h-230 w-280 mx-18 mt-18' "
+  'h-246 w-288 mx-10 mt-10 shadow-black/0' : 'h-230 w-280 mx-18 mt-18 shadow-black/20' "
    >
   <ArticleCard
    v-for="article in articles"
    :key="article.id"
    :card="{
-     CardImg: article.image || '../public/img/egudown.png',
+     date: article.date,
+     image: article.image || '/img/egudown.png',
      title: article.title,
      classify: article.classify || '未分类', 
-     TimeData: article.date
    }"
    :PlaneOrSolid="ChengeStore.PlaneOrSolid"
    :to="`/`"
