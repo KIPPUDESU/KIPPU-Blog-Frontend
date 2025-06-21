@@ -1,15 +1,34 @@
 ---
-title: "这是一篇测试文章"
-classify: "分类"
-date: "2025-06-13"
-image: "/img/public/img/egudown.png"
+title: 在 Nuxt3 中使用 content 的踩坑点
+classify: 技术
+date: 2025-06-15
+image: /img/enadev.png
 ---
 
-<!-- 文章正文... -->
-# 这个md文件用来测试文章的渲染  
-## 一个二级标题
-### 一个三级标题  
+# 在 Nuxt3 中使用 content 的踩坑点  
   
-一个正文  
+### AI 的可信度在我这只能说是日益下降  
+
+## 关于 better-sqlite3 编译
+假如直接使用 Nuxt3 提供的快捷安装方法（或者正常方法下）都会在安装过程中提示  
+> 是否要安装 better-sqlite3 ？  
+如果选了是那多半要遭殃，如果只是询问 AI 的话得到的结果就是  
+> 你遇到的问题依然说明 native 模块的构建脚本没有正确运行，导致缺失绑定文件  
   
-这是一篇使用 Nuxt Content 模块生成的 Markdown 文件所转化的页面内容。你可以在这里添加 **Markdown** 格式的文本、图片、代码块等
+问题可能确实出在这倒是没错，但是根据这个结果给出的解决方案，诸如手动重新编译 native 之类的  
+很明显，复杂性堆满了，但是既然这么多人都在使用 Nuxt3 ，那么应该有个更合理的解决方案  
+---
+据我观察，事实上问题出在 node.js 的版本，在**高版本的 node 中**（现在是25年6月），似乎自带了 原生的 SQLite 功能  
+这一更新直接让 Content 不必再依赖**额外的包**（原生的 SQLite 功能）  
+  
+**所以我们直接使用 Nuxt3 文档中提供的实验性方法来解决现有的问题**
+### 代码：
+```ts
+content: {
+    experimental: { nativeSqlite: true }
+  },
+```  
+
+关于此方法的文档链接 https://content.nuxt.com/docs/getting-started/configuration#experimentalnativesqlite
+  
+这样一来似乎也能一劳永逸了.  

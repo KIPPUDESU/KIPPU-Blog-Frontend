@@ -1,7 +1,7 @@
 <template>
     <div class="relative flex flex-col justify-center items-center h-44 bg-blue-200/50">
         <div 
-        class="flex flex-row bg-white w-200 h-20 mt-2 px-22 rounded-3xl
+        class="flex flex-row bg-white w-200 h-20 mt-4 px-22 rounded-3xl
         border-4 border-black/20
         justify-between items-center">
             <!-- GitHub -->
@@ -53,8 +53,8 @@
                 </a>
             </div>
         </div>
-        <div class="relative mt-2 flex text-lg text-gray-500">
-            版权所有 © KIPPU 2025
+        <div class="relative mt-4 flex text-lg text-gray-500">
+            版权所有 © KIPPU 2025 至今
         </div>
     </div>
 </template>
