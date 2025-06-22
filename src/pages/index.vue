@@ -64,38 +64,41 @@
    :class="ChengeStore.PlaneOrSolid?
    'shadow-black/0' : 'shadow-black/20'"
    >
+    <div 
+    class="
+    transition-all duration-600 ease-in-out
+    flex flex-row absolute z-20 left-0
+    justify-center items-center shadow-lg backdrop-blur-sm
+    bg-gradient-to-bl from-gray-50/60 to-white/95 rounded-t-xl"
+    :class="ChengeStore.PlaneOrSolid?
+    'w-288 top-0 h-256 shadow-black/0' : 'w-284 top-4 h-248 shadow-black/20' "
+    >
+      <div 
+        class="
+        transition-all duration-600 ease-in-out
+        flex flex-wrap absolute z-20 left-0
+        justify-center items-center shadow-lg backdrop-blur-sm
+        bg-gradient-to-bl from-gray-50/60 to-white/95 rounded-t-xl"
+        :class="ChengeStore.PlaneOrSolid?
+        'w-288 top-0 h-256 shadow-black/0' : 'w-280 top-4 h-240 shadow-black/20' "
+        >
+        <ArticleCard
+        v-for="article in articles"
+        :key="article.id"
+        :card="{
+          date: article.date,
+          image: article.image || '/img/egudown.png',
+          title: article.title,
+          classify: article.classify || '未分类', 
+        }"
+        :PlaneOrSolid="ChengeStore.PlaneOrSolid"
+        :to="`/`"
+        />
+        </div>
+    </div>
    </div>
-   <div 
-   class="
-   transition-all duration-600 ease-in-out
-   flex flex-row absolute z-20 left-80
-   justify-center items-center shadow-lg backdrop-blur-sm
-   bg-gradient-to-bl from-gray-50/60 to-white/95 rounded-t-xl"
-   :class="ChengeStore.PlaneOrSolid?
-   'w-288 top-10 h-256 shadow-black/0' : 'w-284 top-14 h-248 shadow-black/20' "
-   >
-   </div>
-  <div 
-  class="
-  transition-all duration-600 ease-in-out
-  relative flex z-40 flex-wrap justify-center items-center
-  ml-80 my-10 py-4 rounded-t-xl shadow-lg bg-white"
-  :class="ChengeStore.PlaneOrSolid?
-  'h-256 w-288 mx-10 mt-10 shadow-black/0' : 'h-240 w-280 mx-18 mt-12 shadow-black/20' "
-   >
-  <ArticleCard
-   v-for="article in articles"
-   :key="article.id"
-   :card="{
-     date: article.date,
-     image: article.image || '/img/egudown.png',
-     title: article.title,
-     classify: article.classify || '未分类', 
-   }"
-   :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-   :to="`/`"
-  />
-  </div>
+   
+
 </div>
 </div>
 <!-- 分页按钮 -->
@@ -104,22 +107,23 @@ class="flex h-46 items-center bg-gray-100 ">
   <div 
   class="
   transition-all duration-600 ease-in-out
+  px-10 hover:px-6
   flex justify-between items-center w-288 h-46 ml-80"
-  :class="DownOrUp ? 'px-6' : 'px-10'"
-  @mouseenter="PostsDown"
-  @mouseleave="PostsUp"
   >
   <!-- 左 -->
     <div 
     class="flex py-2 px-4 w-66 h-12
-    hover:py-2 hover:w-62 hover:h-13
-    shadow-black/0 shadow-inner/0 text-[20px] text-gray-500
-    hover:shadow-black/30 hover:shadow-inner/80 hover:text-[22px] hover:text-gray-600
+    hover:py-2 hover:w-64 hover:h-13
+    text-[20px] text-gray-500
+    hover:text-[22px] hover:text-gray-600
     bg-gradient-to-br from-pink-300/60 to-white
     hover:from-pink-300/70 hover:to-white
     transition-all duration-500 ease-in-out
-    justify-center items-center font-bold
-    ">
+    justify-center items-center font-bold"
+    :class="ChengeStore.PlaneOrSolid?
+    'shadow-black/20 shadow-none hover:shadow-black/20 hover:shadow-md rounded-none' : 
+    'shadow-black/20 shadow-md hover:shadow-black/30 hover:shadow-lg rounded-lg'"
+    >
     <!-- :to="`/?page=${pageNum - 1}`" -->
     <NuxtLink to="/" class="flex flex-nowrap items-center gap-3"
     >
@@ -146,17 +150,19 @@ class="flex h-46 items-center bg-gray-100 ">
     <!-- 右 -->
     <div 
     class="flex py-2 px-4 w-66 h-12
-    hover:py-2 hover:w-62 hover:h-13
-    shadow-black/0 shadow-inner/0 text-[20px] text-gray-500
-    hover:shadow-black/30 hover:shadow-inner/80 hover:text-[22px] hover:text-gray-600
+    hover:py-2 hover:w-64 hover:h-13
+    text-[20px] text-gray-500
+    hover:text-[22px] hover:text-gray-600
     bg-gradient-to-br from-pink-300/60 to-white
     hover:from-pink-300/70 hover:to-white
     transition-all duration-500 ease-in-out
-    justify-center items-center font-bold
-    ">
+    justify-center items-center font-bold"
+    :class="ChengeStore.PlaneOrSolid?
+    'shadow-black/20 shadow-none hover:shadow-black/20 hover:shadow-md rounded-none' : 
+    'shadow-black/20 shadow-md hover:shadow-black/30 hover:shadow-lg rounded-lg'"
+    >
     <!-- :to="`/?page=${pageNum + 1}`" -->
     <NuxtLink to="/" class="flex flex-nowrap items-center gap-3"
-    
     >Newer Posts 
       <!-- → → → -->
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
@@ -185,16 +191,6 @@ const ChengeStore = useTestStore()
 // vue 响应
 // import { computed } from 'vue'
 // import { queryContent } from '@nuxt/content'
-
-// 两个方法
-const DownOrUp = ref(false)
-
-function PostsDown() {
-  DownOrUp.value = true
-}
-function PostsUp() {
-  DownOrUp.value = false
-}
 
 // 卡片渲染数据获取(异步)
 // const { data: articles } = await useAsyncData('article', () => queryContent('blog').find())

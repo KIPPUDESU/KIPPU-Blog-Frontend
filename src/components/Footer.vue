@@ -1,8 +1,8 @@
 <template>
-    <div class="relative flex flex-col justify-center items-center h-44 bg-blue-200/50">
+    <div class="relative flex flex-col justify-center items-center h-44 bg-gray-200">
         <div 
         class="flex flex-row bg-white w-200 h-20 mt-4 px-22 rounded-3xl
-        border-4 border-black/20
+        border-4 border-gray-300
         justify-between items-center">
             <!-- GitHub -->
             <div class="flex relative bg-black/0 rounded-4xl w-12 h-12">
