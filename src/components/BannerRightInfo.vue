@@ -36,16 +36,36 @@ absolute z-10 flex flex-col right-0 rounded-l-xl"
   ">
   <p class="flex flex-row">Frontend Dev [<span class="inline-flex xl:text-[11px] justify-center items-center">>></span>] Backend Dev / Graphic Designer / Writing</p>
    <p class="">16 November 2005 — My first commit, the day I became me</p>
-    <p class="">If okay... mail me, maybe? 💌 : 
-      <a 
-      href="mailto:KIPPUDESU@OUTLOOK.COM?subject=Hello%20Kippu" 
-      target="_blank"
-      class="
-      hover:text-gray-400"
-      :class="ChengeStore.PlaneOrSolid?
-      'text-gray-500' : 'text-blue-400' "
-      >
-      KIPPUDESU@OUTLOOK.COM</a></p>
+    <p class="flex flex-row">If okay... mail me, maybe? 💌 : 
+      <!-- 邮箱容器 -->
+      <div class="relative flex items-center w-[226px] ml-[4px] h-7">
+        <!-- 动画效果容器 -->
+        <div 
+        class="
+        transition-all duration-600 ease-in-out
+        absolute bottom-1 w-full h-full group
+        ">
+          <!-- 邮箱 -->
+          <a 
+          href="mailto:KIPPUDESU@OUTLOOK.COM?subject=Hello%20Kippu" 
+          target="_blank"
+          class="
+          absolute right-0 top-1 z-20
+          hover:text-gray-400"
+          :class="ChengeStore.PlaneOrSolid?
+          'text-gray-500' : 'text-blue-400' "
+          >
+          KIPPUDESU@OUTLOOK.COM</a>
+          <!-- 下划线 -->
+          <div class="
+          transition-all duration-600 ease-in-out
+          absolute bottom-0 h-0.5 w-full rounded-4xl
+          left-0 right-auto bg-gray-400
+          group-hover:w-0 group-hover:left-auto group-hover:right-0" 
+          ></div>
+        </div>
+      </div>
+      </p>
   </div>
   <!-- 圆点 -->
   <div 

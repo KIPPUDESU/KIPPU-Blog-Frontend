@@ -71,7 +71,8 @@
     justify-center items-center shadow-lg backdrop-blur-sm
     bg-gradient-to-bl from-gray-50/60 to-white/95 rounded-t-xl"
     :class="ChengeStore.PlaneOrSolid?
-    'w-288 top-0 h-256 shadow-black/0' : 'w-284 top-4 h-248 shadow-black/20' "
+    'w-288 top-0 h-256 shadow-black/0' :
+    'w-284 top-4 h-248 shadow-black/20' "
     >
       <div 
         class="
