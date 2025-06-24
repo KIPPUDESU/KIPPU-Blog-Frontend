@@ -89,22 +89,27 @@ justify-center items-center">
     <!-- 分类 -->
     <div 
     class="
-    relative flex flex-col w-49 h-92.5 mt-4
-    bg-white rounded-lg shadow-black/20 shadow-lg">
+    transition-all duration-600 ease-in-out
+    relative flex flex-col w-46 h-92.5 mt-4 bg-white "
+    :class="ChengeStore.PlaneOrSolid?
+    'rounded-none shadow-black/0 shadow-none' :
+    'rounded-lg shadow-black/20 shadow-lg '"
+    >
       <!-- 图片 -->
       <div 
       class="
       absolute flex z-10 inset-0 overflow-hidden rounded-lg
-      justify-center items-center bg-gradient-to-bl from-blue-300 to-pink-200">
-      <div class="absolute z-20 flex inset-0 bg-white/40 backdrop-blur-lg"></div>
+      justify-center items-center bg-gradient-to-bl from-blue-100/70 to-pink-100/70">
+      <div class="absolute z-20 flex inset-0 bg-gray-50/90 backdrop-blur-lg"></div>
       </div>
       <div class="flex flex-col justify-center items-center absolute inset-0 z-10">
         <div class="
         transition-all duration-600 ease-in-out
-        w-full object-cover hover:scale-110 bg-gradient-to-bl 
-        from-white/70 to-white/0 backdrop-blur-xs border-1 border-white
-        flex flex-row flex-1 items-center gap-2 px-4 rounded-t-lg
-        text-[16px] text-gray-600 font-medium">
+        w-full object-cover 
+        hover:scale-110 hover:rounded-none 
+        backdrop-blur-xs rounded-t-lg
+        flex flex-row flex-1 items-center gap-2 px-2
+        text-[15px] text-gray-600 font-medium">
           <svg 
           xmlns="http://www.w3.org/2000/svg" 
           xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -118,10 +123,10 @@ justify-center items-center">
           <!-- 分隔 -->
         <div class="
         transition-all duration-600 ease-in-out
-        w-full object-cover hover:scale-110 bg-gradient-to-bl 
-        from-white/70 to-white/0 backdrop-blur-xs border-1 border-white
-        flex flex-row flex-1 items-center gap-2 px-4
-        text-[16px] text-gray-600 font-medium">
+        w-full object-cover hover:scale-110 
+        backdrop-blur-xs
+        flex flex-row flex-1 items-center gap-2 px-2
+        text-[15px] text-gray-600 font-medium">
           <svg 
           xmlns="http://www.w3.org/2000/svg" 
           xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -135,10 +140,10 @@ justify-center items-center">
           <!-- 分隔 -->
         <div class="
         transition-all duration-600 ease-in-out
-        w-full object-cover hover:scale-110 bg-gradient-to-bl 
-        from-white/70 to-white/0 backdrop-blur-xs border-1 border-white
-        flex flex-row flex-1 items-center gap-2 px-4
-        text-[16px] text-gray-600 font-medium">
+        w-full object-cover hover:scale-110 
+        backdrop-blur-xs
+        flex flex-row flex-1 items-center gap-2 px-2
+        text-[15px] text-gray-600 font-medium">
           <svg 
           xmlns="http://www.w3.org/2000/svg" 
           xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -152,10 +157,10 @@ justify-center items-center">
         <!-- 分隔 -->
         <div class="
         transition-all duration-600 ease-in-out
-        w-full object-cover hover:scale-110 bg-gradient-to-bl 
-        from-white/70 to-white/0 backdrop-blur-xs border-1 border-white
-        flex flex-row flex-1 items-center gap-2 px-4
-        text-[16px] text-gray-600 font-medium">
+        w-full object-cover hover:scale-110 
+        backdrop-blur-xs hover:rounded-none
+        flex flex-row flex-1 items-center gap-2 px-2
+        text-[15px] text-gray-600 font-medium">
           <svg 
           xmlns="http://www.w3.org/2000/svg" 
           xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -169,10 +174,10 @@ justify-center items-center">
         <!-- 分隔 -->
         <div class="
         transition-all duration-600 ease-in-out
-        w-full object-cover hover:scale-110 bg-gradient-to-bl 
-        from-white/70 to-white/0 backdrop-blur-xs border-1 border-white
-        flex flex-row flex-1 items-center gap-2 px-4
-        text-[16px] text-gray-600 font-medium">
+        w-full object-cover hover:scale-110 
+        backdrop-blur-xs
+        flex flex-row flex-1 items-center gap-2 px-2
+        text-[15px] text-gray-600 font-medium">
           <svg 
           xmlns="http://www.w3.org/2000/svg" 
           xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -186,10 +191,10 @@ justify-center items-center">
           <!-- 分隔 -->
         <div class="
         transition-all duration-600 ease-in-out
-        w-full object-cover hover:scale-110 bg-gradient-to-bl 
-        from-white/70 to-white/0 backdrop-blur-xs border-1 border-white
-        flex flex-row flex-1 items-center gap-2 px-4 rounded-b-lg
-        text-[16px] text-gray-600 font-medium">
+        w-full object-cover hover:scale-110 
+        backdrop-blur-xs rounded-b-lg
+        flex flex-row flex-1 items-center gap-2 px-2
+        text-[15px] text-gray-600 font-medium">
           <svg 
           xmlns="http://www.w3.org/2000/svg" 
           xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -206,3 +211,9 @@ justify-center items-center">
     
 </div>
 </template>
+
+<script setup lang="ts">
+// 全局
+import { useTestStore } from '#imports'
+const ChengeStore = useTestStore()
+</script>

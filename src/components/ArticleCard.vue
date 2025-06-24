@@ -8,7 +8,7 @@
     transition-all duration-600 ease-in-out
     object-cover hover:scale-106"
     :class="PlaneOrSolid ? 
-    'from-blue-100 to-gray-50 hover:from-blue-200/30 hover:to-blue-100/70' :
+    'from-gray-100 to-gray-100 hover:from-blue-200/30 hover:to-blue-100/70' :
     'from-pink-200/30 to-white/30 hover:from-blue-100/60 hover:to-white/60 ring-4 ring-pink-200/50 shadow-lg shadow-black/40 hover:shadow-pink-500/50 rounded-lg'"
     >   
         <!-- 图片容器 -->

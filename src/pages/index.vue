@@ -106,15 +106,15 @@
           <div 
           class="flex py-2 px-4 w-56 h-12
           hover:py-2 hover:w-54 hover:h-13
-          text-[18px] text-gray-500
+          text-[18px] text-gray-700
           hover:text-[20px] hover:text-gray-600
-          bg-gradient-to-br from-pink-300/60 to-white
-          hover:from-pink-300/70 hover:to-white
+          bg-gradient-to-bl from-pink-300/30 to-white/30
+          hover:from-pink-200/40 hover:to-white
           transition-all duration-500 ease-in-out
-          justify-center items-center font-bold"
+          justify-center items-center font-medium"
           :class="ChengeStore.PlaneOrSolid?
           'shadow-black/20 shadow-none hover:shadow-black/20 hover:shadow-md rounded-none' : 
-          'shadow-black/20 shadow-md hover:shadow-black/30 hover:shadow-lg rounded-lg'"
+          'shadow-black/20 shadow-xs hover:shadow-black/20 hover:shadow-md rounded-lg ring-4 ring-pink-200/50'"
           >
           <!-- :to="`/?page=${pageNum - 1}`" -->
           <NuxtLink to="/" class="flex flex-nowrap items-center gap-3"
@@ -131,7 +131,7 @@
                     stroke-linejoin="round"/>
                 </g>
               </svg>
-            Older Posts</NuxtLink>
+            上一页</NuxtLink>
           </div>
           <!-- 占位分隔图片 -->
           <div class="flex justify-center w-max h-40">
@@ -143,19 +143,19 @@
           <div 
           class="flex py-2 px-4 w-56 h-12
           hover:py-2 hover:w-54 hover:h-13
-          text-[18px] text-gray-500
+          text-[18px] text-gray-700
           hover:text-[20px] hover:text-gray-600
-          bg-gradient-to-br from-pink-300/60 to-white
-          hover:from-pink-300/70 hover:to-white
+          bg-gradient-to-bl from-pink-300/30 to-white/30
+          hover:from-pink-200/40 hover:to-white
           transition-all duration-500 ease-in-out
-          justify-center items-center font-bold"
+          justify-center items-center font-medium"
           :class="ChengeStore.PlaneOrSolid?
           'shadow-black/20 shadow-none hover:shadow-black/20 hover:shadow-md rounded-none' : 
-          'shadow-black/20 shadow-md hover:shadow-black/30 hover:shadow-lg rounded-lg'"
+          'shadow-black/20 shadow-xs hover:shadow-black/20 hover:shadow-md rounded-lg ring-4 ring-pink-200/50'"
           >
           <!-- :to="`/?page=${pageNum + 1}`" -->
           <NuxtLink to="/" class="flex flex-nowrap items-center gap-3"
-          >Newer Posts 
+          >下一页 
             <!-- → → → -->
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                   <polyline 
