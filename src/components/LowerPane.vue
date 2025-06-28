@@ -64,6 +64,7 @@
                  noticed me</p>
             </div>
           <!-- 卡片 -->
+          <!-- 288与文章外层容器一致 -->
           <div class="
           transition-all duration-600 ease-in-out
           absolute right-0 top-3/10 w-full h-1/2 z-40
@@ -75,267 +76,324 @@
             animate-marquee transition-all duration-600 ease-in-out
             relative group-hover:w-max h-full flex items-center">
               <!-- 套壳，计算长度 -->
+              <!-- 卡片展开后w-38, + 1 边距，于是卡片右侧距离容器 39 -->
+              <!-- 第二个卡片左侧距离容器 32，第一张右侧与第二张左侧重合部分 39 - 32 = 7 -->
+              <!-- 最后一张卡片 lfet-280，于是套壳的宽度是 280 + 38 -7 -->
+              <!-- 为了保证第二个套壳内的第一张卡片与第一个套壳最后一张重合部分为 7 -->
+              <!-- 考虑到第二个套壳内第一张卡片与套壳左侧也有 1 边距，于是削减第一个套壳 1 点的宽度 -->
+              <!-- 最终结果 280 + 38 - ( 7 + 1 ) = w-310 -->
+              <!-- 后续添加卡片都如此计算 -->
               <div 
               class="
               transition-all duration-600 ease-in-out
-              group-hover:relative group-hover:w-310 group-hover:h-full">
-              <!-- HTML -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-0 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-1 group-hover:w-38  
-              bg-white items-center justify-center
-              -rotate-y-8 rotate-x-8 -rotate-6
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              rounded-lg shadow-lg shadow-black/20">
-                <img src="../public/img/html.png" alt="">
+              group-hover:relative group-hover:w-341 group-hover:h-full">
+                <!-- HTML -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-0 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-1 group-hover:w-38  
+                bg-white items-center justify-center
+                -rotate-y-8 rotate-x-8 -rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                rounded-lg shadow-lg shadow-black/20">
+                  <img src="../public/img/html.png" alt="">
+                </div>
+                <!-- CSS -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-8 w-18 h-14/24 
+                group-hover:top-4/20 group-hover:left-32 group-hover:w-38 
+                bg-white items-center justify-center
+                -rotate-y-4 -rotate-x-4 rotate-4
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:-rotate-x-0 group-hover:rotate-0
+                rounded-lg shadow-lg shadow-black/20">
+                  <img src="../public/img/CSS3.png" alt="">
+                </div>
+                <!-- JavaScript -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-16 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-63 group-hover:w-38 
+                bg-white items-center justify-center
+                -rotate-y-20 -rotate-x-8 -rotate-4
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:rotate-y-0 group-hover:-rotate-x-0 group-hover:-rotate-0
+                rounded-lg shadow-lg shadow-black/20">
+                  <img src="../public/img/JavaScript.png" alt="">
+                </div>
+                <!-- typescript -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-24 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-94 group-hover:w-38 
+                bg-white items-center justify-center
+                rotate-y-8 rotate-x-4 rotate-4
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:rotate-y-0 group-hover:rotate-x-0 group-hover:rotate-0
+                rounded-lg shadow-lg shadow-black/20">
+                  <img src="../public/img/typescript.png" alt="">
+                </div>
+                <!-- Vue -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-32 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-125 group-hover:w-38
+                bg-white items-center justify-center
+                -rotate-y-8 rotate-x-8 -rotate-2
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                rounded-lg shadow-lg shadow-black/20">
+                  <img src="../public/img/Vue.png" alt="">
+                </div>
+                <!-- Nuxt -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-156 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                rounded-lg shadow-lg shadow-black/20">
+                  <img src="../public/img/Nuxt.png" alt="">
+                </div>
+                <!-- tailwindcss -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-187 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                group-hover:shadow-lg group-hover:shadow-black/20
+                rounded-lg ">
+                  <img src="../public/img/tailwindcss_.png" alt="">
+                </div>
+                <!-- naiveui -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-218 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                group-hover:shadow-lg group-hover:shadow-black/20
+                rounded-lg ">
+                  <img src="../public/img/naiveui.png" alt="">
+                </div>
+                <!-- pnpm -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-249 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                group-hover:shadow-lg group-hover:shadow-black/20
+                rounded-lg ">
+                  <img src="../public/img/pnpm.png" alt="">
+                </div>
+                <!-- Node.js -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-280 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                group-hover:shadow-lg group-hover:shadow-black/20
+                rounded-lg ">
+                  <img src="../public/img/Node.js.png" alt="">
+                </div>
+                <!-- sqlite -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-311 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                group-hover:shadow-lg group-hover:shadow-black/20
+                rounded-lg ">
+                  <img src="../public/img/sqlite.png" alt="">
+                </div>
+                <!-- git -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-311 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                group-hover:shadow-lg group-hover:shadow-black/20
+                rounded-lg ">
+                  <img src="../public/img/git.png" alt="">
+                </div>
               </div>
-              <!-- CSS -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-8 w-18 h-14/24 
-              group-hover:top-4/20 group-hover:left-32 group-hover:w-38 
-              bg-white items-center justify-center
-              -rotate-y-4 -rotate-x-4 rotate-4
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:-rotate-x-0 group-hover:rotate-0
-              rounded-lg shadow-lg shadow-black/20">
-                <img src="../public/img/CSS3.png" alt="">
-              </div>
-              <!-- JavaScript -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-16 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-63 group-hover:w-38 
-              bg-white items-center justify-center
-              -rotate-y-20 -rotate-x-8 -rotate-4
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:rotate-y-0 group-hover:-rotate-x-0 group-hover:-rotate-0
-              rounded-lg shadow-lg shadow-black/20">
-                <img src="../public/img/JavaScript.png" alt="">
-              </div>
-              <!-- typescript -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-24 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-94 group-hover:w-38 
-              bg-white items-center justify-center
-              rotate-y-8 rotate-x-4 rotate-4
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:rotate-y-0 group-hover:rotate-x-0 group-hover:rotate-0
-              rounded-lg shadow-lg shadow-black/20">
-                <img src="../public/img/typescript.png" alt="">
-              </div>
-              <!-- Vue -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-32 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-125 group-hover:w-38
-              bg-white items-center justify-center
-              -rotate-y-8 rotate-x-8 -rotate-2
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              rounded-lg shadow-lg shadow-black/20">
-                <img src="../public/img/Vue.png" alt="">
-              </div>
-              <!-- Nuxt -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-40 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-156 group-hover:w-38
-              bg-white items-center justify-center
-              rotate-y-4 -rotate-x-18 rotate-6
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              rounded-lg shadow-lg shadow-black/20">
-                <img src="../public/img/Nuxt.png" alt="">
-              </div>
-              <!-- tailwindcss -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-40 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-187 group-hover:w-38
-              bg-white items-center justify-center
-              rotate-y-4 -rotate-x-18 rotate-6
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              group-hover:shadow-lg group-hover:shadow-black/20
-              rounded-lg ">
-                <img src="../public/img/tailwindcss_.png" alt="">
-              </div>
-              <!-- pnpm -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-40 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-218 group-hover:w-38
-              bg-white items-center justify-center
-              rotate-y-4 -rotate-x-18 rotate-6
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              group-hover:shadow-lg group-hover:shadow-black/20
-              rounded-lg ">
-                <img src="../public/img/pnpm.png" alt="">
-              </div>
-              <!-- git -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-40 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-249 group-hover:w-38
-              bg-white items-center justify-center
-              rotate-y-4 -rotate-x-18 rotate-6
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              group-hover:shadow-lg group-hover:shadow-black/20
-              rounded-lg ">
-                <img src="../public/img/git.png" alt="">
-              </div>
-              <!-- sqlite -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-40 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-280 group-hover:w-38
-              bg-white items-center justify-center
-              rotate-y-4 -rotate-x-18 rotate-6
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              group-hover:shadow-lg group-hover:shadow-black/20
-              rounded-lg ">
-                <img src="../public/img/sqlite.png" alt="">
-              </div>
-              </div>
-
               <!-- 复制一份 -->
-
-              <!-- 套壳，计算长度 -->
+              <!-- 套壳 -->
               <div 
               class="
               transition-all duration-600 ease-in-out
-              group-hover:relative group-hover:w-310 group-hover:h-full">
+              group-hover:relative group-hover:w-341 group-hover:h-full">
               <!-- HTML -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-0 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-1 group-hover:w-38  
-              bg-white items-center justify-center
-              -rotate-y-8 rotate-x-8 -rotate-6
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              rounded-lg shadow-lg shadow-black/20">
-                <img src="../public/img/html.png" alt="">
-              </div>
-              <!-- CSS -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-8 w-18 h-14/24 
-              group-hover:top-4/20 group-hover:left-32 group-hover:w-38 
-              bg-white items-center justify-center
-              -rotate-y-4 -rotate-x-4 rotate-4
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:-rotate-x-0 group-hover:rotate-0
-              rounded-lg shadow-lg shadow-black/20">
-                <img src="../public/img/CSS3.png" alt="">
-              </div>
-              <!-- JavaScript -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-16 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-63 group-hover:w-38 
-              bg-white items-center justify-center
-              -rotate-y-20 -rotate-x-8 -rotate-4
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:rotate-y-0 group-hover:-rotate-x-0 group-hover:-rotate-0
-              rounded-lg shadow-lg shadow-black/20">
-                <img src="../public/img/JavaScript.png" alt="">
-              </div>
-              <!-- typescript -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-24 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-94 group-hover:w-38 
-              bg-white items-center justify-center
-              rotate-y-8 rotate-x-4 rotate-4
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:rotate-y-0 group-hover:rotate-x-0 group-hover:rotate-0
-              rounded-lg shadow-lg shadow-black/20">
-                <img src="../public/img/typescript.png" alt="">
-              </div>
-              <!-- Vue -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-32 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-125 group-hover:w-38
-              bg-white items-center justify-center
-              -rotate-y-8 rotate-x-8 -rotate-2
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              rounded-lg shadow-lg shadow-black/20">
-                <img src="../public/img/Vue.png" alt="">
-              </div>
-              <!-- Nuxt -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-40 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-156 group-hover:w-38
-              bg-white items-center justify-center
-              rotate-y-4 -rotate-x-18 rotate-6
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              rounded-lg shadow-lg shadow-black/20">
-                <img src="../public/img/Nuxt.png" alt="">
-              </div>
-              <!-- tailwindcss -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-40 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-187 group-hover:w-38
-              bg-white items-center justify-center
-              rotate-y-4 -rotate-x-18 rotate-6
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              group-hover:shadow-lg group-hover:shadow-black/20
-              rounded-lg ">
-                <img src="../public/img/tailwindcss_.png" alt="">
-              </div>
-              <!-- pnpm -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-40 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-218 group-hover:w-38
-              bg-white items-center justify-center
-              rotate-y-4 -rotate-x-18 rotate-6
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              group-hover:shadow-lg group-hover:shadow-black/20
-              rounded-lg ">
-                <img src="../public/img/pnpm.png" alt="">
-              </div>
-              <!-- git -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-40 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-249 group-hover:w-38
-              bg-white items-center justify-center
-              rotate-y-4 -rotate-x-18 rotate-6
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              group-hover:shadow-lg group-hover:shadow-black/20
-              rounded-lg ">
-                <img src="../public/img/git.png" alt="">
-              </div>
-              <!-- sqlite -->
-              <div class="
-              transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
-              absolute flex top-4 left-40 w-18 h-14/24
-              group-hover:top-4/20 group-hover:left-280 group-hover:w-38
-              bg-white items-center justify-center
-              rotate-y-4 -rotate-x-18 rotate-6
-              group-hover:bg-white/60 backdrop-blur-md
-              group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
-              group-hover:shadow-lg group-hover:shadow-black/20
-              rounded-lg ">
-                <img src="../public/img/sqlite.png" alt="">
-              </div>
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-0 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-1 group-hover:w-38  
+                bg-white items-center justify-center
+                -rotate-y-8 rotate-x-8 -rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                rounded-lg shadow-lg shadow-black/20">
+                  <img src="../public/img/html.png" alt="">
+                </div>
+                <!-- CSS -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-8 w-18 h-14/24 
+                group-hover:top-4/20 group-hover:left-32 group-hover:w-38 
+                bg-white items-center justify-center
+                -rotate-y-4 -rotate-x-4 rotate-4
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:-rotate-x-0 group-hover:rotate-0
+                rounded-lg shadow-lg shadow-black/20">
+                  <img src="../public/img/CSS3.png" alt="">
+                </div>
+                <!-- JavaScript -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-16 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-63 group-hover:w-38 
+                bg-white items-center justify-center
+                -rotate-y-20 -rotate-x-8 -rotate-4
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:rotate-y-0 group-hover:-rotate-x-0 group-hover:-rotate-0
+                rounded-lg shadow-lg shadow-black/20">
+                  <img src="../public/img/JavaScript.png" alt="">
+                </div>
+                <!-- typescript -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-24 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-94 group-hover:w-38 
+                bg-white items-center justify-center
+                rotate-y-8 rotate-x-4 rotate-4
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:rotate-y-0 group-hover:rotate-x-0 group-hover:rotate-0
+                rounded-lg shadow-lg shadow-black/20">
+                  <img src="../public/img/typescript.png" alt="">
+                </div>
+                <!-- Vue -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-32 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-125 group-hover:w-38
+                bg-white items-center justify-center
+                -rotate-y-8 rotate-x-8 -rotate-2
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                rounded-lg shadow-lg shadow-black/20">
+                  <img src="../public/img/Vue.png" alt="">
+                </div>
+                <!-- Nuxt -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-156 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                rounded-lg shadow-lg shadow-black/20">
+                  <img src="../public/img/Nuxt.png" alt="">
+                </div>
+                <!-- tailwindcss -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-187 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                group-hover:shadow-lg group-hover:shadow-black/20
+                rounded-lg ">
+                  <img src="../public/img/tailwindcss_.png" alt="">
+                </div>
+                <!-- naiveui -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-218 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                group-hover:shadow-lg group-hover:shadow-black/20
+                rounded-lg ">
+                  <img src="../public/img/naiveui.png" alt="">
+                </div>
+                <!-- pnpm -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-249 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                group-hover:shadow-lg group-hover:shadow-black/20
+                rounded-lg ">
+                  <img src="../public/img/pnpm.png" alt="">
+                </div>
+                <!-- Node.js -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-280 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                group-hover:shadow-lg group-hover:shadow-black/20
+                rounded-lg ">
+                  <img src="../public/img/Node.js.png" alt="">
+                </div>
+                <!-- sqlite -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-311 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                group-hover:shadow-lg group-hover:shadow-black/20
+                rounded-lg ">
+                  <img src="../public/img/sqlite.png" alt="">
+                </div>
+                <!-- git -->
+                <div class="
+                transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
+                absolute flex top-4 left-40 w-18 h-14/24
+                group-hover:top-4/20 group-hover:left-311 group-hover:w-38
+                bg-white items-center justify-center
+                rotate-y-4 -rotate-x-18 rotate-6
+                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                group-hover:shadow-lg group-hover:shadow-black/20
+                rounded-lg ">
+                  <img src="../public/img/git.png" alt="">
+                </div>
               </div>
             </div>
           </div>
@@ -386,10 +444,12 @@
 </template>
 
 <style>
+/* 在 Tailwind CSS 中，一个单位默认等于 0.25rem */
 :root {
-  --marquee-width: 77.5rem; /* 估算值，请务必校准 */
+  --marquee-width: 85.25rem;
 }
 
+/* 定义一个循环 */
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -400,9 +460,6 @@
 
 }
 .animate-marquee {
-  /* 动画默认是暂停的 */
-  animation: marquee 25s linear infinite;
-  animation-play-state: paused;
   /* 强制为动画轨道创建独立的渲染层 */
   /* 并提示浏览器该元素的 transform 属性将会被频繁改变 */
   backface-visibility: hidden;
@@ -419,6 +476,7 @@
 
 /* 当父级的 .group 被 hover 时，播放动画 */
 .group:hover .animate-marquee {
+  animation: marquee 10s linear infinite;
   animation-play-state: running;
   animation-delay: 600ms;
 }
