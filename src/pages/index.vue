@@ -26,23 +26,23 @@
       <!-- 边角 -->
       <div>
         <div class="absolute w-[22px] h-[22px] top-5 left-[294.5px] bg-gray-300/0
-        border-t-[3.5px] border-l-[3.5px] border-gray-300 rounded-tl-xl"></div>
+        border-t-[3.5px] border-l-[3.5px] border-black/20 rounded-tl-xl"></div>
       </div>
       <!-- 右侧包围线条 -->
       <div>
         <div
         class="
-        absolute w-284 h-[3px] bg-gray-300 rounded-xl
+        absolute w-284 h-[3px] bg-black/20 rounded-xl
         right-12 top-5
         "></div>
         <div 
         class="
-        absolute w-4 h-4 bg-gray-300 rounded-full
+        absolute w-4 h-4 bg-black/20 rounded-full
         right-4 top-4
         "></div>
         <div
         class="
-        absolute w-[3px] h-308 bg-gray-300 rounded-xl
+        absolute w-[3px] h-308 bg-black/20 rounded-xl
         right-5 top-12
         "></div>
         <div 
