@@ -1,35 +1,30 @@
 <template>
-<!-- 左侧信息容器 -->
-<div 
-class="
-absolute w-70 h-326 top-0 left-0
-justify-center items-center">
-  <!-- 外壳 -->
-  <div class="sticky top-0 w-full h-max pb-4 flex flex-col items-center">
-    <!-- 头像 -->
-    <div 
-    class="
-    relative mt-8 flex w-40 h-40 rounded-full justify-center items-center
-    overflow-hidden shadow-lg shadow-black/30 ring-4 ring-gray-300
-    ">
-      <img 
+  <!-- 左侧信息容器 -->
+  <div class="absolute w-70 h-326 top-0 left-0 justify-center items-center">
+    <!-- 外壳 -->
+    <div class="sticky top-0 w-full h-max pb-4 flex flex-col items-center">
+      <!-- 头像 -->
+      <div 
       class="
-      transition-all duration-600 ease-in-out
-      flex absolute w-full h-full object-cover hover:scale-110" 
-      src="../public/img/egucool.jpg" 
-      alt="KIPPUIMG">
-    </div>
-    <!-- id 简介 -->
-    <div 
-    class="
-    relative flex flex-col w-max h-18 mt-2
-    justify-center items-center
-    ">
-      <span class="text-2xl text-gray-800 font-bold">切符</span>
-      <p class="text-md text-gray-600/80 font-extrabold">もっとElegantになりたい</p>
-    </div>
-    <!-- 联系方式 -->
-    <div 
+      relative mt-8 flex w-40 h-40 rounded-full 
+      justify-center items-center overflow-hidden 
+      shadow-lg shadow-black/30 ring-4 ring-gray-300">
+        <img
+          class="
+          transition-all duration-600 ease-in-out 
+          flex absolute w-full h-full object-cover 
+          hover:scale-110"
+          src="../public/img/egucool.jpg"
+          alt="KIPPUIMG"
+        />
+      </div>
+      <!-- id 简介 -->
+      <div class="relative flex flex-col w-max h-18 mt-2 justify-center items-center">
+        <span class="text-2xl text-gray-800 font-bold">切符</span>
+        <p class="text-md text-gray-600/80 font-extrabold">もっとElegantになりたい</p>
+      </div>
+      <!-- 联系方式 -->
+      <div 
     class="
     relative flex flex-row w-32 h-10
     justify-between items-center
@@ -86,134 +81,100 @@ justify-center items-center">
       </svg>
       </a>
     </div>
-    <!-- 分类 -->
-    <div 
-    class="
-    transition-all duration-600 ease-in-out
-    relative flex flex-col w-46 h-92.5 mt-4 bg-white "
-    :class="ChengeStore.PlaneOrSolid?
-    'rounded-none shadow-black/0 shadow-none' :
-    'rounded-lg shadow-black/20 shadow-lg '"
-    >
-      <!-- 图片 -->
-      <div 
+
+      <!-- 分类 -->
+      <div
       class="
-      absolute flex z-10 inset-0 overflow-hidden rounded-lg
-      justify-center items-center bg-gradient-to-bl from-blue-100/70 to-pink-100/70">
-      <div class="absolute z-20 flex inset-0 bg-gray-50/90 backdrop-blur-lg"></div>
-      </div>
-      <div class="flex flex-col justify-center items-center absolute inset-0 z-10">
+      transition-all duration-600 ease-in-out 
+      relative flex flex-col w-46 h-92.5 mt-4 
+      bg-white"
+      :class="ChengeStore.PlaneOrSolid ? 
+      'rounded-none shadow-black/0 shadow-none' :
+      'rounded-lg shadow-black/20 shadow-lg'"
+      >
+        <!-- 图片遮罩 -->
         <div class="
-        transition-all duration-600 ease-in-out
-        w-full object-cover 
-        hover:scale-110 hover:rounded-none 
-        backdrop-blur-xs rounded-t-lg
-        flex flex-row flex-1 items-center gap-2 px-2
-        text-[15px] text-gray-600 font-medium">
-          <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          xmlns:xlink="http://www.w3.org/1999/xlink" 
-          viewBox="0 0 24 24"
-          class="w-2/16 text-gray-700">
-            <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" fill="currentColor"></path><path d="M14 17H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor">
-            </path>
-          </svg>
-          Articles Overview
-        </div>
-          <!-- 分隔 -->
-        <div class="
-        transition-all duration-600 ease-in-out
-        w-full object-cover hover:scale-110 
-        backdrop-blur-xs
-        flex flex-row flex-1 items-center gap-2 px-2
-        text-[15px] text-gray-600 font-medium">
-          <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          xmlns:xlink="http://www.w3.org/1999/xlink" 
-          viewBox="0 0 32 32"
-          class="w-2/16 text-gray-700">
-            <path d="M14 4h4v4h-4z" fill="currentColor"></path><path d="M4 4h4v4H4z" fill="currentColor"></path><path d="M24 4h4v4h-4z" fill="currentColor"></path><path d="M14 14h4v4h-4z" fill="currentColor"></path><path d="M4 14h4v4H4z" fill="currentColor"></path><path d="M24 14h4v4h-4z" fill="currentColor"></path><path d="M14 24h4v4h-4z" fill="currentColor"></path><path d="M4 24h4v4H4z" fill="currentColor"></path><path d="M24 24h4v4h-4z" fill="currentColor">
-            </path>
-          </svg>
-          Categories List
-        </div>
-          <!-- 分隔 -->
-        <div class="
-        transition-all duration-600 ease-in-out
-        w-full object-cover hover:scale-110 
-        backdrop-blur-xs
-        flex flex-row flex-1 items-center gap-2 px-2
-        text-[15px] text-gray-600 font-medium">
-          <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          xmlns:xlink="http://www.w3.org/1999/xlink" 
-          viewBox="0 0 24 24"
-          class="w-2/16 text-gray-700">
-            <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zm-7.5-1a2.5 2.5 0 0 0 2.5-2.5V7h3V5h-4v5.51c-.42-.32-.93-.51-1.5-.51a2.5 2.5 0 0 0 0 5zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z" fill="currentColor">
-            </path>
-          </svg>
-          Playlists Catalog
-        </div>
-        <!-- 分隔 -->
-        <div class="
-        transition-all duration-600 ease-in-out
-        w-full object-cover hover:scale-110 
-        backdrop-blur-xs hover:rounded-none
-        flex flex-row flex-1 items-center gap-2 px-2
-        text-[15px] text-gray-600 font-medium">
-          <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          xmlns:xlink="http://www.w3.org/1999/xlink" 
-          viewBox="0 0 24 24"
-          class="w-2/16 text-gray-700">
-            <path d="M21 3H3c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5a2 2 0 0 0-2-2zm0 14H3V5h18v12zm-5-6l-7 4V7z" fill="currentColor">
-            </path>
-          </svg>
-          Video Highlights
-        </div>
-        <!-- 分隔 -->
-        <div class="
-        transition-all duration-600 ease-in-out
-        w-full object-cover hover:scale-110 
-        backdrop-blur-xs
-        flex flex-row flex-1 items-center gap-2 px-2
-        text-[15px] text-gray-600 font-medium">
-          <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          xmlns:xlink="http://www.w3.org/1999/xlink" 
-          viewBox="0 0 24 24"
-          class="w-2/16 text-gray-700">
-            <path d="M12 11c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2zm6 2c0-3.31-2.69-6-6-6s-6 2.69-6 6c0 2.22 1.21 4.15 3 5.19l1-1.74c-1.19-.7-2-1.97-2-3.45c0-2.21 1.79-4 4-4s4 1.79 4 4c0 1.48-.81 2.75-2 3.45l1 1.74c1.79-1.04 3-2.97 3-5.19zM12 3C6.48 3 2 7.48 2 13c0 3.7 2.01 6.92 4.99 8.65l1-1.73C5.61 18.53 4 15.96 4 13c0-4.42 3.58-8 8-8s8 3.58 8 8c0 2.96-1.61 5.53-4 6.92l1 1.73c2.99-1.73 5-4.95 5-8.65c0-5.52-4.48-10-10-10z" fill="currentColor">
-            </path>
-          </svg>
-          Tech Insights
-        </div>
-          <!-- 分隔 -->
-        <div class="
-        transition-all duration-600 ease-in-out
-        w-full object-cover hover:scale-110 
-        backdrop-blur-xs rounded-b-lg
-        flex flex-row flex-1 items-center gap-2 px-2
-        text-[15px] text-gray-600 font-medium">
-          <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          xmlns:xlink="http://www.w3.org/1999/xlink" 
-          viewBox="0 0 24 24"
-          class="w-2/16 text-gray-700">
-            <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7-.25c.22 0 .41.1.55.25c.12.13.2.31.2.5c0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5c.14-.15.33-.25.55-.25zM19 19H5V5h14v14zM12 6c-1.65 0-3 1.35-3 3s1.35 3 3 3s3-1.35 3-3s-1.35-3-3-3zm0 4c-.55 0-1-.45-1-1s.45-1 1-1s1 .45 1 1s-.45 1-1 1zm-6 6.47V18h12v-1.53c0-2.5-3.97-3.58-6-3.58s-6 1.07-6 3.58zM8.31 16c.69-.56 2.38-1.12 3.69-1.12s3.01.56 3.69 1.12H8.31z" fill="currentColor">
-            </path>
-          </svg>
-          About Me
+        absolute flex z-10 inset-0 
+        justify-center items-center rounded-lg
+        bg-gradient-to-bl from-gray-50 to-white">
+          <!-- 列表项 容器 -->
+          <div 
+          class="
+          absolute flex flex-col z-10
+          justify-center items-center inset-0 ">
+            <div
+              v-for="(item, idx) in categories"
+              :key="idx"
+              class="
+              transition-all duration-600 ease-in-out
+              flex flex-row flex-1 items-center gap-2 px-2 w-full
+              object-cover bg-white/0 backdrop-blur-xs rounded-lg
+              text-[15px] text-gray-600 font-medium
+              hover:scale-110 hover:bg-white/30"
+              @click=""
+            >
+              <span v-html="item.svg" class="w-2/16 text-gray-700"></span>
+              <span>{{ item.label }}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-    
-</div>
 </template>
 
 <script setup lang="ts">
-// 全局
 import { useTestStore } from '#imports'
 const ChengeStore = useTestStore()
+
+const categories = [
+  { label: 'Articles Overview', svg: `
+    <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    viewBox="0 0 24 24">
+      <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" fill="currentColor"></path><path d="M14 17H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor">
+      </path>
+    </svg>` },
+  { label: 'Categories List', svg: `
+    <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    viewBox="0 0 32 32">
+      <path d="M14 4h4v4h-4z" fill="currentColor"></path><path d="M4 4h4v4H4z" fill="currentColor"></path><path d="M24 4h4v4h-4z" fill="currentColor"></path><path d="M14 14h4v4h-4z" fill="currentColor"></path><path d="M4 14h4v4H4z" fill="currentColor"></path><path d="M24 14h4v4h-4z" fill="currentColor"></path><path d="M14 24h4v4h-4z" fill="currentColor"></path><path d="M4 24h4v4H4z" fill="currentColor"></path><path d="M24 24h4v4h-4z" fill="currentColor">
+      </path>
+    </svg>` },
+  { label: 'Playlists Catalog', svg: `
+    <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    viewBox="0 0 24 24">
+      <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zm-7.5-1a2.5 2.5 0 0 0 2.5-2.5V7h3V5h-4v5.51c-.42-.32-.93-.51-1.5-.51a2.5 2.5 0 0 0 0 5zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z" fill="currentColor">
+      </path>
+    </svg>` },
+  { label: 'Video Highlights', svg: `
+    <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    viewBox="0 0 24 24">
+      <path d="M21 3H3c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5a2 2 0 0 0-2-2zm0 14H3V5h18v12zm-5-6l-7 4V7z" fill="currentColor">
+      </path>
+    </svg>` },
+  { label: 'Tech Insights', svg: `
+    <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    viewBox="0 0 24 24">
+      <path d="M12 11c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2zm6 2c0-3.31-2.69-6-6-6s-6 2.69-6 6c0 2.22 1.21 4.15 3 5.19l1-1.74c-1.19-.7-2-1.97-2-3.45c0-2.21 1.79-4 4-4s4 1.79 4 4c0 1.48-.81 2.75-2 3.45l1 1.74c1.79-1.04 3-2.97 3-5.19zM12 3C6.48 3 2 7.48 2 13c0 3.7 2.01 6.92 4.99 8.65l1-1.73C5.61 18.53 4 15.96 4 13c0-4.42 3.58-8 8-8s8 3.58 8 8c0 2.96-1.61 5.53-4 6.92l1 1.73c2.99-1.73 5-4.95 5-8.65c0-5.52-4.48-10-10-10z" fill="currentColor">
+      </path>
+    </svg>` },
+  { label: 'About Me', svg: `
+    <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    viewBox="0 0 24 24">
+      <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7-.25c.22 0 .41.1.55.25c.12.13.2.31.2.5c0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.19.08-.37.2-.5c.14-.15.33-.25.55-.25zM19 19H5V5h14v14zM12 6c-1.65 0-3 1.35-3 3s1.35 3 3 3s3-1.35 3-3s-1.35-3-3-3zm0 4c-.55 0-1-.45-1-1s.45-1 1-1s1 .45 1 1s-.45 1-1 1zm-6 6.47V18h12v-1.53c0-2.5-3.97-3.58-6-3.58s-6 1.07-6 3.58zM8.31 16c.69-.56 2.38-1.12 3.69-1.12s3.01.56 3.69 1.12H8.31z" fill="currentColor">
+      </path>
+    </svg>` },
+]
 </script>
