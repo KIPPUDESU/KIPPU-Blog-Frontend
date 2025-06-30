@@ -3,7 +3,7 @@
 <div 
   class="transition-all duration-600 linear
   flex flex-col absolute 
-  xl:mx-18 lg:mx-12 z-10 font-bold text-black/60
+  xl:mx-18 lg:mx-12 z-20 font-bold text-black/60
   "
   :class="ChengeStore.PlaneOrSolid? 
   'xl:top-34 lg:top-38' : '-top-64' ">

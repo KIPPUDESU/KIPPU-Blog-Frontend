@@ -1,17 +1,18 @@
 <template>
-<!-- 全页面容器 -->
-<div class="relative">
-  <!-- 首页 Banner 容器 -->
-   <HomeBanner />
-</div>
+<div class="page-container">
+  <!-- 全页面容器 -->
+  <div class="relative">
+    <!-- 首页 Banner 容器 -->
+    <HomeBanner />
+  </div>
 
-<!-- 这里做分隔行 -->
+  <!-- 这里做分隔行 -->
 
-<!-- 分页 -->
-<div class="flex relative justify-center items-center bg-gray-100 w-full h-440">
-  <!-- 左侧信息容器 -->
-  <LeftInfoPanel />
-  <!-- 文章预览卡片 -->
+  <!-- 分页 -->
+  <div class="flex relative justify-center items-center bg-gray-100 w-full h-440">
+    <!-- 左侧信息容器 -->
+    <LeftInfoPanel />
+    <!-- 文章预览卡片 -->
     <div class="">
       <!-- 左侧分页标题 -->
       <div 
@@ -177,8 +178,8 @@
 
     <!-- 下层容器 -->
     <LowerPane />
+  </div>
 </div>
-
 </template>
 
 <script setup lang="ts">
