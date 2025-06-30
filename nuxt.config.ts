@@ -15,4 +15,7 @@ export default defineNuxtConfig({
   content: {
     experimental: { nativeSqlite: true },
   },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
 })

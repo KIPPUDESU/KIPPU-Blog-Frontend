@@ -4,7 +4,10 @@
     <div 
      class="relative bg-gray-200/10 h-106 overflow-hidden">
       <!-- 填充父容器的透明absolute添加图片上层添加shadow-inner -->
-      <div class="absolute z-10 w-full h-full transition-all duration-600 ease-in-out" 
+      <div 
+      class="
+      transition-all duration-600 ease-in-out
+      absolute z-10 w-full h-full" 
       :class="ChengeStore.PlaneOrSolid?
       'shadow-[inset_0_-4px_6px_rgba(0,0,0,0.0)]' :
       'shadow-[inset_0_-5px_6px_rgba(0,0,0,0.2)]'"></div>

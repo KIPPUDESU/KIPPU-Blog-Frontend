@@ -98,9 +98,9 @@
         bg-gradient-to-bl from-gray-50 to-white ring-3"
         :class="ChengeStore.PlaneOrSolid ? 
         'rounded-none shadow-black/0 shadow-none ring-black/0' :
-        'rounded-lg shadow-black/30 shadow-md ring-black/20'"
+        'rounded-lg shadow-black/30 shadow-md ring-gray-300'"
         >
-          <!-- 列表项 容器 -->
+          <!-- 列表项容器 -->
           <div 
           class="
           absolute flex flex-col z-10
