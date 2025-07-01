@@ -81,12 +81,14 @@
               <!-- 最后一张卡片 lfet-280，于是套壳的宽度是 280 + 38 -7 -->
               <!-- 为了保证第二个套壳内的第一张卡片与第一个套壳最后一张重合部分为 7 -->
               <!-- 考虑到第二个套壳内第一张卡片与套壳左侧也有 1 边距，于是削减第一个套壳 1 点的宽度 -->
-              <!-- 最终结果 280 + 38 - ( 7 + 1 ) = w-310 -->
+              <!-- 最终结果 342 + 38 - ( 7 + 1 ) = w-372 -->
+              <!-- 也就是 lastLeft + cardW - ( overLap + margin ) -->
               <!-- 后续添加卡片都如此计算 -->
               <div 
               class="
               transition-all duration-600 ease-in-out
-              group-hover:relative group-hover:w-341 group-hover:h-full">
+              group-hover:relative group-hover:h-full"
+              :style="{ width: ShellWidth }">
                 <!-- card-v-for -->
                 <div 
                 v-for="(card, idx) in cards"
@@ -109,7 +111,8 @@
               <div 
               class="
               transition-all duration-600 ease-in-out
-              group-hover:relative group-hover:w-341 group-hover:h-full">
+              group-hover:relative group-hover:h-full"
+              :style="{ width: ShellWidth }">
               <!-- card-v-for -->
                 <div 
                 v-for="(card, idx) in cards"
@@ -176,7 +179,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const cards = ref([
   {
@@ -263,12 +266,30 @@ const cards = ref([
     hoverClass: 'group-hover:left-[85.5rem]',
   },
 ])
+
+const cardW = 38
+const cardKasane = 7
+const margin = 1
+
+// 从类名字符串中提取出卡片在 hover 状态下的 left 偏移值
+function hoverClassLeft(left: string) {
+  const hoverLeft = left.match(/group-hover:left-\[(.+)rem\]/)
+  return hoverLeft ? parseFloat(hoverLeft[1]) : 0
+}
+
+// 计算套壳的 w
+const ShellWidth = computed(() => {
+  const lastCard = cards.value[cards.value.length - 1]
+  const lastLeft = hoverClassLeft(lastCard.hoverClass)
+  return `${(lastLeft * 4 + cardW - ( cardKasane + margin )) / 4}rem` 
+}
+)
 </script>
 
 <style>
 /* 在 Tailwind CSS 中，一个单位默认等于 0.25rem */
 :root {
-  --marquee-width: 85.25rem;
+  --marquee-width: 93rem;
 }
 
 /* 定义一个循环 */
