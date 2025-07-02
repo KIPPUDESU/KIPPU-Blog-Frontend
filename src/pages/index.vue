@@ -75,102 +75,14 @@
           <div 
           class="
           transition-all duration-600 ease-in-out
-          flex flex-wrap absolute z-20 left-0
+          flex absolute z-20 left-0
           justify-center items-center shadow-lg backdrop-blur-sm
           bg-gradient-to-bl from-gray-50/60 to-white/95 rounded-t-xl"
           :class="ChengeStore.PlaneOrSolid?
           'w-288 top-0 h-316 shadow-black/0' :
           'w-280 top-4 h-300 shadow-black/20' "
           >
-          <ArticleCard
-          v-for="article in articles"
-          :key="article.id"
-          :card="{
-            date: article.date,
-            image: article.image || '/img/egudown.png',
-            title: article.title,
-            classify: article.classify || '未分类', 
-          }"
-          :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-          :to="`/`"
-          />
-          <!-- 分页按钮 -->
-          <div 
-          class="relative flex justify-center w-full h-46">
-            <div 
-            class="
-            transition-all duration-600 ease-in-out
-            absolute -top-2 px-18 hover:px-16
-            flex justify-between items-center w-full h-42"
-            >
-            <!-- 左 -->
-              <div 
-              class="flex py-2 px-4 w-56 h-12
-              hover:py-2 hover:w-54 hover:h-13
-              text-[18px] text-gray-700
-              hover:text-[20px] hover:text-gray-600
-              bg-gradient-to-bl from-pink-300/30 to-white/30
-              hover:from-pink-200/40 hover:to-white
-              transition-all duration-500 ease-in-out
-              justify-center items-center font-medium"
-              :class="ChengeStore.PlaneOrSolid?
-              'shadow-black/20 shadow-none hover:shadow-black/20 hover:shadow-md rounded-none' : 
-              'shadow-black/20 shadow-xs hover:shadow-black/20 hover:shadow-md rounded-lg ring-4 ring-pink-200/50'"
-              >
-              <!-- :to="`/?page=${pageNum - 1}`" -->
-              <NuxtLink to="/" class="flex flex-nowrap items-center gap-3"
-              >
-                <!-- ← ← ← -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                    <g transform="scale(-1,1) translate(-16,0)">
-                      <polyline 
-                        points="4,2 12,8 4,14" 
-                        fill="none" 
-                        stroke="gray" 
-                        stroke-width="2" 
-                        stroke-linecap="round" 
-                        stroke-linejoin="round"/>
-                    </g>
-                  </svg>
-                上一页</NuxtLink>
-              </div>
-              <!-- 占位分隔图片 -->
-              <div class="flex justify-center w-max h-40">
-                <img
-                class="h-40"
-                src="../public/img/egutenshi.png" alt="">
-              </div>
-              <!-- 右 -->
-              <div 
-              class="flex py-2 px-4 w-56 h-12
-              hover:py-2 hover:w-54 hover:h-13
-              text-[18px] text-gray-700
-              hover:text-[20px] hover:text-gray-600
-              bg-gradient-to-bl from-pink-300/30 to-white/30
-              hover:from-pink-200/40 hover:to-white
-              transition-all duration-500 ease-in-out
-              justify-center items-center font-medium"
-              :class="ChengeStore.PlaneOrSolid?
-              'shadow-black/20 shadow-none hover:shadow-black/20 hover:shadow-md rounded-none' : 
-              'shadow-black/20 shadow-xs hover:shadow-black/20 hover:shadow-md rounded-lg ring-4 ring-pink-200/50'"
-              >
-              <!-- :to="`/?page=${pageNum + 1}`" -->
-              <NuxtLink to="/" class="flex flex-nowrap items-center gap-3"
-              >下一页 
-                <!-- → → → -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                      <polyline 
-                        points="4,2 12,8 4,14" 
-                        fill="none" 
-                        stroke="gray" 
-                        stroke-width="2" 
-                        stroke-linecap="round" 
-                        stroke-linejoin="round"/>
-                  </svg>
-              </NuxtLink>
-              </div>
-            </div>
-          </div>
+            <ArticlesList />
           </div>
         </div>
       </div>
@@ -189,18 +101,6 @@ import { useTestStore } from '#imports'
 
 // 把useTestStore存入ChengeStore
 const ChengeStore = useTestStore()
-
-// vue 响应
-// import { computed } from 'vue'
-// import { queryContent } from '@nuxt/content'
-
-// 卡片渲染数据获取(异步)
-// const { data: articles } = await useAsyncData('article', () => queryContent('blog').find())
-// 以上编写中，最新的 Nuxt Content v3 已经不再提供 queryContent() 
-// 改用基于「集合（collection）」的新 API：
-const { data: articles } = await useAsyncData('article', () => 
-queryCollection('blog').all()
-)
 </script>
 
 <style scoped>

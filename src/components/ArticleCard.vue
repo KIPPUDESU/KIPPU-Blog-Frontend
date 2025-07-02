@@ -1,11 +1,12 @@
 <template>
+<NuxtLink :to="card.path">
     <!-- 纯展示组件，只接收 props -->
     <!-- 外壳 -->
     <div 
     class="
     flex flex-col items-center mx-4 w-58 h-70
     bg-gradient-to-bl
-    transition-all duration-600 ease-in-out
+    transition-all duration-500 ease-in-out
     object-cover hover:scale-106"
     :class="PlaneOrSolid ? 
     'from-gray-100 to-gray-100 hover:from-blue-200/30 hover:to-blue-100/70' :
@@ -15,7 +16,7 @@
         <div 
             class="
             flex justify-center items-center overflow-hidden
-            transition-all duration-600 ease-in-out
+            transition-all duration-500 ease-in-out
             w-50 h-36 mx-4 mt-6
             object-cover hover:scale-104 
             hover:shadow-lg hover:shadow-black/20 hover:rounded-none
@@ -29,13 +30,14 @@
         <!-- 文字 -->
         <div class="
         flex flex-col relative w-52 h-24 px-2 mt-2
-        transition-all duration-600 ease-in-out"
+        transition-all duration-500 ease-in-out"
         >
             <h1 class="text-[18px] font-bold text-gray-900/90">{{ card.title }}</h1>
             <span class="text-[14px] font-bold text-gray-600/90">{{ card.classify }}</span>
             <p class="absolute bottom-0 text-[12px] text-blue-300">{{ card.date }}</p>
         </div>        
     </div>
+</NuxtLink>
 </template>
 
 <script setup lang="ts">
@@ -45,6 +47,7 @@ interface Card {
     date: string
     image: string
     classify: string
+    path: string
 }
 
 // 接收被父组件从 content 结构的数据

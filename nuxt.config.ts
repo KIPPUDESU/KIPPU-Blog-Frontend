@@ -16,6 +16,11 @@ export default defineNuxtConfig({
     experimental: { nativeSqlite: true },
   },
   app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/jpg', href: '/egucool.jpg' }
+      ]
+    },
     pageTransition: { name: 'page', mode: 'out-in' }
   },
 })

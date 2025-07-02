@@ -13,9 +13,31 @@ class="
             <img src="../public/img/blog-header.svg" alt="">
        </NuxtLink>
     </div>
+    <!-- 实验按钮 -->
+    <button class="w-20 h-full bg-amber-600">
+
+    </button>
+    <!-- 顶部灰色横线 -->
+    <div 
+    class="
+    transition-all duration-600 linear
+    absolute flex justify-center items-center 
+    h-1 w-full
+    "
+    :class="ChengeStore.PlaneOrSolid ?
+    'top-12' : '-top-50' "
+    >
+      <div 
+      class="
+      relative w-full h-0.5 mx-6
+      bg-gray-300 rounded-full
+      ">
+
+      </div>
+    </div>
     <!-- 右侧用户组件 -->
     <div class="
-    relative flex justify-between items-center h-12 w-66 px-8">
+    relative flex justify-between items-center h-12 w-58 px-6">
         <div 
         class="
         relative w-1/2 h-full overflow-hidden">

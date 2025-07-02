@@ -35,10 +35,11 @@ absolute z-20 flex flex-col right-0 rounded-l-xl"
   'xl:right-18 lg:right-12 xl:top-30 lg:top-28' : 'xl:right-20 lg:right-14 xl:top-32 lg:top-30'
   ">
   <p class="flex flex-row">Frontend Dev [<span class="inline-flex xl:text-[11px] justify-center items-center">>></span>] Backend Dev / Graphic Designer / Writing</p>
-   <p class="">16 November 2005 — My first commit, the day I became me</p>
-    <p class="flex flex-row">If okay... mail me, maybe? 💌 : 
+  <p class="">16 November 2005 — My first commit, the day I became me</p>
+  <div class="flex flex-row w-full h-7">
+  <p class="w-1/2"> If okay... mail me, maybe? 💌 :  </p>
       <!-- 邮箱容器 -->
-      <div class="relative flex items-center w-[226px] ml-[4px] h-7">
+      <div class="relative w-1/2">
         <!-- 动画效果容器 -->
         <div 
         class="
@@ -65,7 +66,7 @@ absolute z-20 flex flex-col right-0 rounded-l-xl"
           ></div>
         </div>
       </div>
-      </p>
+    </div>
   </div>
   <!-- 圆点 -->
   <div 
