@@ -13,10 +13,6 @@ class="
             <img src="../public/img/blog-header.svg" alt="">
        </NuxtLink>
     </div>
-    <!-- 实验按钮 -->
-    <button class="w-20 h-full bg-amber-600">
-
-    </button>
     <!-- 顶部灰色横线 -->
     <div 
     class="

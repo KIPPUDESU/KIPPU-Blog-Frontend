@@ -1,107 +1,110 @@
 <template>
 <div 
 class="
-flex flex-wrap justify-center items-center
+flex flex-col justify-center items-center
 w-full h-full
 ">
-    <ArticleCard
-    v-for="article in articles"
-    :key="article.id"
-    :card="{
-    date: article.date,
-    image: article.image || '/img/egudown.png',
-    title: article.title,
-    classify: article.classify || '未分类', 
-    path: article.path,
-    }"
-    :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-    :to="`/`"
-    />
-    <!-- 分页按钮 -->
     <div 
-    class="relative flex justify-center w-full h-46">
+    class="
+    flex flex-wrap w-full justify-center pt-6 h-8/10">
+        <ArticleCard
+        v-for="article in articles"
+        :key="article.id"
+        :card="{
+        date: article.date,
+        image: article.image || '/img/egudown.png',
+        title: article.title,
+        classify: article.classify || '未分类', 
+        path: article.path,
+        }"
+        :PlaneOrSolid="ChengeStore.PlaneOrSolid"
+        :to="`/`"
+        />
+    </div>
+        <!-- 分页按钮 -->
         <div 
         class="
-        transition-all duration-600 ease-in-out
-        absolute -top-2 px-18 hover:px-16
-        flex justify-between items-center w-full h-42"
-        >
-            <!-- 左 -->
-            <div 
-            class="relative flex py-2 px-4 w-56 h-12
-            hover:py-2 hover:w-54 hover:h-13
-            text-[18px] text-gray-700
-            hover:text-[20px] hover:text-gray-600
-            bg-gradient-to-bl from-pink-300/30 to-white/30
-            hover:from-pink-200/40 hover:to-white
-            transition-all duration-500 ease-in-out
-            justify-center items-center font-medium"
-            :class="ChengeStore.PlaneOrSolid?
-            'shadow-black/20 shadow-none hover:shadow-black/20 hover:shadow-md rounded-none' : 
-            'shadow-black/20 shadow-xs hover:shadow-black/20 hover:shadow-md rounded-lg ring-4 ring-pink-200/50'"
-            >
-            <!-- :to="`/?page=${pageNum - 1}`" -->
-            <button @click="subPage" class="flex flex-nowrap w-full h-full items-center gap-3"
-            >
-            <!-- ← ← ← -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                <g transform="scale(-1,1) translate(-16,0)">
-                    <polyline 
-                    points="4,2 12,8 4,14" 
-                    fill="none" 
-                    stroke="gray" 
-                    stroke-width="2" 
-                    stroke-linecap="round" 
-                    stroke-linejoin="round"/>
-                </g>
-                </svg>
-            上一页</button>
-            </div>
-            <!-- 占位分隔图片 -->
+        relative flex justify-center w-full h-2/10">
             <div 
             class="
-            flex justify-center w-max h-full">
-            <img
-            class="h-full"
-            src="../public/img/egutenshi.png" alt="">
-            </div>
-            <!-- 右 -->
-            <div 
-            class="relative flex w-56 h-12
-            hover:w-54 hover:h-13
-            text-[18px] text-gray-700 overflow-hidden
-            hover:text-[20px] hover:text-gray-600
-            bg-gradient-to-bl from-pink-300/30 to-white/30
-            hover:from-pink-200/40 hover:to-white
-            transition-all duration-500 ease-in-out
-            justify-center items-center font-medium"
-            :class="ChengeStore.PlaneOrSolid?
-            'shadow-black/20 shadow-none hover:shadow-black/20 hover:shadow-md rounded-none' : 
-            'shadow-black/20 shadow-xs hover:shadow-black/20 hover:shadow-md rounded-lg ring-4 ring-pink-200/50'"
+            transition-all duration-600 ease-in-out
+            absolute pb-12 pt-4 px-18 hover:px-16
+            flex justify-between items-center w-full h-full"
             >
-            <!-- :to="`/?page=${pageNum + 1}`" -->
-            <button @click="addPage" 
-            class="
-            z-50 flex flex-nowrap w-full h-full
-            items-center gap-3 "
-            >下一页 
-            <!-- → → → -->
-                <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="16" height="16" 
-                viewBox="0 0 16 16">
-                    <polyline 
-                    points="4,2 12,8 4,14" 
-                    fill="none" 
-                    stroke="gray" 
-                    stroke-width="2" 
-                    stroke-linecap="round" 
-                    stroke-linejoin="round"/>
-                </svg>
-            </button>
+                <!-- 左 -->
+                <div 
+                class="
+                transition-all duration-500 ease-in-out
+                relative flex w-56 h-12
+                hover:w-54 hover:h-13">
+                    <button 
+                    @click="subPage" 
+                    class="
+                    transition-all duration-500 ease-in-out
+                    flex flex-nowrap w-full h-full 
+                    items-center justify-center 
+                    text-[18px] text-blue-300 font-bold
+                    hover:text-[20px] hover:text-gray-500
+                    bg-gradient-to-bl from-pink-300/30 to-white shadow-black/20
+                    hover:from-pink-200/40 hover:shadow-lg
+                    cursor-pointer gap-3 hover:gap-4"
+                    :class="ChengeStore.PlaneOrSolid?
+                    'shadow-none rounded-none' : 
+                    'shadow-md rounded-lg ring-4 ring-pink-200/50'"
+                    >
+                        <!-- ← ← ← -->
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        viewBox="0 0 256 512"
+                        class="w-3">
+                            <path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" fill="currentColor">
+                            </path>
+                        </svg>
+                    上一页</button>
+                </div>
+                <!-- 占位分隔图片 -->
+                <div 
+                class="
+                flex justify-center w-max h-full">
+                <img
+                class="h-full"
+                src="../public/img/egutenshi.png" alt="">
+                </div>
+                <!-- 右 -->
+                <div 
+                class="
+                transition-all duration-500 ease-in-out
+                relative flex w-56 h-12
+                hover:w-54 hover:h-13">
+                    <button 
+                    @click="addPage" 
+                    class="
+                    transition-all duration-500 ease-in-out
+                    flex flex-nowrap w-full h-full 
+                    items-center justify-center 
+                    text-[18px] text-blue-300 font-bold
+                    hover:text-[20px] hover:text-gray-500
+                    bg-gradient-to-bl from-pink-300/30 to-white shadow-black/20
+                    hover:from-pink-200/40 hover:shadow-lg
+                    cursor-pointer gap-3 hover:gap-4"
+                    :class="ChengeStore.PlaneOrSolid?
+                    'shadow-none rounded-none' : 
+                    'shadow-md rounded-lg ring-4 ring-pink-200/50'"
+                    >下一页 
+                    <!-- → → → -->
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        viewBox="0 0 256 512"
+                        class="w-3">
+                        <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4l-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" fill="currentColor">
+                        </path></svg>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
+    
 </div>
 </template>
 
