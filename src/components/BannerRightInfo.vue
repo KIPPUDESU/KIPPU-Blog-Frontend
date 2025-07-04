@@ -39,19 +39,19 @@ absolute z-20 flex flex-col right-0 rounded-l-xl"
   <div class="flex flex-row w-full h-7">
   <p class="w-1/2"> If okay... mail me, maybe? 💌 :  </p>
       <!-- 邮箱容器 -->
-      <div class="relative w-1/2">
+      <div class="relative w-1/2 px-0.5">
         <!-- 动画效果容器 -->
         <div 
         class="
         transition-all duration-600 ease-in-out
-        absolute bottom-1 w-full h-full group
+        absolute w-full h-full group
         ">
           <!-- 邮箱 -->
           <a 
           href="mailto:KIPPUDESU@OUTLOOK.COM?subject=Hello%20Kippu" 
           target="_blank"
           class="
-          absolute right-0 top-1 z-20
+          absolute right-0.5 z-20
           hover:text-gray-400"
           :class="ChengeStore.PlaneOrSolid?
           'text-gray-500' : 'text-blue-400' "
@@ -60,7 +60,7 @@ absolute z-20 flex flex-col right-0 rounded-l-xl"
           <!-- 下划线 -->
           <div class="
           transition-all duration-600 ease-in-out
-          absolute bottom-0 h-0.5 w-full rounded-4xl
+          absolute bottom-1 h-0.5 w-full rounded-4xl
           left-0 right-auto bg-gray-400
           group-hover:w-0 group-hover:left-auto group-hover:right-0" 
           ></div>
