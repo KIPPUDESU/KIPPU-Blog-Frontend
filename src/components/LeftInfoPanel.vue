@@ -112,7 +112,7 @@
               transition-all duration-600 ease-in-out
               flex flex-row flex-1 items-center gap-3 px-6 w-full
               object-cover bg-white/0 backdrop-blur-xs rounded-lg
-              text-[16px] text-blue-300 font-bold
+              text-[16px] text-blue-300 font-bold cursor-pointer
               hover:scale-110 hover:bg-white/30 hover:text-blue-400"
               @click=""
             >
