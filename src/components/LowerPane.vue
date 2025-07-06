@@ -170,9 +170,12 @@
     </div>
     <!-- 插图 -->
     <div class="
-    absolute flex mx-80 h-16/20 w-288
-    justify-center
-    bg-blue-50/10 rounded-xl shadow-black/20 shadow-lg overflow-hidden">
+    transition-all duration-600 ease-in-out
+    absolute flex mx-80 h-16/20 w-288 justify-center
+    bg-blue-50/10 shadow-lg overflow-hidden"
+    :class="ChengeStore.PlaneOrSolid ?
+    'rounded-none shadow-black/0' : 'rounded-xl shadow-black/20' "
+    >
       <img class="absolute z-0 -top-40 w-10/12" src="../public/img/egubule.png" alt="">
     </div>
   </div>
@@ -180,6 +183,8 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useTestStore } from '#imports'
+const ChengeStore = useTestStore()
 
 const cards = ref([
   {
