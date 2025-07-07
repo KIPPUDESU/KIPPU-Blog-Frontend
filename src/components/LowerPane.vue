@@ -97,8 +97,7 @@
                 transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
                 absolute flex top-4 w-18 h-14/24
                 group-hover:top-4/20 group-hover:w-38  
-                bg-white items-center justify-center
-                group-hover:bg-white/60 backdrop-blur-md
+                bg-white/80 items-center justify-center
                 group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
                 rounded-lg shadow-lg"
                 :class="[ card.shadowClass, card.initClass, card.leftClass, card.hoverClass ]"
@@ -122,7 +121,7 @@
                 absolute flex top-4 w-18 h-14/24
                 group-hover:top-4/20 group-hover:w-38  
                 bg-white items-center justify-center
-                group-hover:bg-white/60 backdrop-blur-md
+                group-hover:bg-white/80
                 group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
                 rounded-lg shadow-lg"
                 :class="[ card.shadowClass, card.initClass, card.leftClass, card.hoverClass ]"
@@ -177,6 +176,7 @@
     'rounded-none shadow-black/0' : 'rounded-xl shadow-black/20' "
     >
       <img class="absolute z-0 -top-40 w-10/12" src="../public/img/egubule.png" alt="">
+      <img class="absolute z-40 -top-40 w-10/12" src="../public/img/egubuleindex.png" alt="">
     </div>
   </div>
 </template>
@@ -189,83 +189,83 @@ const ChengeStore = useTestStore()
 const cards = ref([
   {
     src: '/img/html.png',
-    shadowClass: 'shadow-black/20 group-hover:shadow-black/20',
+    shadowClass: 'shadow-black/20 group-hover:shadow-black/0',
     initClass: '-rotate-y-8 rotate-x-8 -rotate-6',
     leftClass: 'left-[0rem]',
     hoverClass: 'group-hover:left-[0.25rem]',
   },
   {
     src: '/img/CSS3.png',
-    shadowClass: 'shadow-black/20 group-hover:shadow-black/20',
+    shadowClass: 'shadow-black/20 group-hover:shadow-black/0',
     initClass: '-rotate-y-4 -rotate-x-4 rotate-4',
     leftClass: 'left-[2rem]',
     hoverClass: 'group-hover:left-[8rem]',
   },
   {
     src: '/img/JavaScript.png',
-    shadowClass: 'shadow-black/20 group-hover:shadow-black/20',
+    shadowClass: 'shadow-black/20 group-hover:shadow-black/0',
     initClass: '-rotate-y-20 -rotate-x-8 -rotate-4',
     leftClass: 'left-[4rem]',
     hoverClass: 'group-hover:left-[15.75rem]',
   },
   {
     src: '/img/typescript.png',
-    shadowClass: 'shadow-black/20 group-hover:shadow-black/20',
+    shadowClass: 'shadow-black/20 group-hover:shadow-black/0',
     initClass: 'rotate-y-8 rotate-x-4 rotate-4',
     leftClass: 'left-[6rem]',
     hoverClass: 'group-hover:left-[23.5rem]',
   },
   {
     src: '/img/Vue.png',
-    shadowClass: 'shadow-black/20 group-hover:shadow-black/20',
+    shadowClass: 'shadow-black/20 group-hover:shadow-black/0',
     initClass: '-rotate-y-8 rotate-x-8 -rotate-2',
     leftClass: 'left-[8rem]',
     hoverClass: 'group-hover:left-[31.25rem]',
   },
   {
     src: '/img/Nuxt.png',
-    shadowClass: 'shadow-black/20 group-hover:shadow-black/20',
+    shadowClass: 'shadow-black/20 group-hover:shadow-black/0',
     initClass: 'rotate-y-4 -rotate-x-18 rotate-6',
     leftClass: 'left-[10rem]',
     hoverClass: 'group-hover:left-[39rem]',
   },
   { src: '/img/tailwindcss_.png',
-    shadowClass: 'shadow-black/0 group-hover:shadow-black/20',
+    shadowClass: 'shadow-black/0 group-hover:shadow-black/0',
     initClass: 'rotate-y-4 -rotate-x-18 rotate-6',
     leftClass: 'left-[10rem]',
     hoverClass: 'group-hover:left-[46.75rem]',
   },
   {
     src: '/img/naiveui.png',
-    shadowClass: 'shadow-black/0 group-hover:shadow-black/20',
+    shadowClass: 'shadow-black/0 group-hover:shadow-black/0',
     initClass: 'rotate-y-4 -rotate-x-18 rotate-6',
     leftClass: 'left-[10rem]',
     hoverClass: 'group-hover:left-[54.5rem]',
   },
   {
     src: '/img/pnpm.png',
-    shadowClass: 'shadow-black/0 group-hover:shadow-black/20',
+    shadowClass: 'shadow-black/0 group-hover:shadow-black/0',
     initClass: 'rotate-y-4 -rotate-x-18 rotate-6',
     leftClass: 'left-[10rem]',
     hoverClass: 'group-hover:left-[62.25rem]',
   },
   {
     src: '/img/Node.js.png',
-    shadowClass: 'shadow-black/0 group-hover:shadow-black/20',
+    shadowClass: 'shadow-black/0 group-hover:shadow-black/0',
     initClass: 'rotate-y-4 -rotate-x-18 rotate-6',
     leftClass: 'left-[10rem]',
     hoverClass: 'group-hover:left-[70rem]',
   },
   {
     src: '/img/sqlite.png',
-    shadowClass: 'shadow-black/0 group-hover:shadow-black/20',
+    shadowClass: 'shadow-black/0 group-hover:shadow-black/0',
     initClass: 'rotate-y-4 -rotate-x-18 rotate-6',
     leftClass: 'left-[10rem]',
     hoverClass: 'group-hover:left-[77.75rem]',
   },
   {
     src: '/img/git.png',
-    shadowClass: 'shadow-black/0 group-hover:shadow-black/20',
+    shadowClass: 'shadow-black/0 group-hover:shadow-black/0',
     initClass: 'rotate-y-4 -rotate-x-18 rotate-6',
     leftClass: 'left-[10rem]',
     hoverClass: 'group-hover:left-[85.5rem]',
