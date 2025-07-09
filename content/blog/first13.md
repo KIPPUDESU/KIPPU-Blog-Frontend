@@ -1,0 +1,110 @@
+---
+title: Nuxt3 中插入页面过渡动画
+classify: 动画
+date: 2025-07-09
+image: "/img/mizuki(1).png"
+---
+
+# Nuxt3 中插入页面过渡动画  
+## 关于在 Nuxt3 创建的项目中，为页面衔接间的过度状态插入一个独立的组件，在其中运行设定好的动效，用作过度的动画  
+  
+## 首先需要考虑怎样使组件读取到页面状态的切换，以此插入动画  
+Nuxt3 其中提供了`useNuxtApp`用以获取应用实例  
+我们可以利用此方法正好读取页面切换，创造钩子函数，再利用钩子函数改变一个**布尔值**确定页面的状态  
+### 代码：  
+```ts  
+import { ref } from 'vue'
+
+const nuxtApp = useNuxtApp()
+const isLoading = ref(false)
+
+nuxtApp.hook('page:start', () => {
+  isLoading.value = true;
+})
+
+nuxtApp.hook('page:finish', () => {
+  // 延迟一点时间关闭，确保动画至少播放一小段时间
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 900); 
+})
+```  
+本逻辑根据以下步骤完成了目的
+- 创建一个 nuxtApp 方法（该方法由 useNuxtApp 检测路由切换后触发）
+- 创建一个 loading 布尔值定义当前加载动画组件状态
+- 路由变化注册 page:start 钩子改变布尔值为 true
+- 随后注册 page:finish 钩子，根据setTimeout的定义 900毫秒后更变 loading   
+  
+这样就好似写好了一个 mc 中的小按钮，由路由变化触发  
+---  
+## 利用定义好的布尔值配合 vue3 的`v-if`控制组件显示  
+这一步非常简单  
+### 代码：
+```vue
+<template>
+  <div class="">
+    <!-- 使用 Vue 的 Transition 组件来包裹遮罩层，以实现平滑的淡入淡出 -->
+    <Transition name="fade">
+      <TransitionCover v-if="isLoading" />
+    </Transition>
+    <NuxtLayout>
+     <NuxtPage />
+    </NuxtLayout>
+  </div>
+</template>
+```  
+就像注释里说的一样，使用 Vue 的 Transition 组件来包裹遮罩层实现更好的动画效果  
+而`v-if`会根据布尔值切换 TransitionCover 组件的**销毁与创建**（此组件在样式上悬浮在页面上层）  
+---  
+## 在 CSS 里定义组件出现的动画
+为了使得组件的出现不生硬，需要一些定义
+### 代码：
+```css
+/* 为 TransitionCover 的淡入淡出效果定义 CSS */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.5s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+```  
+对于动画组件
+- 只针对`opacity`属性操控
+- 在 ease-in-out 缓动下操控 0.5 秒
+- 透明度`opacity`初始为0，缓动过滤到1（透明度淡入）
+对于切换的下一页面
+- 同时针对`opacity`与`filter`属性
+- 在 ease 默认缓动下同样操控 0.5 秒
+- 初始为0，缓动过滤到1（透明度淡入）
+- 透明度`opacity`初始为0，缓动过滤到1（透明度淡入）
+- 模糊度`filter`初始为1，缓动过滤到0（模糊度淡入）  
+  
+**过度动画组件**与**入场组件**配合，实现舒适的过度缓动效果  
+---  
+## 总结：
+在Nuxt3中插入动画效果非常方便，基本只涉及监听和状态的改变，剩下的都是自定义的范畴  
+  
+在 Nuxt3 根布局里，用 useNuxtApp() 注册 page:start/page:finish 钩子，维护一个响应式的 isLoading。然后在根组件中用  
+```vue
+<Transition name="fade">
+  <TransitionCover v-if="isLoading" />
+</Transition>
+```
+根据 isLoading 动态挂载遮罩层。最后在全局样式里分别定义两组过渡类：  
+.fade-enter-active/.fade-leave-active：透明度渐变  
+.page-enter-active/.page-leave-active：同时过渡透明度和模糊滤镜。  
+  
+### 2025.07.09 共勉
