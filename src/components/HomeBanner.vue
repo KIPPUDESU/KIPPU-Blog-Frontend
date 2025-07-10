@@ -13,7 +13,7 @@
       'shadow-[inset_0_-5px_6px_rgba(0,0,0,0.2)]'"></div>
         <img 
         class="absolute transition-all duration-600 linear -left-4
-        xl:w-262 lg:w-210 "
+        sm:w-262 w-94 "
         :class="ChengeStore.PlaneOrSolid?
         'bottom-100' : 'xl:-bottom-192 lg:-bottom-144'"
         src="../public/img/eguegugang.png" alt="">

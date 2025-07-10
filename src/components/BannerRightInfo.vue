@@ -2,7 +2,8 @@
 <!-- banner的右侧文字容器 -->
 <div 
 class="transition-all duration-600 ease-in-out 
-absolute z-20 flex flex-col right-0 rounded-l-xl"
+absolute z-20 flex-col right-0 rounded-l-xl
+hidden sm:flex"
 :class="ChengeStore.PlaneOrSolid?
 'bottom-0 xl:h-70 lg:h-62 xl:w-146 lg:w-120 bg-gradient-to-bl' : 
 'bottom-12 xl:h-62 lg:h-54 xl:w-156 lg:w-120 backdrop-blur-sm shadow-black/20 shadow-lg'

@@ -5,10 +5,10 @@ class="
  absolute z-20 flex w-full justify-between backdrop-blur-lg"
 :class="ChengeStore.PlaneOrSolid ?
  'h-106 bg-white':
- 'h-12 bg-gray-300/20 shadow-md shadow-black/20'" 
+ 'h-10 sm:h-12 bg-gray-300/20 shadow-md shadow-black/20'" 
  >
     <!-- 左侧logo -->
-    <div class="p-2 mx-6 w-46">
+    <div class="p-2 mx-2 sm:mx-6 w-36 sm:w-46 bg-amber-300">
        <NuxtLink to="/">
             <img src="../public/img/blog-header.svg" alt="">
        </NuxtLink>
@@ -32,8 +32,8 @@ class="
       </div>
     </div>
     <!-- 右侧用户组件 -->
-    <div class="
-    relative flex justify-between items-center h-12 w-58 px-6">
+    <div class="bg-red-500
+    relative flex justify-between items-center h-10 sm:h-12 w-42 sm:w-58 px-6">
         <div 
         class="
         relative w-1/2 h-full overflow-hidden">

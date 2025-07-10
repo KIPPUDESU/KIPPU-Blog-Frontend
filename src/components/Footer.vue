@@ -13,7 +13,7 @@
             <div class="relative h-0.5 w-full bg-gray-400 rounded-2xl"></div>
         </div> 
         <div 
-        class="flex flex-row bg-white w-200 h-16 mt-2 px-22 rounded-3xl
+        class="flex flex-row bg-white w-22/40 h-16 mt-2 px-22 rounded-3xl
         border-4 border-gray-300
         justify-between items-center">
             <!-- GitHub -->
