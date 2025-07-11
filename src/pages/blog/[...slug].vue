@@ -24,9 +24,6 @@
             <h3>一个三级标题</h3>
 
             <p>一个正文</p>
-
-            <p>这是一篇使用 Nuxt Content 模块生成的 Markdown 文件所转化的页面内容。你可以在这里添加 <strong>Markdown</strong> 格式的文本、图片、代码块等</p>
-
           </article>
         </div>
       </div>

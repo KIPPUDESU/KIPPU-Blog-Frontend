@@ -8,7 +8,7 @@
         justify-between items-center gap-2">
             <div class="relative h-0.5 w-full bg-gray-400 rounded-2xl"></div>
                 <div class="flex font-thin w-max text-gray-600">
-                    <p class="w-max">我仍然稚嫩，期待着与您的技术交流</p>
+                    <p class="w-max">我仍然稚嫩，期待与您的技术交流</p>
                 </div>
             <div class="relative h-0.5 w-full bg-gray-400 rounded-2xl"></div>
         </div> 

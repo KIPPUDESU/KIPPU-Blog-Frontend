@@ -2,7 +2,8 @@
 <div class="relative w-full h-106">
     <!-- 首页图容器 -->
     <div 
-     class="relative bg-gray-200/10 h-106 overflow-hidden">
+     class="
+     relative bg-gray-200/10 h-106 overflow-hidden">
       <!-- 填充父容器的透明absolute添加图片上层添加shadow-inner -->
       <div 
       class="

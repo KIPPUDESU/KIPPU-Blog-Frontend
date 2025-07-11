@@ -305,7 +305,6 @@ const ShellWidth = computed(() => {
   to {
     transform: translateX(calc(-1 * var(--marquee-width)));
   }
-
 }
 .animate-marquee {
   /* 强制为动画轨道创建独立的渲染层 */
