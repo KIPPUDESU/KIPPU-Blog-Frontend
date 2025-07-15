@@ -104,7 +104,6 @@ w-full h-full
                 </div>
             </div>
         </div>
-    
 </div>
 </template>
 
