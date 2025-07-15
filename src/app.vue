@@ -34,8 +34,8 @@ nuxtApp.hook('page:finish', () => {
 </template>
 
 <style>
-/* @import "tailwindcss"; */
-/* @plugin "@tailwindcss/typography"; */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* 为 TransitionCover 的淡入淡出效果定义 CSS */
 .fade-enter-active,
