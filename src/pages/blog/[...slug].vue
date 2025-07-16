@@ -39,8 +39,7 @@
           <article v-if="page" 
           class="
           prose prose-a:no-underline max-w-none
-          prose-pre:p-6 prose-pre:bg-blue-100
-          prose-code:px-1 prose-code:rounded">
+          prose-pre:px-6 prose-pre:py-6 prose-pre:bg-gray-200">
             <ContentRenderer :value="page" />
           </article>
           <p v-else>页面不存在或正在加载…</p>

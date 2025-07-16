@@ -28,7 +28,7 @@ image: "/img/egusleep.png"
 诚然这二位在我的学习旅途中为我提供了难以想象的变量，但事到如今很显然已经来到了一个**添乱**的阶段  
 
 ## 代码片段：
-```TypeScript
+```ts
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
