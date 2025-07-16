@@ -41,8 +41,9 @@ class="
         <div 
         class="
         relative w-1/2 h-full overflow-hidden">
+            <!-- 使用绝对路径防止渲染 /blog/SignUp -->
             <NuxtLink 
-            to="SignUp"
+            to="/SignUp"
             class="
             transition-all duration-600 ease-in-out
             absolute z-50 flex justify-center items-center w-full h-full
@@ -57,7 +58,7 @@ class="
         class="
         relative w-1/2 h-full overflow-hidden">
             <NuxtLink 
-            to="Login"
+            to="/Login"
             class="
             transition-all duration-600 ease-in-out
             absolute z-50 flex justify-center items-center w-full h-full

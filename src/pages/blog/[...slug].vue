@@ -4,16 +4,24 @@
   bg-gray-50 py-12 sm:py-16">
     <div 
     class="
-    mx-auto max-w-8/10">
+    mx-auto max-w-14/20">
       <div 
       class="
       bg-pink-50 rounded-2xl shadow-lg shadow-black/20
       overflow-hidden">
-        <div class="h-80">
+        <div 
+        class="
+        flex relative h-80 w-full overflow-hidden">
           <img 
-          src="/img/egudown.png" 
+          :src="page?.image" 
           alt="Article Cover Image" 
           class="w-full h-full object-cover">
+          <div 
+          class="
+          absolute w-full h-full
+          shadow-[inset_0_-5px_6px_rgba(0,0,0,0.1)]
+          ">
+          </div>
         </div>
         <!-- markdown -->
         <div class="p-16">

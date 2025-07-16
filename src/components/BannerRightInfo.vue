@@ -1,7 +1,8 @@
 <template>
 <!-- banner的右侧文字容器 -->
 <div 
-class="transition-all duration-600 ease-in-out 
+class="
+transition-all duration-600 ease-in-out 
 absolute z-20 flex-col right-0 rounded-l-xl
 hidden sm:flex"
 :class="ChengeStore.PlaneOrSolid?

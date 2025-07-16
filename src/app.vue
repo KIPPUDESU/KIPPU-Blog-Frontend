@@ -13,11 +13,13 @@ nuxtApp.hook('page:start', () => {
 })
 
 nuxtApp.hook('page:finish', () => {
-  // 延迟一点时间关闭，确保动画至少播放一小段时间
-  setTimeout(() => {
-    isLoading.value = false;
-  }, 900); 
-})
+  // 在加载动画遮罩存在时，启动滚动，补全 app/router.options.ts 中被禁用的默认滚动行为
+  // 延迟一点时间关闭，确保动画至少播放一小段时间   
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        isLoading.value = false;
+      }, 900);
+    })
 </script>
 
 
@@ -25,7 +27,7 @@ nuxtApp.hook('page:finish', () => {
   <div class="">
     <!-- 使用 Vue 的 Transition 组件来包裹遮罩层，以实现平滑的淡入淡出 -->
     <Transition name="fade">
-      <TransitionCover v-if="isLoading" />
+      <TransitionCover v-show="isLoading" />
     </Transition>
     <NuxtLayout>
      <NuxtPage />
@@ -35,6 +37,7 @@ nuxtApp.hook('page:finish', () => {
 
 <style>
 @import "tailwindcss";
+/* 忽略的警告 */
 @plugin "@tailwindcss/typography";
 
 /* 为 TransitionCover 的淡入淡出效果定义 CSS */
