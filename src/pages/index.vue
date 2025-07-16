@@ -9,7 +9,9 @@
   <!-- 这里做分隔行 -->
 
   <!-- 分页 -->
-  <div class="flex relative justify-center items-center bg-gray-100 w-full h-440">
+  <div 
+  class="flex relative justify-center items-center 
+  bg-gray-100 w-full h-440">
     <!-- 左侧信息容器 -->
     <LeftInfoPanel />
     <!-- 文章预览卡片 -->
@@ -84,10 +86,10 @@
           transition-all duration-600 ease-in-out
           flex absolute z-20 left-0
           justify-center items-center shadow-lg backdrop-blur-sm
-          bg-gradient-to-bl from-gray-50/60 to-white/95 rounded-t-xl"
+          bg-gradient-to-bl rounded-t-xl"
           :class="ChengeStore.PlaneOrSolid?
-          'w-288 top-0 h-316 shadow-black/0' :
-          'w-280 top-4 h-300 shadow-black/20' "
+          'w-288 top-0 h-316 shadow-black/0 bg-gray-100' :
+          'w-280 top-4 h-300 shadow-black/20 bg-white' "
           >
             <ArticlesList />
           </div>

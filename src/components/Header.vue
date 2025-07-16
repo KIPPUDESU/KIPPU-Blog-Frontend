@@ -2,11 +2,20 @@
 <div 
 class="
  transition-all duration-600 linear
- absolute z-20 flex w-full justify-between backdrop-blur-lg"
+ absolute z-30 flex w-full justify-between backdrop-blur-lg"
 :class="ChengeStore.PlaneOrSolid ?
- 'h-106 bg-white':
- 'h-10 sm:h-12 bg-gray-300/20 shadow-md shadow-black/20'" 
+ 'h-12 bg-gray-100':
+ 'h-12 bg-gray-300/20 shadow-md shadow-black/20'" 
  >
+    <!-- 顶部横线 -->
+    <div 
+    class="
+    transition-all duration-600 linear 
+    w-362 rounded-2xl
+    absolute left-1/2 -translate-x-1/2 z-30 h-0.5 bg-gray-300"
+    :class="ChengeStore.PlaneOrSolid?
+    'top-12' : '-top-20' "
+    ></div>
     <!-- 左侧logo -->
     <div 
     class="
@@ -14,24 +23,6 @@ class="
        <NuxtLink to="/">
             <img src="../public/img/blog-header.svg" alt="">
        </NuxtLink>
-    </div>
-    <!-- 顶部灰色横线 -->
-    <div 
-    class="
-    transition-all duration-600 linear
-    absolute flex justify-center items-center 
-    h-1 w-full
-    "
-    :class="ChengeStore.PlaneOrSolid ?
-    'top-12' : '-top-50' "
-    >
-      <div 
-      class="
-      relative w-full h-0.5 mx-6
-      bg-gray-300 rounded-full
-      ">
-
-      </div>
     </div>
     <!-- 右侧用户组件 -->
     <div 

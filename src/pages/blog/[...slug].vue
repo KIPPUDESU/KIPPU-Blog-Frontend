@@ -1,7 +1,7 @@
 <template>
   <main 
   class="
-  bg-gray-50 py-12 sm:py-18">
+  bg-gray-100 py-12 sm:py-18">
     <div 
     class="
     mx-auto max-w-14/20">
@@ -20,7 +20,7 @@
           <div 
           class="
           absolute w-full h-full 
-          backdrop-blur-xs bg-black/40
+          backdrop-blur-none bg-black/40
           shadow-[inset_0_-5px_6px_rgba(0,0,0,0.1)]
           ">
             <div 

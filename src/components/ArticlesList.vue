@@ -6,7 +6,11 @@ w-full h-full
 ">
     <div 
     class="
-    flex flex-wrap w-full justify-center pt-6 h-8/10">
+    transition-all duration-600 ease-in-out
+    flex flex-wrap w-full justify-center 
+     h-8/10"
+    :class="ChengeStore.PlaneOrSolid?
+    'pt-2' : 'pt-6' ">
         <ArticleCard
         v-for="article in articles"
         :key="article.id"
@@ -47,10 +51,11 @@ w-full h-full
                     hover:text-[20px] hover:text-gray-500
                     bg-gradient-to-bl from-pink-300/30 to-white shadow-black/20
                     hover:from-pink-200/40 hover:shadow-lg
-                    cursor-pointer gap-3 hover:gap-4"
+                    cursor-pointer gap-3 hover:gap-4
+                    ring-4 ring-pink-200/50"
                     :class="ChengeStore.PlaneOrSolid?
                     'shadow-none rounded-none' : 
-                    'shadow-md rounded-lg ring-4 ring-pink-200/50'"
+                    'shadow-md rounded-lg'"
                     >
                         <!-- ← ← ← -->
                         <svg 
@@ -87,10 +92,11 @@ w-full h-full
                     hover:text-[20px] hover:text-gray-500
                     bg-gradient-to-bl from-pink-300/30 to-white shadow-black/20
                     hover:from-pink-200/40 hover:shadow-lg
-                    cursor-pointer gap-3 hover:gap-4"
+                    cursor-pointer gap-3 hover:gap-4
+                    ring-4 ring-pink-200/50"
                     :class="ChengeStore.PlaneOrSolid?
                     'shadow-none rounded-none' : 
-                    'shadow-md rounded-lg ring-4 ring-pink-200/50'"
+                    'shadow-md rounded-lg'"
                     >下一页 
                     <!-- → → → -->
                         <svg 

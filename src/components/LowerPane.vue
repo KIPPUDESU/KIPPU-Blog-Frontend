@@ -6,13 +6,49 @@
     <!-- technology stack -->
     <div class="
     transition-all duration-600 ease-in-out
-    relative flex mx-6 h-14/20 w-58 
-    bg-white rounded-xl shadow-black/20 shadow-lg
-    hover:shadow-black/30 hover:shadow-xl">
+    relative flex mx-6 h-14/20 w-58 group
+    bg-white"
+    :class="ChengeStore.PlaneOrSolid ?
+    'rounded-none shadow-none' : 
+    'rounded-xl shadow-lg shadow-black/20 hover:shadow-black/30 hover:shadow-xl ' ">
+      <!-- 介绍句 -->
+      <div class="
+      absolute bottom-0 left-0 w-full h-1/4
+      px-2 py-5">
+        <div 
+        class="
+        transition-all duration-600 ease-in-out
+        absolute flex left-0 -top-4 w-full h-8 px-2
+        items-center gap-1 bg-gray-600 group-hover:bg-blue-400">
+          <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          xmlns:xlink="http://www.w3.org/1999/xlink" 
+          viewBox="0 0 24 24"
+          class="
+          w-3 h-3 text-white">
+            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm3.3 14.71L11 12.41V7h2v4.59l3.71 3.71l-1.42 1.41z" fill="currentColor">
+            </path>
+          </svg>
+          <span class="text-[12px] text-white font-medium">6h+ daily dev</span>
+          <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          xmlns:xlink="http://www.w3.org/1999/xlink" 
+          viewBox="0 0 16 16"
+          class="w-3 h-3 text-white"><g fill="none">
+            <path d="M7.541 3.948a3.25 3.25 0 0 0-4.595-.012a3.25 3.25 0 0 0 .012 4.595l4.707 4.708a.5.5 0 0 0 .707 0l4.683-4.68a3.25 3.25 0 0 0-.012-4.594a3.252 3.252 0 0 0-4.601-.012l-.447.448l-.454-.453z" fill="currentColor">
+            </path></g>
+          </svg>
+          <span class="text-[12px] text-white font-medium">Interest-based</span>
+        </div>
+        <div class="text-[15px] text-black/60 font-medium">
+          <p>Tech stack ignites innovation</p>
+          <p>at the slightest whisper</p>
+        </div>
+      </div>
       <!-- 悬浮透明层 -->
       <div class="
       transition-all duration-600 ease-in-out
-      absolute h-full w-full group
+      absolute h-full w-full 
       hover:w-362">
           <!-- 主题句 -->
           <div 
@@ -131,40 +167,7 @@
               </div>
             </div>
           </div>
-          <!-- 介绍句 -->
-          <div class="
-          absolute bottom-0 left-0 w-58 h-20
-          bg-gradient-to-t rounded-b-lg
-          px-2 py-5">
-            <div 
-            class="
-            absolute flex left-0 -top-4 w-full h-8 px-2
-            items-center gap-1 bg-gray-700">
-              <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              xmlns:xlink="http://www.w3.org/1999/xlink" 
-              viewBox="0 0 24 24"
-              class="
-              w-3 h-3 text-white">
-                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm3.3 14.71L11 12.41V7h2v4.59l3.71 3.71l-1.42 1.41z" fill="currentColor">
-                </path>
-              </svg>
-              <span class="text-[12px] text-white font-medium">6h+ daily dev</span>
-              <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              xmlns:xlink="http://www.w3.org/1999/xlink" 
-              viewBox="0 0 16 16"
-              class="w-3 h-3 text-white"><g fill="none">
-                <path d="M7.541 3.948a3.25 3.25 0 0 0-4.595-.012a3.25 3.25 0 0 0 .012 4.595l4.707 4.708a.5.5 0 0 0 .707 0l4.683-4.68a3.25 3.25 0 0 0-.012-4.594a3.252 3.252 0 0 0-4.601-.012l-.447.448l-.454-.453z" fill="currentColor">
-                </path></g>
-              </svg>
-              <span class="text-[12px] text-white font-medium">Interest-based</span>
-            </div>
-            <div class="text-[15px] text-black/60 font-medium">
-              <p>Tech stack ignites innovation</p>
-              <p>at the slightest whisper</p>
-            </div>
-          </div>
+          
       </div>
     </div>
     <!-- 插图 -->

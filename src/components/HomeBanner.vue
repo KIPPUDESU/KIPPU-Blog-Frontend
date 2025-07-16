@@ -1,5 +1,7 @@
 <template>
 <div class="relative w-full h-106">
+  <!-- 延伸 Header -->
+   <HeaderAdd />
     <!-- 首页图容器 -->
     <div 
      class="
@@ -19,14 +21,6 @@
         'bottom-100' : 'xl:-bottom-192 lg:-bottom-144'"
         src="../public/img/eguegugang.png" alt="">
     </div>
-    <!-- 顶部横线 -->
-    <div 
-    class="
-    transition-all duration-600 ease-in-out xl:w-364 lg:w-278 rounded-2xl
-    absolute left-1/2 -translate-x-1/2 z-10 h-0.5 bg-gray-300"
-    :class="ChengeStore.PlaneOrSolid?
-    'top-13' : '-top-13' "
-    ></div>
     <!-- 左侧文字容器 -->
     <BannerLeftInfo />
     <!-- 右侧文字容器 -->
