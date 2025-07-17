@@ -28,8 +28,35 @@
             relative flex flex-col w-full h-40 
             mt-36 px-14 gap-2
             ">
+              <!-- 文章标题 -->
               <h1 class="text-[40px] text-white font-bold">{{ page?.title }}</h1>
-              <span class=" text-[20px] text-gray-200">发布日期：{{ page?.date }}</span>
+              <div class="relative flex flex-row w-full h-1/5 gap-6">
+                <!-- 发布日期 -->
+                <div class="flex gap-2 justify-center items-center h-full w-max">
+                  <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  xmlns:xlink="http://www.w3.org/1999/xlink" 
+                  viewBox="0 0 24 24"
+                  class="text-gray-300 w-6">
+                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z" fill="currentColor">
+                    </path>
+                  </svg>
+                  <span class=" text-[20px] text-gray-300">
+                    发布日期：{{ page?.date }}</span>
+                </div>
+                <!-- 阅读时长 -->
+                <div class="flex gap-2 justify-center items-center h-full w-max">
+                  <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  xmlns:xlink="http://www.w3.org/1999/xlink" 
+                  viewBox="0 0 24 24"
+                  class="text-gray-300 w-6">
+                  <path d="M22 5.72l-4.6-3.86l-1.29 1.53l4.6 3.86L22 5.72zM7.88 3.39L6.6 1.86L2 5.71l1.29 1.53l4.59-3.85zM12.5 8H11v6l4.75 2.85l.75-1.23l-4-2.37V8zM12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9a9 9 0 0 0 0-18zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7s7 3.13 7 7s-3.13 7-7 7z" fill="currentColor">
+                  </path></svg>
+                  <span class=" text-[20px] text-gray-300">
+                    阅读时长：{{ page?.readingTime }} 分钟</span>
+                </div>
+              </div>
             </div>
           <!-- <h1>{{ page?.title }}</h1> -->
           </div>
