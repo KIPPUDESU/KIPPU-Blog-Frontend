@@ -282,12 +282,20 @@ const margin = 1
 // 从类名字符串中提取出卡片在 hover 状态下的 left 偏移值
 function hoverClassLeft(left: string) {
   const hoverLeft = left.match(/group-hover:left-\[(.+)rem\]/)
-  return hoverLeft ? parseFloat(hoverLeft[1]) : 0
+  // 确保 hoverLeft 和 hoverLeft[1] 都存在
+  if (hoverLeft && hoverLeft[1]) {
+    return parseFloat(hoverLeft[1])
+  }
+  return 0
 }
 
 // 计算套壳的 w
 const ShellWidth = computed(() => {
   const lastCard = cards.value[cards.value.length - 1]
+  if (!lastCard) {
+    // 如果数组是空的，lastCard 就是 undefined
+    return '0rem'
+   }
   const lastLeft = hoverClassLeft(lastCard.hoverClass)
   return `${(lastLeft * 4 + cardW - ( cardKasane + margin )) / 4}rem` 
 }
