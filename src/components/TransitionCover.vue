@@ -7,7 +7,7 @@
     <div 
     class="
     flex w-full h-full justify-center items-center">
-      <img src="../public/img/Kippusvg.svg" alt="">
+      <img src="/img/Kippusvg.svg" alt="">
     </div>
   </div>
 </template>

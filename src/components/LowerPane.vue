@@ -178,8 +178,8 @@
     :class="ChengeStore.PlaneOrSolid ?
     'rounded-none shadow-black/0' : 'rounded-xl shadow-black/20' "
     >
-      <img class="absolute z-0 -top-40 w-10/12" src="../public/img/egubule.png" alt="">
-      <img class="absolute z-40 -top-40 w-10/12" src="../public/img/egubuleindex.png" alt="">
+      <img class="absolute z-0 -top-40 w-10/12" src="/img/egubule.png" alt="">
+      <img class="absolute z-40 -top-40 w-10/12" src="/img/egubuleindex.png" alt="">
     </div>
   </div>
 </template>

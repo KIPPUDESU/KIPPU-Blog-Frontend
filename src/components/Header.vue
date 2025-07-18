@@ -21,7 +21,7 @@ class="
     class="
     flex p-6 mx-4 w-36 sm:w-60 h-12 justify-center items-center">
        <NuxtLink to="/">
-            <img src="../public/img/blog-header.svg" alt="">
+            <img src="/img/blog-header.svg" alt="">
        </NuxtLink>
     </div>
     <!-- 右侧用户组件 -->

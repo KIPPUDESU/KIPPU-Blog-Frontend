@@ -20,7 +20,7 @@
           transition-all duration-600 ease-in-out 
           flex absolute w-full h-full object-cover 
           hover:scale-110"
-          src="../public/img/egucool.jpg"
+          src="/img/egucool.jpg"
           alt="KIPPUIMG"
         />
       </div>
