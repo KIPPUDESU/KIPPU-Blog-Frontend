@@ -6,11 +6,11 @@
     class="
     transition-all duration-500 ease-in-out
     flex flex-col items-center 
-    ring-4
+     ring-4
     object-cover hover:scale-106"
     :class="PlaneOrSolid ? 
     'bg-blue-50 hover:bg-blue-100/30 ring-gray-200 mx-5 w-60 h-72' :
-    ' bg-pink-50 hover:bg-pink-100 ring-pink-200/50 shadow-lg shadow-black/40 hover:shadow-pink-500/50 rounded-lg mx-4 w-58 h-70'"
+    'bg-pink-50 hover:bg-pink-100 ring-pink-200/50 shadow-lg shadow-black/40 hover:shadow-pink-500/50 rounded-lg mx-4 w-58 h-72'"
     >   
         <!-- 图片容器 -->
         <div 

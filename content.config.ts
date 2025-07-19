@@ -13,6 +13,8 @@ export default defineContentConfig({
         date:    z.string(),
         image:   z.string().optional(),
         classify: z.string().optional(),
+        // 把 readingTime 声明为可选数字
+        readingTime: z.number().optional(),
       })
   })
   }

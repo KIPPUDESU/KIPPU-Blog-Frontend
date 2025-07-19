@@ -16,6 +16,20 @@ export default defineNuxtConfig({
   content: {
     experimental: { nativeSqlite: true },
   },
+  hooks: {
+    // Markdown 解析后调用
+    'content:file:afterParse'(ctx) {
+      const { file, content } = ctx
+      // 只对 .md 文件生效
+      if (file.extension === '.md') {
+        const wordsPerMinute = 180
+        const text = typeof file.body === 'string' ? file.body : ''
+        const wordCount = text.split(/\s+/).length
+        // 向内容对象挂载一个字段
+        content.readingTime = Math.ceil(wordCount / wordsPerMinute)
+      }
+    }
+  },
   app: {
     head: {
       link: [
