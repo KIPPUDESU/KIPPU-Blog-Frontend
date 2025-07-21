@@ -11,6 +11,13 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate',
     '@nuxt/content',
   ],
+  components: [
+    '~/components',
+    {
+      path: '~/components/views',
+      pathPrefix: false,
+    }
+  ],
   // better-sqlite3编译出现问题，node22.5.0以上可以如此解决（实验性功能）
   // https://content.nuxt.com/docs/getting-started/configuration#experimentalnativesqlite
   content: {

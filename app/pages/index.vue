@@ -13,7 +13,7 @@
   class="flex relative justify-center items-center 
   bg-gray-100 w-full h-440">
     <!-- 左侧信息容器 -->
-    <LeftInfoPanel />
+    <LeftInfoPanel @change-class="onChangeClass" />
     <!-- 文章预览卡片 -->
     <div class="">
       <!-- 左侧分页标题 -->
@@ -110,6 +110,10 @@ import { useTestStore } from '#imports'
 
 // 把useTestStore存入ChengeStore
 const ChengeStore = useTestStore()
+
+function onChangeClass(compName: string) {
+
+}
 </script>
 
 <style scoped>

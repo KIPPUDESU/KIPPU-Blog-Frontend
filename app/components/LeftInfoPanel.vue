@@ -111,13 +111,13 @@
             <div
               v-for="(item, idx) in categories"
               :key="idx"
+              @click="onChangeClass(item.compName)"
               class="
               transition-all duration-600 ease-in-out
               flex flex-row flex-1 items-center gap-3 px-6 w-full
               object-cover bg-white/0 backdrop-blur-xs rounded-lg
               text-[16px] text-blue-300 font-bold cursor-pointer
               hover:scale-110 hover:bg-white/30 hover:text-blue-400"
-              @click=""
             >
               <span v-html="item.svg" class="w-3/16 text-blue-300"></span>
               <span>{{ item.label }}</span>
@@ -143,8 +143,11 @@
 import { useTestStore } from '#imports'
 const ChengeStore = useTestStore()
 
+const emit = defineEmits(['change-class'])
+
 const categories = [
-  { label: '文章列表', 
+  { label: '文章列表',
+    compName: 'ArticlesList', 
     svg: `
     <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -154,6 +157,7 @@ const categories = [
       </path>
     </svg>` },
   { label: '分类列表', 
+    compName: 'CategoryList',
     svg: `
     <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -162,7 +166,8 @@ const categories = [
       <path d="M14 4h4v4h-4z" fill="currentColor"></path><path d="M4 4h4v4H4z" fill="currentColor"></path><path d="M24 4h4v4h-4z" fill="currentColor"></path><path d="M14 14h4v4h-4z" fill="currentColor"></path><path d="M4 14h4v4H4z" fill="currentColor"></path><path d="M24 14h4v4h-4z" fill="currentColor"></path><path d="M14 24h4v4h-4z" fill="currentColor"></path><path d="M4 24h4v4H4z" fill="currentColor"></path><path d="M24 24h4v4h-4z" fill="currentColor">
       </path>
     </svg>` },
-  { label: '歌单推荐', 
+  { label: '歌单推荐',
+    compName: 'Playlists', 
     svg: `
     <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -171,7 +176,8 @@ const categories = [
       <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zm-7.5-1a2.5 2.5 0 0 0 2.5-2.5V7h3V5h-4v5.51c-.42-.32-.93-.51-1.5-.51a2.5 2.5 0 0 0 0 5zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z" fill="currentColor">
       </path>
     </svg>` },
-  { label: '视频推荐', 
+  { label: '视频推荐',
+    compName: 'Videos', 
     svg: `
     <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -180,7 +186,8 @@ const categories = [
       <path d="M21 3H3c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5a2 2 0 0 0-2-2zm0 14H3V5h18v12zm-5-6l-7 4V7z" fill="currentColor">
       </path>
     </svg>` },
-  { label: '技术分享', 
+  { label: '技术分享',
+    compName: 'TechShares', 
     svg: `
     <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -189,7 +196,8 @@ const categories = [
       <path d="M12 11c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2zm6 2c0-3.31-2.69-6-6-6s-6 2.69-6 6c0 2.22 1.21 4.15 3 5.19l1-1.74c-1.19-.7-2-1.97-2-3.45c0-2.21 1.79-4 4-4s4 1.79 4 4c0 1.48-.81 2.75-2 3.45l1 1.74c1.79-1.04 3-2.97 3-5.19zM12 3C6.48 3 2 7.48 2 13c0 3.7 2.01 6.92 4.99 8.65l1-1.73C5.61 18.53 4 15.96 4 13c0-4.42 3.58-8 8-8s8 3.58 8 8c0 2.96-1.61 5.53-4 6.92l1 1.73c2.99-1.73 5-4.95 5-8.65c0-5.52-4.48-10-10-10z" fill="currentColor">
       </path>
     </svg>` },
-  { label: '与我相关', 
+  { label: '与我相关',
+    compName: 'RelatedToMe', 
     svg: `
     <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -199,4 +207,8 @@ const categories = [
       </path>
     </svg>` },
 ]
+
+function onChangeClass(compName: string) {
+  emit('change-class', compName);
+}
 </script>
