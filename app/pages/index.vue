@@ -91,7 +91,7 @@
           'w-288 top-0 h-316 shadow-black/0 bg-gray-100' :
           'w-280 top-4 h-300 shadow-black/20 bg-white' "
           >
-            <ArticlesList />
+            <component :is="compMap[defaultComp]" />
           </div>
         </div>
       </div>
@@ -104,15 +104,42 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, shallowRef, type Component } from 'vue'
 // 全局状态管理
 import { useTestStore } from '#imports'
+
+// Nuxt 的自动组件导入只对模板中的组件标签有效
+// 手动导入所有需要在 <script> 中使用的组件用作映射
+import ArticlesList from '~/components/views/ArticlesList.vue'
+import CategoryList from '~/components/views/CategoryList.vue'
+import Playlists from '~/components/views/Playlists.vue'
+import Videos from '~/components/views/Videos.vue'
+import TechShares from '~/components/views/TechShares.vue'
+import RelatedToMe from '~/components/views/RelatedToMe.vue'
 
 // 把useTestStore存入ChengeStore
 const ChengeStore = useTestStore()
 
-function onChangeClass(compName: string) {
+// 写一个映射,Vue 3 中，Component 通常是指 Vue 组件的类型
+// 记录表（Record）
+const compMap: Record<string, Component> = {
+  ArticlesList: ArticlesList,
+  CategoryList: CategoryList,
+  Playlists: Playlists,
+  Videos: Videos,
+  TechShares: TechShares,
+  RelatedToMe: RelatedToMe,
+}
 
+const defaultComp = ref<string>('ArticlesList')
+
+function onChangeClass(compName: string) {
+  if (compName in compMap) {
+    defaultComp.value = compName
+  }
+  else {
+    console.warn(`[onChangeClass] Unknown component: "${compName}" Wt F**K did u just pass in?`)
+  }
 }
 </script>
 
