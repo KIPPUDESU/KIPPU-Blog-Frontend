@@ -74,7 +74,7 @@ w-full h-full
                 flex justify-center w-max h-full">
                 <img
                 class="h-full"
-                src="../public/img/egutenshi.png" alt="">
+                src="/img/egutenshi.png" alt="">
                 </div>
                 <!-- 右 -->
                 <div 
