@@ -47,16 +47,13 @@ w-full h-full
                     transition-all duration-500 ease-in-out
                     flex flex-nowrap w-full h-full 
                     items-center justify-center 
-                    text-[18px] text-blue-300 font-bold
-                    hover:text-[20px] hover:text-gray-500
-                    bg-gradient-to-bl from-pink-300/30 to-white shadow-black/20
-                    hover:from-pink-200/40 hover:shadow-lg
-                    cursor-pointer gap-3 hover:gap-4
+                    text-[18px] text-blue-300 font-bold bg-gray-50
+                    hover:text-[20px] hover:text-gray-500 hover:shadow-lg
+                    cursor-pointer gap-4 hover:gap-6
                     ring-4 ring-pink-200/50"
                     :class="ChengeStore.PlaneOrSolid?
                     'shadow-none rounded-none' : 
-                    'shadow-md rounded-lg'"
-                    >
+                    'shadow-md rounded-lg'">
                         <!-- ← ← ← -->
                         <svg 
                         xmlns="http://www.w3.org/2000/svg" 
@@ -88,16 +85,14 @@ w-full h-full
                     transition-all duration-500 ease-in-out
                     flex flex-nowrap w-full h-full 
                     items-center justify-center 
-                    text-[18px] text-blue-300 font-bold
-                    hover:text-[20px] hover:text-gray-500
-                    bg-gradient-to-bl from-pink-300/30 to-white shadow-black/20
-                    hover:from-pink-200/40 hover:shadow-lg
-                    cursor-pointer gap-3 hover:gap-4
+                    text-[18px] text-blue-300 font-bold bg-gray-50
+                    hover:text-[20px] hover:text-gray-500 hover:shadow-lg
+                    cursor-pointer gap-4 hover:gap-6
                     ring-4 ring-pink-200/50"
                     :class="ChengeStore.PlaneOrSolid?
                     'shadow-none rounded-none' : 
-                    'shadow-md rounded-lg'"
-                    >下一页 
+                    'shadow-md rounded-lg'">
+                    下一页 
                     <!-- → → → -->
                         <svg 
                         xmlns="http://www.w3.org/2000/svg" 

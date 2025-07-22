@@ -20,15 +20,14 @@
           transition-all duration-600 ease-in-out 
           flex absolute w-full h-full object-cover 
           hover:scale-110"
-          src="
-            /img/egucool.jpg"
+          src="/img/egucool.jpg"
           alt="KIPPUIMG"
         />
       </div>
       <!-- id 简介 -->
       <div class="relative flex flex-col w-max h-18 mt-2 justify-center items-center">
         <span class="text-2xl text-gray-800 font-bold">切符</span>
-        <p class="text-md text-gray-600/80 font-extrabold">もっとElegantになりたい</p>
+        <p class="text-md text-gray-600/80 font-extrabold">もっと Elegant になりたい</p>
       </div>
       <!-- 联系方式 -->
       <div 

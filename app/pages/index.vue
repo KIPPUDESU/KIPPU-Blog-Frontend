@@ -10,8 +10,7 @@
 
   <!-- 分页 -->
   <div 
-  class="flex relative justify-center items-center 
-  bg-gray-100 w-full h-440">
+  class="flex relative justify-center items-center bg-gray-100 w-full h-440">
     <!-- 左侧信息容器 -->
     <LeftInfoPanel @change-class="onChangeClass" />
     <!-- 文章预览卡片 -->
@@ -32,9 +31,13 @@
       <div>
         <div 
         class="
-        absolute w-[22px] h-[22px] top-5 left-[294.5px] bg-gray-300/0
-        border-t-[3.5px] border-l-[3.5px] border-black/20 rounded-tl-xl
-        hidden sm:block"></div>
+        transition-all duration-600 ease-in-out
+        absolute w-[22px] h-[22px] top-5 left-[294.5px]
+        border-t-[3.5px] border-l-[3.5px] border-black/20 
+        hidden sm:block"
+        :class="ChengeStore.PlaneOrSolid?
+        'rounded-tl-none' : 'rounded-tl-xl'">
+        </div>
       </div>
       <!-- 右侧包围线条 -->
       <div>
