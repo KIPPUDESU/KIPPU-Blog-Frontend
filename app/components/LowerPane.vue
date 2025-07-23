@@ -160,8 +160,7 @@
                 group-hover:bg-white/80
                 group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
                 rounded-lg shadow-lg"
-                :class="[ card.shadowClass, card.initClass, card.leftClass, card.hoverClass ]"
-                >
+                :class="[ card.shadowClass, card.initClass, card.leftClass, card.hoverClass ]">
                   <img :src="card.src" alt="" />
                 </div>
               </div>
