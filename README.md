@@ -49,10 +49,9 @@ pnpm install
 **3. 启动开发服务器**
 访问 `http://localhost:3000` 查看
 ```bash
+# 直接启动开发页面
 pnpm dev
-```
   
-```bash
 # 构建用于生产环境的应用
 pnpm run build
    
@@ -91,12 +90,6 @@ pnpm run preview
 
 **Front-matter 示例:**
 ```yaml
----
-title: '文章标题'
-date: 'YYYY-MM-DD'
-description: '。'
-cover: '/img/your-cover-image.jpg'
----
 ---
 title: "文章标题"
 classify: "此文章的分类"
