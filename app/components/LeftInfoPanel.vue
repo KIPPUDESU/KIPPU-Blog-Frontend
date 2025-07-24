@@ -106,19 +106,25 @@
           <div 
           class="
           absolute flex flex-col z-10
-          justify-center items-center inset-0">
+          justify-center items-center inset-0 overflow-hidden">
             <div
               v-for="(item, idx) in categories"
               :key="idx"
               @click="onChangeClass(item.compName)"
               class="
-              transition-all duration-600 ease-in-out
+              transition-all duration-300 ease-in-out
               flex flex-row flex-1 items-center gap-3 px-6 w-full
-              object-cover bg-white/0 backdrop-blur-xs rounded-lg
+              object-cover bg-white/0 
               text-[16px] text-blue-300 font-bold cursor-pointer
-              hover:scale-110 hover:bg-white/30 hover:text-blue-400"
+              hover:scale-110 hover:text-blue-400
+              hover:bg-blue-300/10
+              active:scale-90"
+              :class="{
+              'text-blue-400 scale-110 bg-white/0 backdrop-blur-none': activeItemName === item.compName,
+              'text-blue-300 ': activeItemName === item.compName}"
             >
-              <span v-html="item.svg" class="w-3/16 text-blue-300"></span>
+              <span v-html="item.svg" 
+              class="w-3/16"></span>
               <span>{{ item.label }}</span>
             </div>
           </div>
@@ -139,7 +145,7 @@
 </style>
 
 <script setup lang="ts">
-import { useTestStore } from '#imports'
+import { useTestStore, ref } from '#imports'
 const ChengeStore = useTestStore()
 
 const emit = defineEmits(['change-class'])
@@ -208,6 +214,14 @@ const categories = [
 ]
 
 function onChangeClass(compName: string) {
-  emit('change-class', compName);
+  emit('change-class', compName)
+  activeItemName.value = compName
 }
+
+// 创建一个用来存储当前点击的分类组件名称的变量
+const activeItemName = ref('技术分享')
+
+// cosnt setActiev = (copName: string) => {
+  
+// }
 </script>
