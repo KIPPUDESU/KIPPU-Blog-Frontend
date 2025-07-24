@@ -63,10 +63,10 @@
 const classify = ref([
   { name: '技术', src: 'classIMG/1.jpg', overlaycolor: 'bg-fuchsia-400/50', pText:'Deep dives into code, systems, and ideas worth building.'},
   { name: '笔记', src: 'classIMG/2.png', overlaycolor: 'bg-blue-200/50', pText:'Quick scribbles, lasting knowledge—your brain’s bookmarks.'},
-  { name: '动画', src: 'classIMG/3.png', overlaycolor: 'bg-cyan-400/50', pText:'Where sketches breathe and stories come alive on screen.'},
+  { name: '动画', src: 'classIMG/3.png', overlaycolor: 'bg-cyan-300/50', pText:'Where sketches breathe and stories come alive on screen.'},
   { name: '随笔', src: 'classIMG/4.png', overlaycolor: 'bg-gray-800/50', pText:'Wandering thoughts stitched into poetic reflections. '},
-  { name: '分享', src: 'classIMG/5.jpg', overlaycolor: 'bg-purple-600/50', pText:'Spontaneous pieces from life, ready to pass around. '},
-  { name: '项目', src: 'classIMG/6.jpg', overlaycolor: 'bg-red-500/50', pText:'Experiments, journeys, and hands-on ideas in motion. '},
+  { name: '分享', src: 'classIMG/5.jpg', overlaycolor: 'bg-purple-400/50', pText:'Spontaneous pieces from life, ready to pass around. '},
+  { name: '项目', src: 'classIMG/6.jpg', overlaycolor: 'bg-red-400/50', pText:'Experiments, journeys, and hands-on ideas in motion. '},
   { name: '面试', src: 'classIMG/7.jpg', overlaycolor: 'bg-gray-100/50', pText:'First impressions, tough questions, and lessons earned. '},
   { name: '见闻', src: 'classIMG/8.png', overlaycolor: 'bg-stone-400/50', pText:'Moments noticed, places seensnapshots of curiosity. '},
   { name: '杂文', src: 'classIMG/9.jpg', overlaycolor: 'bg-pink-300/50', pText:'Thoughts that stray, but somehow still belong.'},

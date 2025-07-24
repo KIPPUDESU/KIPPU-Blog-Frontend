@@ -1,7 +1,7 @@
 ---
 title: "Markdown 核心语法指南"
 classify: "技术"
-date: "2025-06-13"
+date: "2025-01-13"
 image: "/img/egudown.png"
 ---
 # Markdown 核心语法指南
@@ -312,4 +312,4 @@ Markdown 以其简洁、高效和扩展灵活性成为绝大多数写作者和�
 
 愿你在 Markdown 的世界里，写得自如，输出佳作。  
   
-### 2025.06.13 共勉
+### 2025.01.13 共勉
