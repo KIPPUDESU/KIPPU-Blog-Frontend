@@ -120,7 +120,7 @@
               hover:bg-blue-300/10
               active:scale-90"
               :class="{
-              'text-blue-400 scale-110 bg-white/0 backdrop-blur-none': activeItemName === item.compName,
+              'text-blue-500 scale-110 bg-white/0 backdrop-blur-none': activeItemName === item.compName,
               'text-blue-300 ': activeItemName === item.compName}"
             >
               <span v-html="item.svg" 
