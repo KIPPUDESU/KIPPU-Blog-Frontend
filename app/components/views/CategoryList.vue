@@ -7,16 +7,16 @@
       class="
       transition-all duration-500 ease-in-out
       flex relative justify-center items-center w-74 h-74 m-6 
-      rounded-lg bg-pink-400 
-      hover:scale-110
-      overflow-hidden group">
+      shadow-lg hover:scale-110 overflow-hidden group cursor-pointer"
+      :class="ChengeStore.PlaneOrSolid?
+      'shadow-black/0 rounded-none' : 'shadow-black/20 rounded-lg' ">
         <!-- 图片 -->
         <img class="object-cover w-full h-full" :src="item.src" alt="">
         <!-- 颜色遮罩 -->
         <div 
         class="
         transition-all duration-500 ease-in-out
-        absolute z-10 inset-0 backdrop-blur-[2px] cursor-pointer 
+        absolute z-10 inset-0 backdrop-blur-[2px] 
         group-hover:bg-black/20 group-hover:backdrop-blur-none"
         :class="[ item.overlaycolor ]"></div>
         <!-- x 线条 -->
@@ -49,8 +49,8 @@
           <p 
           class="
           transition-all duration-400 ease-in-outs
-          text-white/0 text-[16px] 
-          delay-300 group-hover:delay-0 group-hover:text-gray-100">
+          text-white/0 text-[16px] delay-300
+          group-hover:delay-0 group-hover:text-gray-100">
           {{ item.pText }}
           </p>
         </div>
@@ -60,6 +60,12 @@
 </template>
 
 <script setup lang="ts">
+// 全局状态管理
+import { useTestStore } from '#imports'
+
+// 把useTestStore存入ChengeStore
+const ChengeStore = useTestStore()
+
 const classify = ref([
   { name: '技术', src: 'classIMG/1.jpg', overlaycolor: 'bg-fuchsia-400/50', pText:'Deep dives into code, systems, and ideas worth building.'},
   { name: '笔记', src: 'classIMG/2.png', overlaycolor: 'bg-blue-200/50', pText:'Quick scribbles, lasting knowledge—your brain’s bookmarks.'},
@@ -72,9 +78,3 @@ const classify = ref([
   { name: '杂文', src: 'classIMG/9.jpg', overlaycolor: 'bg-pink-300/50', pText:'Thoughts that stray, but somehow still belong.'},
 ])
 </script>
-
-<style scoped>
-h1 {
-  color: #42b983;
-}
-</style>

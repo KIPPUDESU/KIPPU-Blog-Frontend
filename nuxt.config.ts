@@ -22,6 +22,19 @@ export default defineNuxtConfig({
   // https://content.nuxt.com/docs/getting-started/configuration#experimentalnativesqlite
   content: {
     experimental: { nativeSqlite: true },
+    // 废弃的 v2 配置
+    // sources: {
+    //   blog: {
+    //     driver: 'fs',
+    //     prefix: '/blog', // 访问路径前缀
+    //     base: '/blog' // 文件存储路径
+    //   },
+    //   songs: {
+    //     driver: 'fs',
+    //     prefix: '/songs',
+    //     base: '/songs'
+    //   }
+    // }
   },
   hooks: {
     // Markdown 解析后调用

@@ -16,6 +16,16 @@ export default defineContentConfig({
         // 把 readingTime 声明为可选数字
         readingTime: z.number().optional(),
       })
+  }),
+  songs:defineCollection({
+    type: 'page',
+    source: 'songs/*.md',
+    schema: z.object({
+        title:     z.string(),
+        vocalist:    z.string(),
+        image:   z.string().optional(),
+        classify: z.string().optional(),
+      })
   })
   }
 })
