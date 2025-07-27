@@ -68,7 +68,7 @@ const songColors = ref<Record<string, string>>({})
 // 函数：当图片加载完成时触发，调用 API 获取颜色
 async function fetchDominantColor(event: Event, song: any) {
   const imageUrl = (event.target as HTMLImageElement).src
-  // 严格使用 song.id
+ 
   if (imageUrl && !songColors.value[song.id]) {
     try {
       const response = await $fetch(`/api/get-color?imageUrl=${encodeURIComponent(imageUrl)}`)

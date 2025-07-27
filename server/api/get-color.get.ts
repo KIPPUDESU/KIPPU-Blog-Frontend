@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
   const { imageUrl } = getQuery(event)
 
   if (!imageUrl || typeof imageUrl !== 'string') {
-    return { error: 'Image URL is required' }
+    return { error: 'No URL? Then f**k off' }
   }
 
   if (colorCache.has(imageUrl)) {
@@ -56,8 +56,8 @@ export default defineEventHandler(async (event) => {
     return { color: colorHex }
 
   } catch (error) {
-    console.error(`Failed to process image: ${imageUrl}`, error)
-    return { error: 'Failed to process image', color: '#5a67d8' }
+    console.error(`F**k this img: ${imageUrl}`, error)
+    return { error: 'Failed. Totally f**ked', color: '#5a67d8' }
   }
 })
 
@@ -69,6 +69,7 @@ function rgbToHsl(r: number, g: number, b: number): [number, number, number] {
   if (max !== min) {
     const d = max - min;
     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    // 无视掉的色相，不使用
     switch (max) {
       case r: h = (g - b) / d + (g < b ? 6 : 0); break;
       case g: h = (b - r) / d + 2; break;
