@@ -1,0 +1,6 @@
+---
+title: 'you are my curse'
+vocalist: 'nyamura'
+image: 'https://p1.music.126.net/H0E-2LhltADCak89EdjR7g==/109951168625181384.jpg?param=130y130'
+classify: 'J-POP'
+---
