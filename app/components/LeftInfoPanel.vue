@@ -39,7 +39,7 @@
       class="
       transition-all duration-600 ease-in-out
       w-8 h-8 text-blue-500/50 hover:text-blue-500/90" 
-      href="">
+      href="https://x.com/aKIPPUz" target="_blank">
         <svg 
         version="1.1" 
         xmlns="http://www.w3.org/2000/svg" 
@@ -61,7 +61,7 @@
       class="
       transition-all duration-600 ease-in-out
       w-8 h-8 text-blue-500/50 hover:text-blue-500/90" 
-      href="">
+      href="https://t.me/aKIPPUDESUz" target="_blank">
         <svg 
         xmlns="http://www.w3.org/2000/svg" 
         xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -75,7 +75,7 @@
       class="
       transition-all duration-600 ease-in-out
       w-8 h-8 text-blue-500/50 hover:text-blue-600/90" 
-      href="">
+      href="https://discord.gg/F22fCZtr" target="_blank1">
         <svg 
         xmlns="http://www.w3.org/2000/svg" 
         xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -219,7 +219,7 @@ function onChangeClass(compName: string) {
 }
 
 // 创建一个用来存储当前点击的分类组件名称的变量
-const activeItemName = ref('技术分享')
+const activeItemName = ref('ArticlesList')
 
 // cosnt setActiev = (copName: string) => {
   
