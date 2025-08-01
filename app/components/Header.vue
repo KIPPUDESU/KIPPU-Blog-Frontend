@@ -11,7 +11,7 @@ class="
     <div 
     class="
     transition-all duration-600 linear 
-    w-362 rounded-2xl
+    w-96/100 rounded-2xl
     absolute left-1/2 -translate-x-1/2 z-30 h-0.5 bg-gray-300"
     :class="ChengeStore.PlaneOrSolid?
     'top-12' : '-top-20' "
@@ -19,7 +19,7 @@ class="
     <!-- 左侧logo -->
     <div 
     class="
-    flex p-6 mx-4 w-36 sm:w-60 h-12 justify-center items-center">
+    flex p-0 lg:p-6 mx-4 w-40 lg:w-60 h-12 justify-center items-center">
        <NuxtLink to="/">
             <img src="/img/blog-header.svg" alt="">
        </NuxtLink>
@@ -28,7 +28,7 @@ class="
     <div 
     class="
     relative flex justify-between items-center 
-    h-10 sm:h-12 w-42 sm:w-58 px-4 mx-4">
+    h-12 lg:h-12 w-40 lg:w-58 px-2 lg:px-4 mx-2 lg:mx-4">
         <div 
         class="
         relative w-1/2 h-full overflow-hidden">

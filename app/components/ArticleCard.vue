@@ -19,7 +19,7 @@ object-cover hover:scale-106"
             class="
             transition-all duration-500 ease-in-out
             flex justify-center items-center overflow-hidden
-            w-50 h-36 mx-4 mt-5 object-cover group:
+            w-50 h-36 mx-4 mt-5 object-cover group: ring-2 ring-gray-200
             hover:scale-102 hover:shadow-lg hover:shadow-black/20 hover:rounded-none"
             :class="PlaneOrSolid ? 'rounded-none' : 'rounded-lg'"
             >

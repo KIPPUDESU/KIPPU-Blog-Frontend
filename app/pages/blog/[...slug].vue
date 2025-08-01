@@ -1,16 +1,16 @@
 <template>
   <main 
   class="
-  bg-gray-100 py-12 sm:py-18">
+  bg-gray-100 py-16 lg:py-18">
     <!-- 页面容器 -->
-    <div class="mx-auto max-w-14/20">
+    <div class="mx-auto max-w-18/20 lg:max-w-14/20">
       <div 
       class="
       bg-pink-50 rounded-2xl shadow-lg shadow-black/20
       overflow-hidden">
         <div 
         class="
-        flex relative h-92 w-full overflow-hidden">
+        flex relative w-full overflow-hidden h-64 lg:h-92">
           <img 
           :src="page?.image" 
           alt="Article img" 
@@ -22,10 +22,10 @@
           shadow-[inset_0_-5px_6px_rgba(0,0,0,0.1)]
           ">
             <div 
-            class="relative flex flex-col w-full h-40 mt-36 px-14 gap-2">
+            class="relative flex flex-col w-full h-auto mt-24 px-6 lg:mt-36 lg:px-14 gap-2">
               <!-- 文章标题 -->
-              <h1 class="text-[40px] text-white font-bold">{{ page?.title }}</h1>
-              <div class="relative flex flex-row w-full h-1/5 gap-6">
+              <h1 class="text-3xl lg:text-[40px] text-white font-bold">{{ page?.title }}</h1>
+              <div class="relative flex flex-col items-start gap-2 lg:flex-row lg:items-center lg:gap-6 w-full h-auto">
                 <!-- 发布日期 -->
                 <div class="flex gap-2 justify-center items-center h-full w-max">
                   <svg 
@@ -36,7 +36,7 @@
                     <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z" fill="currentColor">
                     </path>
                   </svg>
-                  <span class=" text-[20px] text-gray-300">
+                  <span class="text-base lg:text-[20px] text-gray-300">
                     发布日期：{{ page?.date }}</span>
                 </div>
                 <!-- 阅读时长 -->
@@ -48,7 +48,7 @@
                   class="text-gray-300 w-6">
                   <path d="M22 5.72l-4.6-3.86l-1.29 1.53l4.6 3.86L22 5.72zM7.88 3.39L6.6 1.86L2 5.71l1.29 1.53l4.59-3.85zM12.5 8H11v6l4.75 2.85l.75-1.23l-4-2.37V8zM12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9a9 9 0 0 0 0-18zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7s7 3.13 7 7s-3.13 7-7 7z" fill="currentColor">
                   </path></svg>
-                  <span class=" text-[20px] text-gray-300">
+                  <span class="text-base lg:text-[20px] text-gray-300">
                     阅读时长：{{  page?.readingTime }} 分钟</span>
                 </div>
               </div>
@@ -57,7 +57,7 @@
           </div>
         </div>
         <!-- markdown -->
-        <div class="px-16 py-10">
+        <div class="px-6 py-8 lg:px-16 lg:py-10">
           <article v-if="page" 
           class="prose prose-a:no-underline max-w-none">
             <ContentRenderer :value="page" />
@@ -222,12 +222,21 @@ watch(page, addCopyButtons);
 .prose :deep(h3::before) {
   content: '';
   position: absolute;
-  /* 将竖条定位到元素外左侧 */
-  left: -1.25rem;
   top: 0;
   width: 4px;
   height: 100%;
   border-radius: 2px;
+  /* 默认/移动端位置 */
+  left: -1.45rem; 
+}
+
+/* lg及以上 (1024px) */
+@media (min-width: 1024px) {
+  .prose :deep(h1::before),
+  .prose :deep(h2::before),
+  .prose :deep(h3::before) {
+    left: -1.25rem; /* 匹配 lg:px-16 */
+  }
 }
 
 .prose :deep(h1::before) {
