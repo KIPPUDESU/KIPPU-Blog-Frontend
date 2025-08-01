@@ -2,9 +2,8 @@
   <main 
   class="
   bg-gray-100 py-12 sm:py-18">
-    <div 
-    class="
-    mx-auto max-w-14/20">
+    <!-- 页面容器 -->
+    <div class="mx-auto max-w-14/20">
       <div 
       class="
       bg-pink-50 rounded-2xl shadow-lg shadow-black/20
@@ -14,20 +13,16 @@
         flex relative h-92 w-full overflow-hidden">
           <img 
           :src="page?.image" 
-          alt="Article Cover Image" 
+          alt="Article img" 
           class="w-full h-full object-cover">
           <!-- 一层黑色遮罩 -->
           <div 
           class="
-          absolute w-full h-full 
-          backdrop-blur-none bg-black/40
+          absolute w-full h-full bg-black/40
           shadow-[inset_0_-5px_6px_rgba(0,0,0,0.1)]
           ">
             <div 
-            class="
-            relative flex flex-col w-full h-40 
-            mt-36 px-14 gap-2
-            ">
+            class="relative flex flex-col w-full h-40 mt-36 px-14 gap-2">
               <!-- 文章标题 -->
               <h1 class="text-[40px] text-white font-bold">{{ page?.title }}</h1>
               <div class="relative flex flex-row w-full h-1/5 gap-6">
@@ -163,63 +158,87 @@ watch(page, addCopyButtons);
 
 
 /* 移除 Tailwind Typography (`prose`) 插件为行内代码块自动添加的前后反引号。 */
-
 .prose :deep(:not(pre) > code::before),
 .prose :deep(:not(pre) > code::after) {
   content: '';
 }
 
-/*
-  为<pre>代码块容器设置样式。
-*/
+
+/* 为<pre>代码块容器设置样式 */
 .prose :deep(pre) {
   position: relative;
   background-color: #e5e7eb; /* gray-200 */
   padding: 1.5rem; /* 对应 prose-pre:py-6 prose-pre:px-6 */
 }
 
-/*
-  复制按钮的样式。
-  默认情况下是透明的，只有当鼠标悬停在代码块上时才显示。
-*/
+/* 复制按钮的样式,默认透明，鼠标悬停显示 */
 .prose :deep(.Copy-Button) {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
   padding: 0.5rem; /* 调整内边距以适应图标 */
   border-radius: 0.375rem;
-  background-color: #e5e7eb; /* gray-200 */
-  color: #4b5563; /* gray-600 */
-  border: 1px solid #d1d5db; /* gray-300 */
+  background-color: #e5e7eb;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
   cursor: pointer;
   opacity: 0;
-  /* 添加背景色过渡效果 */
   transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  display: flex; /* 使用flex布局来居中SVG */
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/*
-  设置按钮内SVG图标的大小
-*/
+
+/* SVG图标大小 */
 .prose :deep(.Copy-Button svg) {
   width: 1rem;
   height: 1rem;
 }
 
 
-/*
-  当鼠标悬停在<pre>代码块上时，显示复制按钮。
-*/
+
+/* 当鼠标悬停在<pre>代码块上时，显示复制按钮 */
 .prose :deep(pre:hover .Copy-Button) {
   opacity: 1;
 }
 
-/*
-  当鼠标悬停在复制按钮上时，改变背景色以提供反馈。
-*/
+
+/* 改变背景色 */
 .prose :deep(.Copy-Button:hover) {
   background-color: #d1d5db; 
+}
+
+/* 为标题和段落添加相对定位，以便伪元素可以定位 */
+.prose :deep(h1),
+.prose :deep(h2),
+.prose :deep(h3) {
+  position: relative;
+}
+
+/* 定义所有竖条的通用样式 */
+.prose :deep(h1::before),
+.prose :deep(h2::before),
+.prose :deep(h3::before) {
+  content: '';
+  position: absolute;
+  /* 将竖条定位到元素外左侧 */
+  left: -1.25rem;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.prose :deep(h1::before) {
+  background-color: #ec4899;
+}
+
+.prose :deep(h2::before) {
+  background-color: #3b82f6;
+}
+
+.prose :deep(h3::before) {
+  background-color: #22c55e;
 }
 </style>
