@@ -7,8 +7,8 @@ w-full h-full
     <div 
     class="
     transition-all duration-600 ease-in-out
-    flex flex-wrap w-full justify-center 
-     h-8/10"
+    flex flex-wrap w-full justify-center
+    h-full lg:h-8/10"
     :class="ChengeStore.PlaneOrSolid?
     'pt-2' : 'pt-6' ">
         <ArticleCard
@@ -28,11 +28,11 @@ w-full h-full
         <!-- 分页按钮 -->
         <div 
         class="
-        relative flex justify-center w-full h-2/10">
+        relative mb-0 flex justify-center w-full h-10 lg:h-2/10">
             <div 
             class="
             transition-all duration-600 ease-in-out
-            absolute pb-12 pt-4 px-18 hover:px-16
+            absolute mt-0 pb-12 pt-4 px-18 hover:px-16
             flex justify-between items-center w-full h-full"
             >
                 <!-- 左 -->

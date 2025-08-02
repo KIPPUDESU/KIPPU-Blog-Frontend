@@ -66,7 +66,7 @@
       <div 
       class="
       transition-all duration-600 ease-in-out
-      flex-row absolute z-10 top-10 left-8 sm:left-80 w-288 h-316
+      flex-row absolute z-10 top-10 left-0 lg:left-80 w-full lg:w-288 h-316
       justify-center items-center shadow-lg
       bg-gradient-to-bl from-pink-200/50 to-pink-100/50 rounded-t-xl
       flex"
@@ -81,17 +81,17 @@
         bg-gradient-to-bl from-gray-50/60 to-white/95 rounded-t-xl
         flex"
         :class="ChengeStore.PlaneOrSolid?
-        'w-288 top-0 h-316 shadow-black/0' :
-        'w-284 top-4 h-308 shadow-black/20' "
+        'w-full lg:w-288 top-0 h-316 shadow-black/0' :
+        'w-full lg:w-284 top-4 h-308 shadow-black/20' "
         >
           <div 
           class="
           transition-all duration-600 ease-in-out
-          flex absolute z-20 left-0
+          flex absolute overflow-y-auto z-20 left-0
           justify-center items-center shadow-lg rounded-t-xl"
           :class="ChengeStore.PlaneOrSolid?
           'w-288 top-0 h-316 shadow-black/0 bg-gray-100' :
-          'w-280 top-4 h-300 shadow-black/20 bg-white' "
+          'w-full  lg:w-280 top-4 h-300 shadow-black/20 bg-white' "
           >
             <component :is="compMap[defaultComp]" />
           </div>
