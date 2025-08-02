@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 
-const MaxSongCard = 12
+const MaxSongCard = 7
 const PageNum = ref(0)
 
 const { data: songs, refresh: refreshSongs } =

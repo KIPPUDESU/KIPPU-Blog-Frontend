@@ -4,8 +4,10 @@
     transition-all duration-500 ease-in-out
     flex relative items-center gap-4 p-4 w-full h-32
     hover:scale-101 cursor-pointer
-    rounded-lg shadow-lg shadow-black/20 hover:shadow-xl"
-     :style="{ background: getGradientBackground(song.id) }"> <!-- 严格使用 song.id -->
+    shadow-lg hover:shadow-xl"
+     :style="{ background: getGradientBackground(song.id) }"
+     :class="ChengeStore.PlaneOrSolid ? 
+     'rounded-none shadow-black/0' : 'rounded-lg shadow-black/20' ">
         <!-- 封面图片 -->
         <img
           :src="song.image || '/img/egusleep.png'"
@@ -35,6 +37,9 @@
 
 <script setup lang="ts">
 import {  } from 'vue'
+
+import { useTestStore } from '#imports'
+const ChengeStore = useTestStore()
 
 interface Song {
   id: string;
