@@ -1,5 +1,6 @@
 <template>
-  <div class="w-38/40 h-58/60">
+  <div class="flex w-full h-full justify-center items-center">
+      <div class="w-38/40 h-58/60">
     <div class="flex flex-wrap justify-center w-full aspect-square">
       <div
       v-for="(item, idx) in classify"
@@ -56,6 +57,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 

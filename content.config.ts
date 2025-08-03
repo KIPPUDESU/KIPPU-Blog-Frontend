@@ -25,6 +25,7 @@ export default defineContentConfig({
         vocalist:    z.string(),
         image:   z.string().optional(),
         classify: z.string().optional(),
+        id:   z.string(),
       })
   })
   }

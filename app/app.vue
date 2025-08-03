@@ -37,6 +37,7 @@ nuxtApp.hook('page:finish', () => {
 
 <style>
 @import "tailwindcss";
+@import 'tailwind-scrollbar-hide/v4';
 /* 忽略的警告 */
 @plugin "@tailwindcss/typography";
 
