@@ -1,11 +1,13 @@
 <template>
 <div 
+ref="headerRef"
 class="
- transition-all duration-600 linear
- absolute z-30 flex w-full justify-between backdrop-blur-lg"
+ transition-all duration-600 linear 
+ top-0 z-30 h-12 flex w-full justify-between backdrop-blur-lg
+ shadow-md sticky"
 :class="ChengeStore.PlaneOrSolid ?
- 'h-12 bg-gray-100':
- 'h-12 bg-gray-300/20 shadow-md shadow-black/20'" 
+ 'bg-gray-100 shadow-black/0':
+ 'bg-gray-300/20 shadow-black/20'" 
  >
     <!-- 顶部横线 -->
     <div 
@@ -67,8 +69,34 @@ class="
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import Headroom from 'headroom.js'
+
 // 全局
 import { useTestStore } from '#imports'
 const ChengeStore = useTestStore()
 
+// 创建一个 ref 来引用 header 元素
+const headerRef = ref<HTMLElement | null>(null)
+
+onMounted(() => {
+  // onMounted 中的代码保证只在客户端执行
+  if (headerRef.value) {
+    const headroom = new Headroom(headerRef.value, {
+      // 一些配置项
+
+    });
+    headroom.init();
+  }
+})
 </script>
+
+<style scoped>
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
+
+.headroom--pinned {
+  transform: translateY(0);
+}
+</style>

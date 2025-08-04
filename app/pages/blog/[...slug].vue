@@ -1,7 +1,7 @@
 <template>
   <main 
   class="
-  bg-gray-100 py-16 lg:py-18">
+  bg-gray-100 py-4 lg:py-6">
     <!-- 页面容器 -->
     <div class="mx-auto max-w-18/20 lg:max-w-14/20">
       <div 

@@ -6,7 +6,7 @@
   xl:mx-18 lg:mx-12 z-20 font-bold text-black/60
   "
   :class="ChengeStore.PlaneOrSolid? 
-  'xl:top-34 lg:top-38' : '-top-64' ">
+  'xl:top-22 lg:top-26' : '-top-68' ">
   <h1 class="xl:text-[72px] lg:text-[64px]">ターゲット は</h1>
   <!-- 文字中割线 -->
   <div class="xl:w-120 lg:w-98 xl:h-1 lg:h-1 bg-black/50 rounded-md"></div>

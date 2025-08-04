@@ -1,11 +1,11 @@
 <template>
-<div class="relative w-full h-106">
+<div class="relative w-full h-94">
   <!-- 延伸 Header -->
    <HeaderAdd />
     <!-- 首页图容器 -->
     <div 
      class="
-     relative bg-gray-200/10 h-106 overflow-hidden">
+     relative bg-gray-200/10 h-94 overflow-hidden">
       <!-- 填充父容器的透明absolute添加图片上层添加shadow-inner -->
       <div 
       class="

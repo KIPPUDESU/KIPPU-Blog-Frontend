@@ -2,10 +2,10 @@
 <div 
 class="
  transition-all duration-600 linear
- absolute z-20 flex w-full justify-between backdrop-blur-lg"
+ absolute z-20 top-0 flex w-full justify-between backdrop-blur-lg"
 :class="ChengeStore.PlaneOrSolid ?
- 'h-106 bg-gray-100':
- 'h-12 bg-gray-300/0'" 
+ 'h-94 bg-gray-100':
+ 'h-0 bg-gray-300/0'" 
  >
 </div>
 </template>
