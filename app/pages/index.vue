@@ -23,7 +23,7 @@
           <div 
           class="
           w-[3px] h-1/18 z-20 mb-2 bg-black/20 rounded-2xl hidden sm:block"></div>
-            <span class="sm:flex flex-col text-black/20 text-[20px] hidden">記事一覧</span>
+            <span class="sm:flex flex-col text-black/20 text-[20px] hidden">{{ titleMap[defaultComp] }}</span>
           <div class="w-[3px] h-full z-20 mt-4 bg-black/20 rounded-2xl hidden sm:block"></div>
         <div class="w-2 h-2 mt-4 bg-black/20 rounded-full hidden sm:block"></div>
       </div>
@@ -131,6 +131,15 @@ const compMap: Record<string, Component> = {
   Videos: Videos,
   TechShares: TechShares,
   RelatedToMe: RelatedToMe,
+}
+
+const titleMap: Record<string, string> = {
+  ArticlesList: '記事一覧',
+  CategoryList: '分類わけ',
+  Playlists: '音楽選び',
+  Videos: '映像選び',
+  TechShares: '技術共有',
+  RelatedToMe: '私と関連',
 }
 
 const defaultComp = ref<string>('ArticlesList')

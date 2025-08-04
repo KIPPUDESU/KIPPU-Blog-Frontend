@@ -10,7 +10,7 @@ w-full h-full
     flex flex-wrap w-full justify-center
     h-full lg:h-8/10"
     :class="ChengeStore.PlaneOrSolid?
-    'pt-2' : 'pt-6' ">
+    'pt-4' : 'pt-6' ">
         <ArticleCard
         v-for="article in articles"
         :key="article.id"
