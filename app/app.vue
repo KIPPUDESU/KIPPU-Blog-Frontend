@@ -6,7 +6,7 @@ useSeoMeta({
 import { ref } from 'vue'
 
 const nuxtApp = useNuxtApp()
-const isLoading = ref(false)
+const isLoading = ref(true)
 
 nuxtApp.hook('page:start', () => {
   isLoading.value = true;
@@ -18,7 +18,7 @@ nuxtApp.hook('page:finish', () => {
       setTimeout(() => {
         window.scrollTo(0, 0);
         isLoading.value = false;
-      }, 900);
+      }, 2000);
     })
 </script>
 
