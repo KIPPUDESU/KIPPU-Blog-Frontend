@@ -45,7 +45,7 @@ relative mb-0 flex justify-center w-full h-10 lg:h-2/10">
         flex justify-center w-max h-full">
         <img
         class="h-full"
-        src="/img/egutenshi.png" alt="">
+        src="/img/egupizaa.png" alt="">
         </div>
         <!-- 右 -->
         <div 

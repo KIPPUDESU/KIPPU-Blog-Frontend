@@ -1,7 +1,13 @@
 <template>
-  <div class="p-4 sm:p-6 md:p-8 w-full h-91/100 
-  overflow-y-scroll scrollbar-hide">
-    <div class="flex flex-col gap-6">
+  <div 
+  class="
+  flex flex-col justify-center items-center
+  w-full h-full">
+    <div 
+    class="
+    transition-all duration-600 ease-in-out
+    flex w-full justify-center
+    h-full lg:h-8/10">
       <!-- 视频列表 -->
       <VideoCard 
       v-for="video in videos"
@@ -13,14 +19,32 @@
         <p>未能找到任何视频...</p>
       </div>
     </div>
+    <!-- 分页按钮 -->
+      <VideoPaginator
+        :PageNum="PageNum"
+        @subPage="subPage"
+        @addPage="addPage"
+      />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import { useTestStore } from '#imports'
+
+const ChengeStore = useTestStore()
 
 const MaxVideoCard = 20
-const PageNum = ref(0)
+const PageNum = ref(
+    (() => {
+        const PageNum = (0)
+        // 保证分页数始终为合法非负数
+        if ( PageNum < 0 ) {
+            return 0
+        }
+        return PageNum
+    })()
+)
 
 const { data: videos, refresh: refreshVideos } =
 await useAsyncData(
@@ -30,6 +54,31 @@ await useAsyncData(
     .skip( PageNum.value * MaxVideoCard )
     .all(),
 )
+
+// 检测本页过后是否依旧有视频存在
+const { data: haveNextPage, refresh: refreshHaveNextPage } =
+await useAsyncData(
+    `videos-haveNext-${PageNum.value}`,
+    () => queryCollection('blog')
+    .order('date', 'DESC')
+    .skip( (PageNum.value + 1 ) * MaxVideoCard )
+    .limit(1)
+    .select('title')
+    .all()
+)
+
+// 加减方法
+function subPage() {
+    if ( PageNum.value > 0 ) {
+        PageNum.value--
+    }
+}
+function addPage() {
+    // 数组长度大于零才启用
+    if ( haveNextPage.value && haveNextPage.value.length > 0 ) {
+        PageNum.value++
+    }
+}
 
 watch(PageNum, () => {
     refreshVideos()
