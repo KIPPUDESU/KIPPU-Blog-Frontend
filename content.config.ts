@@ -27,6 +27,17 @@ export default defineContentConfig({
         classify: z.string().optional(),
         id:   z.string(),
       })
+  }),
+  videos:defineCollection({
+    type: 'page',
+    source: 'videos/*.md',
+    schema: z.object({
+        title:     z.string(),
+        author:    z.string(),
+        cover:   z.string().optional(),
+        url: z.string().optional(),
+        id:   z.string(),
+      })
   })
   }
 })
