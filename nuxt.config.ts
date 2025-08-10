@@ -16,6 +16,18 @@ export default defineNuxtConfig({
     {
       path: '~/components/views',
       pathPrefix: false,
+    },
+    {
+      path: '~/components/banner',
+      pathPrefix: false,
+    },
+    {
+      path: '~/components/paginator',
+      pathPrefix: false,
+    },
+    {
+      path: '~/layouts',
+      pathPrefix: false,
     }
   ],
   // better-sqlite3编译出现问题，node22.5.0以上可以如此解决（实验性功能）
