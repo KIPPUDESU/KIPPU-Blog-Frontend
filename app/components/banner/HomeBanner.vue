@@ -5,17 +5,17 @@
     <!-- 首页图容器 -->
     <div 
      class="
-     relative bg-gray-200/10 h-94 overflow-hidden">
+     relative bg-gray-200/30 h-94 overflow-hidden">
       <!-- 填充父容器的透明absolute添加图片上层添加shadow-inner -->
       <div 
       class="
       transition-all duration-600 ease-in-out
-      absolute z-10 w-full h-full" 
+      absolute z-20 w-full h-full" 
       :class="ChengeStore.PlaneOrSolid?
       'shadow-[inset_0_-4px_6px_rgba(0,0,0,0.0)]' :
       'shadow-[inset_0_-5px_6px_rgba(0,0,0,0.2)]'"></div>
         <img 
-        class="absolute transition-all duration-600 linear -left-4
+        class="absolute z-10 transition-all duration-600 linear -left-4
         sm:w-262 w-94 "
         :class="ChengeStore.PlaneOrSolid?
         'bottom-100' : 'xl:-bottom-192 lg:-bottom-144'"

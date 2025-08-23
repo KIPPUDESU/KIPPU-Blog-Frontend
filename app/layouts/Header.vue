@@ -94,6 +94,7 @@ onMounted(() => {
 <style scoped>
 .headroom--unpinned {
   transform: translateY(-100%);
+  transition-delay: 0.1s;
 }
 
 .headroom--pinned {
