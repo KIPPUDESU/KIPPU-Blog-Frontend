@@ -13,17 +13,18 @@ object-cover hover:scale-106"
     flex flex-col items-center w-full h-full ring-4"
     :class="PlaneOrSolid ? 
     'bg-blue-50 hover:bg-blue-100/30 ring-gray-200' :
-    'bg-pink-50 hover:bg-gray-50/30 ring-pink-200/50 shadow-lg shadow-black/40 hover:shadow-pink-500/50 rounded-lg'">   
+    'bg-pink-50 hover:bg-gray-50/30 ring-pink-200/50 shadow-md shadow-black/20 hover:shadow-pink-500/50 rounded-lg'">   
         <!-- 图片容器 -->
         <div 
             class="
-            transition-all duration-500 ease-in-out
+            transition-all duration-500 ease-in-out group
             flex justify-center items-center overflow-hidden
-            w-50 h-36 mx-4 mt-5 object-cover group: ring-2 ring-gray-200
-            hover:scale-102 hover:shadow-lg hover:shadow-black/20 hover:rounded-none"
-            :class="PlaneOrSolid ? 'rounded-none' : 'rounded-lg'"
+            w-50 h-36 mx-4 mt-5 object-cover group: ring-3 ring-gray-200"
+            :class="PlaneOrSolid 
+            ? 'rounded-none ring-gray-200' 
+            : 'rounded-lg ring-pink-200/50'"
             >
-            <img class="w-full scale-105" :src="card.image" alt="文章封面">
+            <img class="transition-all duration-500 ease-in-out w-full scale-105 group-hover:scale-110" :src="card.image" alt="文章封面">
         </div>
         <!-- 文字 -->
         <div class="
