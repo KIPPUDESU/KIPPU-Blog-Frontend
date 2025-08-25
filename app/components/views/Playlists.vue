@@ -1,8 +1,11 @@
 <template>
   <div 
   class="
-  p-4 sm:p-6 md:p-8 w-full h-full 
-  overflow-y-scroll scrollbar-hide">
+  transition-all duration-800 ease-in-out
+  px-4 sm:px-6 md:px-8  w-full h-full 
+  overflow-y-scroll scrollbar-hide"
+  :class="isIre ? 'opacity-100 py-4 sm:py-6 md:py-8' : 'opacity-0 py-100' "
+  >
     <!-- 渐变遮罩 -->
     <div class="flex flex-col absolute justify-between top-0 left-0 z-50 w-full h-full pointer-events-none">
       <!-- 上 -->
@@ -52,12 +55,17 @@
         </svg>
       </div>
     </div>
-    <div class="flex flex-col gap-6">
+    <div 
+    class="
+    transition-all duration-800 ease-in-out 
+    flex flex-col mb-26"
+    :class="isIre ? 'opacity-100 gap-6' : 'opacity-0 gap-100' ">
       <!-- 歌单列表 -->
       <SongCard 
       v-for="song in songs"
       :key="song.id" 
-      :song="song" />
+      :song="song"
+      />
       <div 
       v-if="!songs || songs.length === 0" 
       class="text-center text-gray-500 mt-8">
@@ -74,6 +82,13 @@ import { useTestStore } from '#imports'
 
 // 把useTestStore存入ChengeStore
 const ChengeStore = useTestStore()
+const isIre = ref(false)
+
+onMounted(() => {
+  setTimeout(() => {
+    isIre.value = true
+  },50)
+})
 
 const MaxSongCard = 20
 const PageNum = ref(0)

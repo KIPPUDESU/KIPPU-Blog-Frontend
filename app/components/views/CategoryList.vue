@@ -1,7 +1,12 @@
 <template>
-  <div class="flex w-full h-full justify-center items-center">
-      <div class="w-38/40 h-58/60">
-    <div class="flex flex-wrap justify-center w-full aspect-square">
+<div class="flex w-full h-full justify-center items-center">
+  <div class="w-38/40 h-58/60">
+    <div 
+    class="
+    transition-all duration-800 ease-in-out
+    flex flex-wrap justify-center w-full aspect-square"
+    :class="isIre ? 'opacity-100' : 'opacity-0' "
+    >
       <div
       v-for="(item, idx) in classify"
       :key="idx"
@@ -58,7 +63,7 @@
       </div>
     </div>
   </div>
-  </div>
+</div>
 </template>
 
 <script setup lang="ts">
@@ -67,6 +72,13 @@ import { useTestStore } from '#imports'
 
 // 把useTestStore存入ChengeStore
 const ChengeStore = useTestStore()
+const isIre = ref(false)
+
+onMounted(() => {
+  setTimeout(() => {
+    isIre.value = true
+  },50)
+})
 
 const classify = ref([
   { name: '技术', src: 'classIMG/1.jpg', overlaycolor: 'bg-fuchsia-400/50', pText:'Deep dives into code, systems, and ideas worth building.'},
