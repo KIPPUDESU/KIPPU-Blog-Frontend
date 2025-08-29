@@ -14,9 +14,9 @@
     <!-- 左侧信息容器 -->
     <LeftInfoPanel @change-class="onChangeClass" />
     <!-- 文章预览卡片 -->
-    <div class="">
+    <div class="bg-gray-500 w-full h-20">
       <!-- 左侧分页标题 -->
-      <div 
+      <!-- <div 
       class="
       absolute flex flex-col top-8 left-72 w-4 h-324
       justify-between items-center py-6">
@@ -26,9 +26,9 @@
             <span class="sm:flex flex-col text-black/20 text-[20px] hidden">{{ titleMap[defaultComp] }}</span>
           <div class="w-[3px] h-full z-20 mt-4 bg-black/20 rounded-2xl hidden sm:block"></div>
         <div class="w-2 h-2 mt-4 bg-black/20 rounded-full hidden sm:block"></div>
-      </div>
+      </div> -->
       <!-- 边角 -->
-      <div>
+      <!-- <div>
         <div 
         class="
         transition-all duration-600 ease-in-out
@@ -38,9 +38,9 @@
         :class="ChengeStore.PlaneOrSolid?
         'rounded-tl-none' : 'rounded-tl-xl'">
         </div>
-      </div>
+      </div> -->
       <!-- 右侧包围线条 -->
-      <div>
+      <!-- <div>
         <div
         class="
         absolute w-284 h-[3px] bg-black/20 rounded-xl
@@ -61,9 +61,9 @@
         w-2 h-2 absolute bg-black/20 rounded-full
         right-4.5 top-324.5 hidden sm:block
         "></div>
-      </div>
+      </div> -->
       <!-- 三层背景容器 -->
-      <div 
+      <!-- <div 
       class="
       transition-all duration-600 ease-in-out
       flex-row absolute z-10 top-10 left-0 lg:left-80 w-full lg:w-288 h-316
@@ -96,7 +96,7 @@
             <component :is="compMap[defaultComp]" />
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <!-- 下层容器 -->
