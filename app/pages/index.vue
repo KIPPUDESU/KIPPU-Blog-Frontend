@@ -10,11 +10,12 @@
 
   <!-- 分页 -->
   <div 
-  class="flex relative justify-center items-center bg-gray-100 w-full h-440">
+  class="flex relative bg-gray-100 w-full h-440">
     <!-- 左侧信息容器 -->
     <LeftInfoPanel @change-class="onChangeClass" />
     <!-- 文章预览卡片 -->
-    <div class="bg-gray-500 w-full h-20">
+    <div class="bg-surface w-full h-20">
+    <!-- <div class="bg-gray-500 w-full h-20"> -->
       <!-- 左侧分页标题 -->
       <!-- <div 
       class="

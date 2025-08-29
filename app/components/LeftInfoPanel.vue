@@ -1,7 +1,7 @@
 <template>
   <!-- 左侧信息容器 -->
   <div class="
-  absolute w-70 h-326 top-0 left-0 justify-center items-center
+  w-70 h-326 justify-center items-center
   hidden sm:block">
     <!-- 外壳 -->
     <div class="sticky top-0 w-full h-max pb-4 flex flex-col items-center">
