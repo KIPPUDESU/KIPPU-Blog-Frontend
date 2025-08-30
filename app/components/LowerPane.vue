@@ -5,7 +5,7 @@
   items-center justify-center perspective-1000">
     <!-- stack div -->
     <div class="flex h-9/10 w-340 rounded-xl shadow-lg shadow-black/20">
-            <!-- stack -->
+      <!-- stack -->
       <div class="
       flex h-full w-full justify-between 
       rounded-xl [clip-path:inset(0_0_0_-2rem)]">
@@ -13,7 +13,7 @@
         <div class="
         transition-all duration-600 ease-in-out
         relative flex h-full w-70 group
-        bg-white"
+        bg-white shadow-[4px_0_10px_rgba(0,0,0,0.2)]"
         :class="ChengeStore.PlaneOrSolid ?
         'rounded-none' : 'rounded-l-xl' ">
           <!-- 介绍句 -->
@@ -25,7 +25,7 @@
             class="
             transition-all duration-600 ease-in-out
             absolute flex left-0 -top-4 w-full h-8 px-2
-            items-center gap-2 bg-gray-600 group-hover:bg-blue-400">
+            items-center gap-1 bg-gray-600 group-hover:bg-blue-400">
               <svg 
               xmlns="http://www.w3.org/2000/svg" 
               xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -35,12 +35,12 @@
                 <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm3.3 14.71L11 12.41V7h2v4.59l3.71 3.71l-1.42 1.41z" fill="currentColor">
                 </path>
               </svg>
-              <span class="text-[14px] text-white font-medium">6h+ daily dev</span>
+              <span class="text-[14px] text-white font-medium">Dev-All the time</span>
               <svg 
               xmlns="http://www.w3.org/2000/svg" 
               xmlns:xlink="http://www.w3.org/1999/xlink" 
               viewBox="0 0 16 16"
-              class="w-4 h-4 ml-2 text-white"><g fill="none">
+              class="w-4 h-4 text-white"><g fill="none">
                 <path d="M7.541 3.948a3.25 3.25 0 0 0-4.595-.012a3.25 3.25 0 0 0 .012 4.595l4.707 4.708a.5.5 0 0 0 .707 0l4.683-4.68a3.25 3.25 0 0 0-.012-4.594a3.252 3.252 0 0 0-4.601-.012l-.447.448l-.454-.453z" fill="currentColor">
                 </path></g>
               </svg>
@@ -56,48 +56,50 @@
           <div class="
           transition-all duration-600 ease-in-out
           absolute h-full w-full 
-          hover:w-355.5">
+          hover:w-380">
               <!-- 主题句 -->
               <div 
               class="
               transition-all duration-600 ease-in-out
-              absolute flex flex-col top-2 left-2 w-7/40 h-1/3
-              text-[36px] text-black/70 font-bold
+              flex flex-col px-2 pt-1 w-full h-1/3
+              text-[40px] text-black/70 font-bold
               group-hover:text-blue-400
               ">
-                <h1 class="absolute">Technology</h1>
-                <h1 class="absolute top-5/12">Stack</h1>
-              </div>
-                <!-- 箭头 -->
-                <div 
-                class="
-                absolute w-12 h-12 top-3/18 left-28
-                overflow-hidden">
+                <!-- 上面那行字 -->
+                <h1 class="">Technology</h1>
+                <!-- 下面一行字加上箭头 -->
+                <div class="flex flex-row items-center gap-2">
+                  <h1 class="">Stack</h1>
+                  <!-- 箭头 -->
                   <div 
-                  class="
-                  transition-all duration-600 ease-in-out
-                  absolute flex -left-full w-24 h-full 
-                  group-hover:left-0
-                  group-hover:text-blue-400
-                  ">
-                  <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  xmlns:xlink="http://www.w3.org/1999/xlink" 
-                  viewBox="0 0 24 24"
-                  class="w-12 h-12">
-                    <path d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42c.39.39 1.02.39 1.41 0l6.59-6.59a.996.996 0 0 0 0-1.41l-6.58-6.6a.996.996 0 1 0-1.41 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z" fill="currentColor">
-                    </path>
-                  </svg>
-                  <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  xmlns:xlink="http://www.w3.org/1999/xlink" 
-                  viewBox="0 0 24 24"
-                  class="w-12 h-12">
-                    <path d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42c.39.39 1.02.39 1.41 0l6.59-6.59a.996.996 0 0 0 0-1.41l-6.58-6.6a.996.996 0 1 0-1.41 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z" fill="currentColor">
-                    </path>
-                  </svg>
+                  class="relative w-12 h-12 overflow-hidden">
+                    <div 
+                    class="
+                    transition-all duration-600 ease-in-out
+                    absolute flex -left-full w-24 h-full text-black/70
+                    group-hover:left-0 group-hover:text-blue-400
+                    ">
+                    <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    viewBox="0 0 24 24"
+                    class="w-12 h-12">
+                      <path d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42c.39.39 1.02.39 1.41 0l6.59-6.59a.996.996 0 0 0 0-1.41l-6.58-6.6a.996.996 0 1 0-1.41 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z" fill="currentColor">
+                      </path>
+                    </svg>
+                    <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    viewBox="0 0 24 24"
+                    class="w-12 h-12">
+                      <path d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42c.39.39 1.02.39 1.41 0l6.59-6.59a.996.996 0 0 0 0-1.41l-6.58-6.6a.996.996 0 1 0-1.41 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z" fill="currentColor">
+                      </path>
+                    </svg>
+                    </div>
                   </div>
                 </div>
+              </div>
+
                 <!-- 隐藏字 -->
                 <div class="
                 transition-all duration-600 ease-in-out
@@ -141,7 +143,7 @@
                     absolute flex top-1 w-24 h-32 z-50
                     group-hover:top-4/20 group-hover:w-38 group-hover:h-14/24  
                     bg-white items-center justify-center
-                    group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                    group-hover:bg-white/80 group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
                     rounded-lg shadow-lg"
                     :class="[ card.shadowClass, card.initClass, card.leftClass, card.hoverClass ]"
                     >
@@ -163,9 +165,8 @@
                     transition-all duration-600 ease-in-out transform transform-gpu transform-style-3d
                     absolute flex top-1 w-24 h-32 z-50
                     group-hover:top-4/20 group-hover:w-38 group-hover:h-14/24
-                    items-center justify-center
-                    bg-white
-                    group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
+                    bg-white items-center justify-center
+                    group-hover:bg-white/80 group-hover:-rotate-y-0 group-hover:rotate-x-0 group-hover:-rotate-0
                     rounded-lg shadow-lg"
                     :class="[ card.shadowClass, card.initClass, card.leftClass, card.hoverClass ]">
                       <img :src="card.src" alt="" />
@@ -196,6 +197,7 @@ import { ref, computed } from 'vue'
 import { useTestStore } from '#imports'
 const ChengeStore = useTestStore()
 
+// 卡片数据
 const cards = ref([
   {
     src: '/img/html.png',
