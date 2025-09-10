@@ -4,7 +4,7 @@ class="
 transition-all duration-600 ease-in-out
 object-cover hover:scale-106"
 :class="PlaneOrSolid ?
-'mx-6 w-60 h-72' : 'mx-4 w-58 h-72' ">
+'mx-6 w-58 h-72' : 'mx-4 w-58 h-72' ">
     <!-- 纯展示组件，只接收 props -->
     <!-- 外壳 -->
     <div 
@@ -12,8 +12,8 @@ object-cover hover:scale-106"
     transition-all duration-500 ease-in-out
     flex flex-col items-center w-full h-full ring-4"
     :class="PlaneOrSolid ? 
-    'bg-blue-50 hover:bg-blue-100/30 ring-gray-200' :
-    'bg-pink-50 hover:bg-gray-50/30 ring-pink-200/50 shadow-md shadow-black/20 hover:shadow-pink-500/50 rounded-lg'">   
+    'bg-blue-50 hover:bg-blue-50/0 ring-gray-200' :
+    'bg-pink-50/50 hover:bg-gray-50 ring-pink-200/50 shadow-md shadow-black/20 hover:shadow-pink-500/80 rounded-lg'">   
         <!-- 图片容器 -->
         <div 
             class="

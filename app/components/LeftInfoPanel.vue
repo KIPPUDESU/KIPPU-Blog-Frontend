@@ -1,10 +1,10 @@
 <template>
   <!-- 左侧信息容器 -->
   <div class="
-  w-70 h-326 justify-center items-center
+  w-max h-326 justify-center items-center
   hidden sm:block">
     <!-- 外壳 -->
-    <div class="sticky top-0 w-full h-max pb-4 flex flex-col items-center">
+    <div class="sticky top-0 w-full h-max pb-4 px-[20px] flex flex-col items-center">
       <!-- 头像 -->
       <div 
       class="
@@ -25,14 +25,14 @@
         />
       </div>
       <!-- id 简介 -->
-      <div class="relative flex flex-col w-max h-18 mt-2 justify-center items-center">
+      <div class="relative flex flex-col w-50 h-18 mt-2 justify-center items-center">
         <span class="text-2xl text-gray-800 font-bold">切符</span>
         <p class="text-md text-gray-600/80 font-extrabold">もっと Elegant になりたい</p>
       </div>
       <!-- 联系方式 -->
       <div 
     class="
-    relative flex flex-row w-32 h-10
+    relative flex flex-row w-40 h-10 px-4
     justify-between items-center
     ">
       <a 
@@ -82,50 +82,52 @@
         viewBox="0 0 24 24"
         class="fill-current"
         >
-          <path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z" fill="currentColor">
+          <path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64-.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z" fill="currentColor">
           </path>
       </svg>
       </a>
     </div>
 
       <!-- 分类 -->
-      <div
-      class=" 
-      relative flex flex-col w-40 h-96 mt-4 rounded-lg">
-        <!-- 图片遮罩 -->
-        <div class="
-        transition-all duration-600 ease-in-out
-        absolute flex z-10 inset-0
-        justify-center items-center rounded-lg
-        bg-gradient-to-bl from-gray-50 to-white ring-3"
-        :class="ChengeStore.PlaneOrSolid ? 
-        'rounded-none shadow-black/0 shadow-none ring-black/0' :
-        'rounded-lg shadow-black/30 shadow-md ring-gray-300'"
-        >
-          <!-- 列表项容器 -->
-          <div 
-          class="
-          absolute flex flex-col z-10
-          justify-center items-center inset-0 overflow-hidden">
-            <div
-              v-for="(item, idx) in categories"
-              :key="idx"
-              @click="onChangeClass(item.compName)"
-              class="
-              transition-all duration-300 ease-in-out
-              flex flex-row flex-1 items-center gap-3 px-6 w-full
-              object-cover bg-white/0 
-              text-[16px] text-blue-300 font-bold cursor-pointer
-              hover:scale-110 hover:text-blue-400
-              hover:bg-blue-300/10
-              active:scale-90"
-              :class="{
-              'text-blue-500 scale-110 bg-white/0 backdrop-blur-none': activeItemName === item.compName,
-              'text-blue-300 ': activeItemName === item.compName}"
-            >
-              <span v-html="item.svg" 
-              class="w-3/16"></span>
-              <span>{{ item.label }}</span>
+      <div class="w-full h-96 mt-4 px-[20px]">
+        <div
+        class=" 
+        relative flex flex-col w-full h-full rounded-lg">
+          <!-- 遮罩 -->
+          <div class="
+          transition-all duration-600 ease-in-out
+          absolute flex z-10 inset-0
+          justify-center items-center rounded-lg
+          bg-gradient-to-bl from-gray-50 to-white ring-0"
+          :class="ChengeStore.PlaneOrSolid ? 
+          'rounded-none shadow-none ring-black/0' :
+          'rounded-lg shadow-lg ring-gray-300'"
+          >
+            <!-- 列表项容器 -->
+            <div 
+            class="
+            absolute flex flex-col z-10
+            justify-center items-center inset-0 overflow-hidden">
+              <div
+                v-for="(item, idx) in categories"
+                :key="idx"
+                @click="onChangeClass(item.compName)"
+                class="
+                transition-all duration-300 ease-in-out
+                flex flex-row flex-1 items-center gap-3 px-6 w-full
+                object-cover bg-white/0 
+                text-[16px] text-blue-300 font-bold cursor-pointer
+                hover:scale-110 hover:text-blue-400
+                hover:bg-blue-300/10
+                active:scale-90"
+                :class="{
+                'text-blue-500 scale-110 bg-white/0 backdrop-blur-none': activeItemName === item.compName,
+                'text-blue-300 ': activeItemName === item.compName}"
+              >
+                <span v-html="item.svg" 
+                class="w-3/16"></span>
+                <span>{{ item.label }}</span>
+              </div>
             </div>
           </div>
         </div>

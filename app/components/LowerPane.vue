@@ -1,10 +1,10 @@
 <template>
   <!-- 下层容器 -->
   <div class="
-  absolute flex w-full bottom-0 my-4 h-1/4
+  relative flex w-full bottom-0 px-[40px] my-4 h-116
   items-center justify-center perspective-1000">
     <!-- stack div -->
-    <div class="flex h-9/10 w-340 rounded-xl shadow-lg shadow-black/20">
+    <div class="flex h-9/10 w-full rounded-xl shadow-lg shadow-black/20">
       <!-- stack -->
       <div class="
       flex h-full w-full justify-between 
@@ -18,8 +18,7 @@
         'rounded-none' : 'rounded-l-xl' ">
           <!-- 介绍句 -->
           <div class="
-          absolute bottom-0 left-0 w-full h-1/4
-          px-2 py-5">
+          absolute bottom-0 left-0 w-full h-1/4 px-2 py-5">
             <!-- 标签 -->
             <div 
             class="

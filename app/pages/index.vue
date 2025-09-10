@@ -10,36 +10,91 @@
 
   <!-- 分页 -->
   <div 
-  class="flex relative bg-gray-100 w-full h-440">
+  class="flex relative bg-gray-100 w-full h-340">
     <!-- 左侧信息容器 -->
     <LeftInfoPanel @change-class="onChangeClass" />
     <!-- 文章预览卡片 -->
-    <div class="bg-surface w-full h-20">
-    <!-- <div class="bg-gray-500 w-full h-20"> -->
-      <!-- 左侧分页标题 -->
-      <!-- <div 
-      class="
-      absolute flex flex-col top-8 left-72 w-4 h-324
-      justify-between items-center py-6">
-          <div 
-          class="
-          w-[3px] h-1/18 z-20 mb-2 bg-black/20 rounded-2xl hidden sm:block"></div>
-            <span class="sm:flex flex-col text-black/20 text-[20px] hidden">{{ titleMap[defaultComp] }}</span>
-          <div class="w-[3px] h-full z-20 mt-4 bg-black/20 rounded-2xl hidden sm:block"></div>
-        <div class="w-2 h-2 mt-4 bg-black/20 rounded-full hidden sm:block"></div>
-      </div> -->
-      <!-- 边角 -->
-      <!-- <div>
-        <div 
-        class="
-        transition-all duration-600 ease-in-out
-        absolute w-[22px] h-[22px] top-5 left-[294.5px]
-        border-t-[3.5px] border-l-[3.5px] border-black/20 
-        hidden sm:block"
-        :class="ChengeStore.PlaneOrSolid?
-        'rounded-tl-none' : 'rounded-tl-xl'">
+    <div class="w-full h-full py-5 px-6">
+      <div class="relative flex flex-col w-full h-full">
+        <!-- 封顶 -->
+        <div class="flex flex-row">
+            <!-- 边角 -->
+            <div 
+              class="
+              transition-all duration-600 ease-in-out
+              w-[22px] h-[22px] -translate-x-[1.5px] -translate-y-[1.5px]
+              border-t-[3.5px] border-l-[3.5px] border-black/20
+              hidden sm:block"
+              :class="ChengeStore.PlaneOrSolid?
+              'rounded-tl-none' : 'rounded-tl-xl'">
+            </div>
+            <!-- 横线 -->
+            <div class="w-full h-[3px] mx-6 -translate-y-[1.5px] bg-black/20"></div>
+            <!-- 圆球 -->
+            <div class="w-4 h-4 bg-black/20 rounded-full translate-x-2 -translate-y-2"></div>
         </div>
-      </div> -->
+        <!-- 页面 -->
+        <div class="relative flex flex-row w-full h-full">
+          <!-- 左侧分页标题 -->
+          <div 
+            class="
+            flex flex-col w-[3px] h-full -translate-x-[1.5px]
+            justify-between items-center py-6">
+              <div 
+                class="
+                w-[3px] h-1/18 z-20 mb-2 bg-black/20 rounded-2xl hidden sm:block"></div>
+                <span class="sm:flex flex-col text-black/20 text-[20px] hidden">{{ titleMap[defaultComp] }}</span>
+              <div class="w-[3px] h-full z-20 mt-4 bg-black/20 rounded-2xl hidden sm:block"></div>
+            <div class="w-2 h-2 mt-4 bg-black/20 rounded-full hidden sm:block"></div>
+          </div>
+          <!-- 中间 display -->
+          <div class="flex justify-center w-full h-full">
+            <!-- 三层背景容器 -->
+            <div 
+            class="
+            transition-all duration-600 ease-in-out
+            flex-row z-10 mx-4 w-full h-316
+            justify-center items-center shadow-lg
+            bg-gradient-to-bl from-pink-200/50 to-pink-100/50 rounded-t-xl
+            flex"
+            :class="ChengeStore.PlaneOrSolid?
+            'shadow-black/0' : 'shadow-black/20'"
+            >
+              <div 
+              class="
+              transition-all duration-600 ease-in-out
+              flex-row w-full z-20 justify-center items-center 
+              shadow-lg backdrop-blur-sm
+              bg-gradient-to-bl from-gray-50/60 to-white/95 rounded-t-xl
+              flex"
+              :class="ChengeStore.PlaneOrSolid?
+              'h-316 shadow-black/0' :
+              'h-308 shadow-black/20' "
+              >
+                <div 
+                class="
+                transition-all duration-600 ease-in-out
+                flex overflow-y-auto z-20 w-full
+                shadow-lg rounded-t-xl"
+                :class="ChengeStore.PlaneOrSolid?
+                'h-316 shadow-black/0 bg-gray-100' :
+                'h-300 shadow-black/20 bg-white' "
+                >
+                  <component :is="compMap[defaultComp]" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 右侧线条 -->
+          <div class="flex w-[3px] h-full translate-x-[1.5px] justify-center items-center py-6">
+            <div class="w-[3px] h-full bg-black/20 rounded-2xl hidden sm:block"></div>
+          </div>
+        </div>
+      </div>
+    <!-- <div class="bg-gray-500 w-full h-20">
+    </div> -->
+    
+
       <!-- 右侧包围线条 -->
       <!-- <div>
         <div
@@ -63,44 +118,11 @@
         right-4.5 top-324.5 hidden sm:block
         "></div>
       </div> -->
-      <!-- 三层背景容器 -->
-      <!-- <div 
-      class="
-      transition-all duration-600 ease-in-out
-      flex-row absolute z-10 top-10 left-0 lg:left-80 w-full lg:w-288 h-316
-      justify-center items-center shadow-lg
-      bg-gradient-to-bl from-pink-200/50 to-pink-100/50 rounded-t-xl
-      flex"
-      :class="ChengeStore.PlaneOrSolid?
-      'shadow-black/0' : 'shadow-black/20'"
-      >
-        <div 
-        class="
-        transition-all duration-600 ease-in-out
-        flex-row absolute z-20 left-0
-        justify-center items-center shadow-lg backdrop-blur-sm
-        bg-gradient-to-bl from-gray-50/60 to-white/95 rounded-t-xl
-        flex"
-        :class="ChengeStore.PlaneOrSolid?
-        'w-full lg:w-288 top-0 h-316 shadow-black/0' :
-        'w-full lg:w-284 top-4 h-308 shadow-black/20' "
-        >
-          <div 
-          class="
-          transition-all duration-600 ease-in-out
-          flex absolute overflow-y-auto z-20 left-0
-          shadow-lg rounded-t-xl"
-          :class="ChengeStore.PlaneOrSolid?
-          'w-288 top-0 h-316 shadow-black/0 bg-gray-100' :
-          'w-full  lg:w-280 top-4 h-300 shadow-black/20 bg-white' "
-          >
-            <component :is="compMap[defaultComp]" />
-          </div>
-        </div>
-      </div> -->
-    </div>
 
-    <!-- 下层容器 -->
+    </div>
+  </div>
+  <!-- 下层容器 -->
+  <div class="flex relative bg-gray-100 w-full h-max">
     <LowerPane />
   </div>
 </div>
