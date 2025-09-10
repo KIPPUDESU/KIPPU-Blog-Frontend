@@ -14,7 +14,7 @@
     <!-- 左侧信息容器 -->
     <LeftInfoPanel @change-class="onChangeClass" />
     <!-- 文章预览卡片 -->
-    <div class="w-full h-full py-5 px-6">
+    <div class="w-full h-full py-5 px-5">
       <div class="relative flex flex-col w-full h-full">
         <!-- 封顶 -->
         <div class="flex flex-row">
@@ -86,8 +86,9 @@
             </div>
           </div>
           <!-- 右侧线条 -->
-          <div class="flex w-[3px] h-full translate-x-[1.5px] justify-center items-center py-6">
+          <div class="flex flex-col w-[3px] h-full translate-x-[1.5px] justify-center items-center py-6">
             <div class="w-[3px] h-full bg-black/20 rounded-2xl hidden sm:block"></div>
+            <div class="w-2 h-2 mt-4 bg-black/20 rounded-full hidden sm:block"></div>
           </div>
         </div>
       </div>

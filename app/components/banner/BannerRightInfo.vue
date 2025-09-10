@@ -36,25 +36,24 @@ hidden sm:flex"
   :class="ChengeStore.PlaneOrSolid?
   'xl:right-18 lg:right-12 xl:top-30 lg:top-28' : 'xl:right-20 lg:right-14 xl:top-32 lg:top-30'
   ">
-  <p class="flex flex-row">Frontend Dev [<span class="inline-flex xl:text-[11px] justify-center items-center">>></span>] Backend Dev / Graphic Designer / Writing</p>
+  <p class="flex flex-row">Frontend Dev [<span class="inline-flex xl:text-[11px] justify-center items-center">> ></span>] Backend Dev / Graphic Designer / Writing</p>
   <p class="">16 November 2005 — My first commit, the day I became me</p>
-  <div class="flex flex-row w-full h-7">
-  <p class="w-1/2"> If okay... mail me, maybe? 💌 :  </p>
+  <div class="flex flex-row w-full h-7 gap-1">
+  <p class="w-max"> If okay.. mail me, maybe? 💌 :  </p>
       <!-- 邮箱容器 -->
-      <div class="relative w-1/2 px-0.5">
+      <div class="relative w-max">
         <!-- 动画效果容器 -->
         <div 
         class="
         transition-all duration-600 ease-in-out
-        absolute w-full h-full group
+        flex flex-col w-full h-full group
         ">
           <!-- 邮箱 -->
           <a 
           href="mailto:KIPPUDESU@OUTLOOK.COM?subject=Hello%20Kippu" 
           target="_blank"
           class="
-          absolute right-0.5 z-20
-          hover:text-gray-400"
+          z-20 hover:text-gray-400"
           :class="ChengeStore.PlaneOrSolid?
           'text-gray-500' : 'text-blue-400' "
           >
@@ -62,9 +61,9 @@ hidden sm:flex"
           <!-- 下划线 -->
           <div class="
           transition-all duration-600 ease-in-out
-          absolute bottom-1 h-0.5 w-full rounded-4xl
-          left-0 right-auto bg-gray-400
-          group-hover:w-0 group-hover:left-auto group-hover:right-0" 
+          h-0.5 w-full rounded-4xl
+          bg-gray-400
+          ml-0 group-hover:w-0 group-hover:ml-auto" 
           ></div>
         </div>
       </div>
