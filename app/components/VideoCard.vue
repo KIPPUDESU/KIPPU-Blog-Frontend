@@ -2,8 +2,8 @@
     <div 
     class="
     transition-all duration-500 ease-in-out
-    flex relative items-center gap-4 p-4 w-full h-32
-    hover:scale-101 cursor-pointer
+    flex relative items-center gap-4 w-full h-32 mt-0
+    hover:scale-101 cursor-pointer overflow-hidden
     shadow-lg hover:shadow-xl bg-white/80"
      :class="ChengeStore.PlaneOrSolid ? 
      'rounded-none shadow-black/0' : 'rounded-lg shadow-black/20' ">
@@ -11,12 +11,12 @@
         <img
           :src="video.cover || '/img/egusleep.png'"
           alt="Video cover"
-          class="h-full rounded-lg"
+          class="h-full"
           />
         <!-- 视频信息 -->
         <div class="flex flex-col flex-grow">
           <h2 
-          class="text-xl font-semibold text-gray-800">
+          class="text-lg font-semibold text-gray-800">
             {{ video.title }}
           </h2>
           <p 

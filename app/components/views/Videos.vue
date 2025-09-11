@@ -6,7 +6,7 @@
     <div 
     class="
     transition-all duration-600 ease-in-out
-    flex w-full justify-center
+    grid grid-cols-2 w-full p-8 gap-8 items-start justify-items-start
     h-full lg:h-8/10">
       <!-- 视频列表 -->
       <VideoCard 
