@@ -2,7 +2,7 @@
 <!-- 分页按钮 -->
 <div 
 class="
-relative mb-0 flex justify-center w-full h-10 lg:h-2/10">
+relative flex justify-center w-full h-10 lg:h-2/10">
     <div 
     class="
     transition-all duration-600 ease-in-out

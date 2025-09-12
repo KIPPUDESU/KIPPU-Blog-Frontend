@@ -1,30 +1,33 @@
 <template>
 <div 
 class="
-flex flex-col justify-center items-center
-w-full h-full
-">
-    <div 
-    class="
-    transition-all duration-600 ease-in-out
-    flex flex-wrap w-full justify-center
-    h-full lg:h-8/10"
-    :class="ChengeStore.PlaneOrSolid?
-    'pt-4' : 'pt-6' ">
-        <ArticleCard
-        v-for="article in articles"
-        :key="article.id"
-        :card="{
-        date: article.date,
-        image: article.image || '/img/egudown.png',
-        title: article.title,
-        classify: article.classify || '未分类', 
-        path: article.path,
-        }"
-        :PlaneOrSolid="ChengeStore.PlaneOrSolid"
-        :to="`/`"
-        />
-    </div>
+flex flex-col justify-between items-center
+w-full h-full">
+    <!-- 翻页动画容器 -->
+    <Transition :name="isNextPage ? 'fade-left' : 'fade-right'" mode="out-in">
+        <div 
+        :key="PageNum"
+        class="
+        transition-all duration-800 ease-in-out
+        flex flex-wrap w-full justify-center
+        "
+        :class="isIre ? 'opacity-100' : 'opacity-0' "
+        >
+            <ArticleCard
+            v-for="article in articles"
+            :key="article.id"
+            :card="{
+            date: article.date,
+            image: article.image || '/img/egudown.png',
+            title: article.title,
+            classify: article.classify || '未分类', 
+            path: article.path,
+            }"
+            :PlaneOrSolid="ChengeStore.PlaneOrSolid"
+            :to="`/`"
+            />
+        </div>
+    </Transition>
         <!-- 分页按钮 -->
         <!-- 使用双重否定 !! 将表达式强制转换为一个严格的布尔值 -->
         <ArticlePaginator
@@ -36,12 +39,22 @@ w-full h-full
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 // 全局状态管理
 import { useTestStore } from '#imports'
 
 // 把useTestStore存入ChengeStore
 const ChengeStore = useTestStore()
+
+// 动画
+const isNextPage = ref<boolean>(true)
+const isIre = ref<boolean>(false)
+
+onMounted(() => {
+  setTimeout(() => {
+    isIre.value = true
+  },50)
+})
 
 // 卡片渲染数据获取(异步)
 const MaxArticleCard = 12
@@ -98,12 +111,14 @@ await useAsyncData(
 function subPage() {
     if ( PageNum.value > 0 ) {
         PageNum.value--
+        isNextPage.value = false
     }
 }
 function addPage() {
     // 数组长度大于零才启用
     if ( haveNextPage.value && haveNextPage.value.length > 0 ) {
         PageNum.value++
+        isNextPage.value = true
     }
 }
 
@@ -113,3 +128,36 @@ watch(PageNum, () => {
     refreshHaveNextPage()
 })
 </script>
+
+<style scoped>
+.fade-left-enter-active,
+.fade-left-leave-active {
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.fade-left-enter-from {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.fade-left-leave-to {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.fade-right-enter-active,
+.fade-right-leave-active {
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.fade-right-enter-from {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.fade-right-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+</style>
+

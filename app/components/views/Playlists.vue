@@ -13,8 +13,8 @@
       class="w-full h-10"
       :class="
       ChengeStore.PlaneOrSolid
-      ? 'bg-gradient-to-b from-gray-100 via-gray-100/30 to-gary-100/0' 
-      : 'bg-gradient-to-b from-white via-white/20 to-white/0' "
+      ? 'bg-gradient-to-b from-gray-100 via-gray-100/90 to-gary-100/0' 
+      : 'bg-gradient-to-b from-white via-white/90 to-white/0' "
       >
       </div>
       <!-- 下 -->

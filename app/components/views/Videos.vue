@@ -1,24 +1,29 @@
 <template>
   <div 
   class="
-  flex flex-col justify-center items-center
-  w-full h-full">
-    <div 
-    class="
-    transition-all duration-600 ease-in-out
-    grid grid-cols-2 w-full p-8 gap-8 items-start justify-items-start
-    h-full lg:h-8/10">
-      <!-- 视频列表 -->
-      <VideoCard 
-      v-for="video in videos"
-      :key="video.id" 
-      :video="video" />
+  flex flex-col justify-between items-center
+  w-full">
+    <Transition :name="isNextPage ? 'fade-left' : 'fade-right'" mode="out-in">
       <div 
-      v-if="!videos || videos.length === 0" 
-      class="text-center text-gray-500 mt-8">
-        <p>未能找到任何视频...</p>
+      :key="PageNum"
+      class="
+      transition-all duration-800 ease-in-out
+      grid grid-cols-2 w-full p-8 gap-8
+      "
+      :class="isIre ? 'opacity-100' : 'opacity-0' "
+      >
+        <!-- 视频列表 -->
+        <VideoCard 
+        v-for="video in videos"
+        :key="video.id" 
+        :video="video" />
+        <div 
+        v-if="!videos || videos.length === 0" 
+        class="text-center text-gray-500 mt-8">
+          <p>未能找到任何视频...</p>
+        </div>
       </div>
-    </div>
+    </Transition>
     <!-- 分页按钮 -->
       <VideoPaginator
         :PageNum="PageNum"
@@ -29,10 +34,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { useTestStore } from '#imports'
 
 const ChengeStore = useTestStore()
+
+// 动画
+const isNextPage = ref<boolean>(true)
+const isIre = ref<boolean>(false)
+
+onMounted(() => {
+  setTimeout(() => {
+    isIre.value = true
+  },50)
+})
 
 const MaxVideoCard = 20
 const PageNum = ref(
@@ -59,7 +74,7 @@ await useAsyncData(
 const { data: haveNextPage, refresh: refreshHaveNextPage } =
 await useAsyncData(
     `videos-haveNext-${PageNum.value}`,
-    () => queryCollection('blog')
+    () => queryCollection('videos')
     .order('date', 'DESC')
     .skip( (PageNum.value + 1 ) * MaxVideoCard )
     .limit(1)
@@ -71,16 +86,51 @@ await useAsyncData(
 function subPage() {
     if ( PageNum.value > 0 ) {
         PageNum.value--
+        isNextPage.value = false
     }
 }
 function addPage() {
     // 数组长度大于零才启用
     if ( haveNextPage.value && haveNextPage.value.length > 0 ) {
         PageNum.value++
+        isNextPage.value = true
     }
 }
 
 watch(PageNum, () => {
     refreshVideos()
+    refreshHaveNextPage()
 })
 </script>
+
+<style scoped>
+.fade-left-enter-active,
+.fade-left-leave-active {
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.fade-left-enter-from {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.fade-left-leave-to {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.fade-right-enter-active,
+.fade-right-leave-active {
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.fade-right-enter-from {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.fade-right-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+</style>
