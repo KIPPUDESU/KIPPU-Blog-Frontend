@@ -1,6 +1,7 @@
 // defineContentConfig 用于定义整个内容模块的配置
 // defineCollection 用于定义一个“集合”（collection）
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
+import { useLink } from 'vue-router'
 
 export default defineContentConfig({
   collections: {
@@ -43,10 +44,10 @@ export default defineContentConfig({
     type: 'page',
     source: 'shares/*.md',
     schema: z.object({
-      title: z.string(),
+      repo: z.string(),
+      link: z.string(),
       description: z.string(),
-      image: z.string().optional(),
-      url: z.string()
+      language: z.string()
     })
   })
   }
