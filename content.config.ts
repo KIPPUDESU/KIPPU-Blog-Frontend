@@ -38,6 +38,16 @@ export default defineContentConfig({
         url: z.string().optional(),
         id:   z.string(),
       })
+  }),
+  shares:defineCollection({
+    type: 'page',
+    source: 'shares/*.md',
+    schema: z.object({
+      title: z.string(),
+      description: z.string(),
+      image: z.string().optional(),
+      url: z.string()
+    })
   })
   }
 })

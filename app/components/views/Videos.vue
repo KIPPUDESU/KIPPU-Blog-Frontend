@@ -75,7 +75,6 @@ const { data: haveNextPage, refresh: refreshHaveNextPage } =
 await useAsyncData(
     `videos-haveNext-${PageNum.value}`,
     () => queryCollection('videos')
-    .order('date', 'DESC')
     .skip( (PageNum.value + 1 ) * MaxVideoCard )
     .limit(1)
     .select('title')
