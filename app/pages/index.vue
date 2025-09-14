@@ -31,7 +31,7 @@
             <!-- 横线 -->
             <div class="w-full h-[3px] mx-6 -translate-y-[1.5px] bg-black/20"></div>
             <!-- 圆球 -->
-            <div class="w-4 h-4 bg-black/20 rounded-full translate-x-2 -translate-y-2"></div>
+            <div class="w-4 h-4 bg-black/20 rounded-full translate-x-1.5 -translate-y-1.5"></div>
         </div>
         <!-- 页面 -->
         <div class="relative flex flex-row w-full h-full">
