@@ -1,5 +1,6 @@
 ---
 title: "图片主导色的提取导出"
+description: "总体上是一个复杂程度不高的算法，用于在一张图片中提取出最具代表性的颜色"
 classify: "技术"
 date: "2025-07-28"
 image: "/img/meganekwi.jpg"

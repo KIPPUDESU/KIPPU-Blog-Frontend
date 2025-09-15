@@ -1,5 +1,6 @@
 ---
 title: "Nuxt 中“阅读时长”功能实现分析"
+description: "项目中“阅读时间”功能的实现主要依赖于:  "
 classify: "技术"
 date: "2025-07-19"
 image: "/img/sentakusuwaru.png"

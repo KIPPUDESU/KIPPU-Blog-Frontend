@@ -1,5 +1,6 @@
 ---
 title: "卡片间错落复位"
+description: "在设计本次页面的卡片列表时，我希望能够实现一种“错落有致”的视觉效果  "
 classify: "动画"
 date: "2025-05-28"
 image: "/img/kanadedabunl.jpg"
@@ -55,7 +56,7 @@ odd:mt-16 even:mt-100
 本文探讨了在 Vue.js 和 Tailwind CSS 中实现“交错卡片布局一键复位”效果的两种技术方案。作者首先展示了通过在 `:class` 中嵌套三元表达式，根据卡片索引的奇偶性和一个布尔状态（`jumpHeader`）来动态赋予不同 `margin-top` 值的方案。随后，文章介绍了使用 Tailwind CSS 的 `odd:` 和 `even:` 伪类来简化奇偶判断的思路。最终，考虑到需要 `jumpHeader` 状态的干预以及未来的扩展性，作者决定保留虽然稍显复杂但灵活性更强的 JavaScript 逻辑嵌套方案。
 
 ## 速览
-> _以下速览由 AI 生成，仅供参考。_
+> _以下总结由 AI 生成，仅供参考。_
 
 #Vue #TailwindCSS #前端技巧 #UI #CSS
 

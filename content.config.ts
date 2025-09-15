@@ -12,6 +12,7 @@ export default defineContentConfig({
     schema: z.object({
         title:     z.string(),
         date:    z.string(),
+        description: z.string().optional(),
         image:   z.string().optional(),
         classify: z.string().optional(),
         // 把 readingTime 声明为可选数字
@@ -24,6 +25,7 @@ export default defineContentConfig({
     schema: z.object({
         title:     z.string(),
         vocalist:    z.string(),
+        description: z.string().optional(),
         image:   z.string().optional(),
         classify: z.string().optional(),
         id:   z.string(),
@@ -35,6 +37,7 @@ export default defineContentConfig({
     schema: z.object({
         title:     z.string(),
         author:    z.string(),
+        description: z.string().optional(),
         cover:   z.string().optional(),
         url: z.string().optional(),
         id:   z.string(),

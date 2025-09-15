@@ -1,5 +1,6 @@
 ---
 title: 关于尝试引入 content 对应功能的所思所想
+description: "本文本质：关于使用“较新”技术时，AI 是否能有效胜任任务"
 classify: 随笔
 date: 2025-06-16
 image: "/img/egusleep.png"

@@ -1,5 +1,6 @@
 ---
 title: "关于全局样式状态"
+description: "在Nuxt3项目内使用状态管理的一般性：  "
 classify: "技术"
 date: "2025-06-14"
 image: "/img/hatune.png"

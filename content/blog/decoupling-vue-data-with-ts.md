@@ -1,5 +1,6 @@
 ---
 title: "直接用 TS 文件给组件提供数据"
+description: "此文写于我的入门时期"
 classify: "笔记"
 date: "2025-05-25"
 image: "/img/boire.jpg"

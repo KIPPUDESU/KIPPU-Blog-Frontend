@@ -1,5 +1,6 @@
 ---
 title: 渐退渐入下划线
+description: "起因是我看到某网站内的动画效果于是也想要手搓一个试试  "
 classify: 动画
 date: 2025-07-02
 image: "/img/egust.jpg"

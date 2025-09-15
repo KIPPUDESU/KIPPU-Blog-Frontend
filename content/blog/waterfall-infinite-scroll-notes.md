@@ -1,5 +1,6 @@
 ---
 title: "瀑布流无限滚动功能开发与调试随想"
+description: "为了实现小红书网站类似的错落不一的瀑布流卡片展示，在引入某库后的自我摸索"
 classify: "记录"
 date: "2025-09-01"
 image: "/img/kawaikokoro.png"

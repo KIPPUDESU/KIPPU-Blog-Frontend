@@ -4,6 +4,14 @@ export default defineNuxtConfig({
   srcDir: 'app/',
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
+
+  site: {
+    url: 'https://kippu.kippupass.life',
+    name: 'KIPPU-BLOG',
+    description: 'Welcome to my personal blog!',
+    defaultLocale: 'zh', // 默认语言
+  },
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@tailwindcss/typography',

@@ -1,5 +1,6 @@
 ---
 title: Nuxt 4 中插入页面过渡动画
+description: "关于在 Nuxt 4 创建的项目中，为页面衔接间的过度状态插入一个独立的组件，在其中运行设定好的动效，用作过度的动画  "
 classify: 动画
 date: 2025-07-09
 image: "/img/mizuki(1).png"

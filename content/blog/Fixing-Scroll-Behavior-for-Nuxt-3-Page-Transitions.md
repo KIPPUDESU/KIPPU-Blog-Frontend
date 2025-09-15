@@ -1,5 +1,6 @@
 ---
 title: 解决 Nuxt3 页面过渡动画与滚动冲突问题
+description: "遇到的问题  "
 classify: 技术
 date: 2025-07-17
 image: "/img/hoshipb.png"

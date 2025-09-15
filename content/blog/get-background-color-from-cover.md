@@ -1,5 +1,6 @@
 ---
 title: "根据歌曲封面自动匹配的背景色"
+description: "本文旨在深入分析项目中“歌单背景颜色”功能的实现细节    "
 classify: "技术"
 date: "2025-07-27"
 image: "/img/mizukineko.jpg"
