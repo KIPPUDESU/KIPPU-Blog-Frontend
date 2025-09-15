@@ -1,5 +1,5 @@
 ---
-title: "Nuxt 中 ReadTime 功能实现分析"
+title: "Nuxt 中“阅读时长”功能实现分析"
 classify: "技术"
 date: "2025-07-19"
 image: "/img/sentakusuwaru.png"

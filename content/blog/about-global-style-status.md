@@ -10,7 +10,7 @@ image: "/img/hatune.png"
   
 **毫无疑问**在 Vue 为基础的项目内，使用状态管理的主流方法就是 Pinia 方法  
 一般来说引入此方法会有以下两个步骤  
-### stores文件目录下创建由pinia管理的函数与方法  
+### stores 文件目录下创建由 pinia 管理的函数与方法  
 ```ts
 // ../stores/test
 export const useTestStore = defineStore(
@@ -73,7 +73,7 @@ export default defineNuxtPlugin((_nuxtApp) => {
   
 这些都是引入方法的一环  
   
-但是在 Nuxt3 开发下这个步骤或许**不被需要**  
-直接通过 Nuxt3 自带的开发组件 Modules 来实现一键式部署，所以 plugins 内的定义就不再需要  
+但是在 Nuxt 开发下这个步骤或许**不被需要**  
+直接通过 Nuxt 自带的开发组件 Modules 来实现一键式部署，所以 plugins 内的定义就不再需要  
   
 ### 2025.06.10 共勉

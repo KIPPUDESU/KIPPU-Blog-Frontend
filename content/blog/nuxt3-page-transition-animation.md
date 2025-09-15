@@ -1,12 +1,12 @@
 ---
-title: Nuxt3 中插入页面过渡动画
+title: Nuxt 4 中插入页面过渡动画
 classify: 动画
 date: 2025-07-09
 image: "/img/mizuki(1).png"
 ---
 
-# Nuxt3 中插入页面过渡动画  
-## 关于在 Nuxt3 创建的项目中，为页面衔接间的过度状态插入一个独立的组件，在其中运行设定好的动效，用作过度的动画  
+# Nuxt 4 中插入页面过渡动画  
+## 关于在 Nuxt 4 创建的项目中，为页面衔接间的过度状态插入一个独立的组件，在其中运行设定好的动效，用作过度的动画  
   
 ## 首先需要考虑怎样使组件读取到页面状态的切换，以此插入动画  
 Nuxt3 其中提供了`useNuxtApp`用以获取应用实例  
@@ -95,9 +95,9 @@ nuxtApp.hook('page:finish', () => {
 **过度动画组件**与**入场组件**配合，实现舒适的过度缓动效果  
 ---  
 ## 总结：
-在Nuxt3中插入动画效果非常方便，基本只涉及监听和状态的改变，剩下的都是自定义的范畴  
+在 Nuxt 中插入动画效果基本只涉及监听和状态的改变，剩下的都是自定义的范畴  
   
-在 Nuxt3 根布局里，用 useNuxtApp() 注册 page:start/page:finish 钩子，维护一个响应式的 isLoading。然后在根组件中用  
+在 Nuxt 根布局里，用 useNuxtApp() 注册 page:start/page:finish 钩子，维护一个响应式的 isLoading。然后在根组件中用  
 ```vue
 <Transition name="fade">
   <TransitionCover v-if="isLoading" />

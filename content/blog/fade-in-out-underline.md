@@ -74,5 +74,45 @@ image: "/img/egust.jpg"
 ---  
   
 不过今天也没写什么东西，就先这样吧  
+
+## 2025.09.15 新编：
+最近优化了一下相关的代码  
+```html
+<!-- 动画效果容器 -->
+<div 
+class="
+transition-all duration-600 ease-in-out
+flex flex-col w-full h-full group
+">
+  <!-- 邮箱 -->
+  <a 
+  href="mailto:KIPPUDESU@OUTLOOK.COM?subject=Hello%20Kippu" 
+  target="_blank"
+  class="
+  z-20 hover:text-gray-400"
+  :class="ChengeStore.PlaneOrSolid?
+  'text-gray-500' : 'text-blue-400' "
+  >
+  KIPPUDESU@OUTLOOK.COM</a>
+  <!-- 下划线 -->
+  <div class="
+  transition-all duration-600 ease-in-out
+  h-0.5 w-full rounded-4xl
+  bg-gray-400
+  ml-0 group-hover:w-0 group-hover:ml-auto" 
+  ></div>
+</div>
+```
+放弃了原先不稳定的 absolute 定位，防止在不同显示器尺寸下下划线与邮箱文本无法对齐  
+为了应对这种改变，原先的逻辑也产生了微笑的变动  
+- `left-0 right-auto group-hover:w-0 group-hover:left-auto group-hover:right-0`  
+⬇⬇⬇⬇  
+- `ml-0 group-hover:w-0 group-hover:ml-auto`  
+用外边距控制定位  
+
+## 总结
+灵感：来自 Capsules 的 hover 下划线动画  
+- 初版实现：依赖 absolute + group-hover，效果达成但存在布局风险  
+- 优化实现：改用 flex + margin 控制，更适配不同屏幕尺寸  
   
 ### 2025.06.22 共勉
