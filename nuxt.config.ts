@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'pinia-plugin-persistedstate',
     '@nuxt/content',
+    '@nuxtjs/seo',
   ],
   components: [
     '~/components',

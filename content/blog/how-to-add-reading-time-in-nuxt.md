@@ -120,9 +120,23 @@ export default defineContentConfig({
 ```  
   
 ## 总结
-这个功能在后续或许可以添加更多的优化   
-例如我们可以引入更专业的库（如 `word-count`）来区分中英文，又或者是区分什么代码之类的的，帮助我们实现更精确的统计，不过既然是估算，就暂且不用这么较真了（笑）  
-总之，这次功能实现对我的主要教训还是很明显的，基本上加深了我对 Nuxt Content 工作流的理解  
-**当然，还有现代前端“类型定义优先”的重要性**  
-  
+> _以下总结由 AI 生成，仅供参考。_
+本文提供了一套在 Nuxt Content v2 中实现“文章阅读时长”功能的完整方案。方案的核心是利用 `reading-time` 等库来计算文本的阅读时长。具体实现上，通过在 `nuxt.config.ts` 中监听 `content:file:afterParse` 钩子，在文件解析后，计算出每篇文章的阅读时长，并将其作为一个新的字段（如 `readingTime`）注入到文章数据中。同时，文章强调了必须在 `content.config.ts` 中为这个新字段定义 `schema`，否则 Nuxt Content 将无法识别和渲染该数据。最后，在前端组件中便可轻松地获取并展示阅读时长。
+
+## 速览
+> _以下速览由 AI 生成，仅供参考。_
+
+#Nuxt #NuxtContent #前端开发 #Vue #博客
+
+**本文是一篇详细的技术教程，指导如何在 Nuxt Content v2 驱动的博客中，通过监听内容钩子（Hook）并定义内容结构（Schema），为每篇文章自动计算并展示“阅读时长”。**
+
+1.  **计算并注入时长 (Calculate & Inject)**
+    -   核心：在 `nuxt.config.ts` 中，使用 `content:file:afterParse` 钩子。
+    -   流程：该钩子在 Markdown 文件被解析后触发。在钩子函数内，通过计算文章正文的词数，并除以预设的阅读速度（如 180字/分钟），得到阅读时长。然后，将这个计算出的值作为一个新字段（如 `readingTime`）挂载到 `content` 对象上。
+2.  **定义数据结构 (Define Schema)**
+    -   关键：必须在 `content.config.ts` 文件中，使用 `defineCollection` 和 `zod` 来为你的内容集合（如 `blog`）定义 `schema`。
+    -   目的：在该 `schema` 中，必须将新添加的 `readingTime` 字段声明为一个类型（如 `z.number().optional()`）。这一步至关重要，否则 Nuxt Content 将因类型未定义而拒绝渲染该数据。
+3.  **前端展示 (Frontend Display)**
+    -   数据访问：完成以上配置后，在文章详情页（如 `[...slug].vue`）中，便可以从 `useContent` 提供的 `page` 对象中，像访问 `page.title` 一样，直接通过 `page.readingTime` 来获取并展示阅读时长。
+
 ### 2025.07.19 共勉

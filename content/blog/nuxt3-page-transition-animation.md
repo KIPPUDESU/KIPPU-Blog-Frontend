@@ -94,17 +94,29 @@ nuxtApp.hook('page:finish', () => {
   
 **过度动画组件**与**入场组件**配合，实现舒适的过度缓动效果  
 ---  
-## 总结：
-在 Nuxt 中插入动画效果基本只涉及监听和状态的改变，剩下的都是自定义的范畴  
-  
-在 Nuxt 根布局里，用 useNuxtApp() 注册 page:start/page:finish 钩子，维护一个响应式的 isLoading。然后在根组件中用  
-```vue
-<Transition name="fade">
-  <TransitionCover v-if="isLoading" />
-</Transition>
-```
-根据 isLoading 动态挂载遮罩层。最后在全局样式里分别定义两组过渡类：  
-.fade-enter-active/.fade-leave-active：透明度渐变  
-.page-enter-active/.page-leave-active：同时过渡透明度和模糊滤镜。  
-  
+## 总结
+> _以下总结由 AI 生成，仅供参考。_
+本文详细介绍了一种在 Nuxt 4 项目中实现页面过渡动画的优雅方案。该方案的核心是利用 Nuxt App 的生命周期钩子（`page:start` 和 `page:finish`）来精确控制一个独立过渡动画组件（`TransitionCover`）的显示与隐藏。通过在根组件（如 `app.vue`）中设置一个响应式状态（`isLoading`），并在钩子函数中改变其值，再结合 Vue 的 `<Transition>` 组件，实现了页面内容与过渡动画的解耦和无缝衔接，避免了页面跳转时的生硬感。
+
+## 速览
+> _以下速览由 AI 生成，仅供参考。_
+
+#Nuxt #Vue #动画 #页面过渡 #前端开发
+
+**本文是一篇关于在 Nuxt 4 项目中实现页面过渡动画的教程。文章的核心思路是利用 Nuxt App 的生命周期钩子（`page:start` 和 `page:finish`）来控制一个独立的过渡动画组件（`TransitionCover`）的显示与隐藏，从而在页面跳转时呈现平滑的动画效果。**
+
+1.  **核心思路 (Core Idea)**
+    -   目标：在 Nuxt 页面切换的间隙，插入一个全屏的、可自定义的过渡动画组件。
+    -   关键：需要精确地监听“页面开始切换”和“页面切换完成”这两个时间点。
+2.  **实现步骤 (Implementation)**
+    -   利用 `useNuxtApp()`：在应用的根组件（如 `app.vue` 或 `layouts/default.vue`）中，通过 `useNuxtApp()` 获取 Nuxt 应用实例。
+    -   监听钩子：使用 `nuxtApp.hook()` 来监听 `page:start` 和 `page:finish` 这两个钩子。
+    -   状态管理：定义一个响应式变量（如 `isLoading = ref(false)`）来作为控制过渡动画组件显示/隐藏的开关。
+    -   逻辑流程：
+        -   当 `page:start` 触发时，将 `isLoading` 设为 `true`，显示过渡动画组件。
+        -   当 `page:finish` 触发时，在短暂延迟后，将 `isLoading` 设为 `false`，隐藏过渡动画组件。
+3.  **组件与样式 (Component & Styling)**
+    -   组件集成：在模板中，使用 Vue 的 `<Transition>` 组件包裹过渡动画组件（如 `<TransitionCover v-if="isLoading" />`），以实现平滑的淡入淡出效果。
+    -   CSS 动画：为 `<Transition>` 组件定义相应的 `fade-enter-active` / `fade-leave-active` 等 CSS 类，以控制透明度（`opacity`）的变化，实现动画效果。
+
 ### 2025.07.09 共勉

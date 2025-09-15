@@ -115,4 +115,18 @@ flex flex-col w-full h-full group
 - 初版实现：依赖 absolute + group-hover，效果达成但存在布局风险  
 - 优化实现：改用 flex + margin 控制，更适配不同屏幕尺寸  
   
+## 速览
+> _以下速览由 AI 生成，仅供参考。_
+
+#CSS #TailwindCSS #动画 #前端技巧
+
+**本文记录了一款悬浮下划线（Hover Underline）动画的两种 CSS 实现方式。灵感来源于 Capsules 网站，旨在实现一种从中间消失、从两边展开的动画效果。文章对比了依赖绝对定位（`absolute`）的初版方案和利用 Flexbox 与外边距（`margin`）的优化方案，最终推荐后者作为更健壮、适应性更强的选择。**
+
+1.  **动画效果与灵感 (Effect & Inspiration)**
+    -   目标效果：鼠标悬夫时，下划线从两边向中间收缩消失；鼠标移开时，下划线从中间向两边展开恢复。
+    -   灵感来源：模仿 Capsules 网站的链接悬浮效果。
+2.  **实现方案对比 (Implementation Comparison)**
+    -   初版方案 (V1)：使用绝对定位 (`absolute`) 和 `width` 结合 `group-hover` 来控制下划线的动画。虽然能实现效果，但在不同屏幕尺寸下可能出现对齐问题，布局风险较高。
+    -   优化方案 (V2)：放弃绝对定位，改用 Flexbox 布局 (`flex`)。通过控制下划线元素的 `width` 和 `margin-left: auto`，巧妙地实现了向右收缩的效果，代码更简洁且布局更稳健。
+
 ### 2025.06.22 共勉

@@ -76,4 +76,22 @@ export default defineNuxtPlugin((_nuxtApp) => {
 但是在 Nuxt 开发下这个步骤或许**不被需要**  
 直接通过 Nuxt 自带的开发组件 Modules 来实现一键式部署，所以 plugins 内的定义就不再需要  
   
+## 总结
+> _以下总结由 AI 生成，仅供参考。_
+本文介绍了在 Nuxt 3 项目中使用 Pinia 进行全局状态管理的方法。文章首先展示了定义一个标准 Pinia store（包含 state, action）并实现持久化（`persist: true`）的基础代码。随后，文章讲解了通过手动创建 Nuxt 插件（`plugins/pinia.ts`）并引入 `pinia-plugin-persistedstate` 来启用持久化功能的传统步骤。最后，文章提出了一个关键点：在现代 Nuxt 开发中，通过使用官方提供的 Nuxt Modules（如 `@pinia/nuxt` 和 `@pinia-plugin-persistedstate/nuxt`），可以极大地简化配置，甚至不再需要手动编写插件文件，实现“一键式”部署。
+
+## 速览
+> _以下速览由 AI 生成，仅供参考。_
+
+#Nuxt #Vue #Pinia #状态管理 #前端开发
+
+**本文探讨了在 Nuxt 3 中使用 Pinia 进行状态管理，特别是持久化储存的实现方式，并指出了通过使用 Nuxt Modules 可以极大地简化传统手动配置插件的流程。**
+
+1.  **Pinia 基础用法 (Basic Usage)**
+    -   Store 定义：展示了如何使用 `defineStore` 创建一个 Pinia store，其中包含响应式状态 (`ref`) 和修改状态的 action。
+    -   组件应用：说明了如何在组件中通过 `useTestStore()` 引入并使用 store 中的状态和方法。
+2.  **持久化实现 (Persistence Implementation)**
+    -   传统方式：详细介绍了通过创建一个 Nuxt 插件 (`plugins/pinia.ts`)，并引入 `pinia-plugin-persistedstate` 库，来为 Pinia 开启状态持久化功能的步骤。
+    -   现代方式：文章最后点明，在当前的 Nuxt 生态中，可以直接使用官方提供的 Modules 来集成 Pinia 及其持久化插件，这使得整个配置过程更简单、自动化，不再需要手动编写插件。
+
 ### 2025.06.10 共勉
