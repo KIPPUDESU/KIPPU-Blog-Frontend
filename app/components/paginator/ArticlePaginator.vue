@@ -21,10 +21,10 @@ relative mb-0 flex justify-center w-full h-10 lg:h-2/10">
             transition-all duration-500 ease-in-out
             flex flex-nowrap w-full h-full 
             items-center justify-center 
-            text-[18px] text-blue-300 font-bold bg-gray-50
-            hover:text-[20px] hover:text-gray-500 hover:shadow-lg
+            text-[18px] text-pink-300 font-bold bg-white
+            hover:bg-pink-50 hover:ring-pink-300 hover:text-[20px] hover:text-pink-500 hover:shadow-lg
             cursor-pointer gap-4 hover:gap-6
-            ring-4 ring-pink-200/50"
+            ring-4 ring-pink-200"
             :class="ChengeStore.PlaneOrSolid?
             'shadow-none rounded-none' : 
             'shadow-md rounded-lg'">
@@ -59,10 +59,10 @@ relative mb-0 flex justify-center w-full h-10 lg:h-2/10">
             transition-all duration-500 ease-in-out
             flex flex-nowrap w-full h-full 
             items-center justify-center 
-            text-[18px] text-blue-300 font-bold bg-gray-50
-            hover:text-[20px] hover:text-gray-500 hover:shadow-lg
+            text-[18px] text-pink-300 font-bold bg-white
+            hover:bg-pink-50 hover:ring-pink-300 hover:text-[20px] hover:text-pink-500 hover:shadow-lg
             cursor-pointer gap-4 hover:gap-6
-            ring-4 ring-pink-200/50"
+            ring-4 ring-pink-200"
             :class="ChengeStore.PlaneOrSolid?
             'shadow-none rounded-none' : 
             'shadow-md rounded-lg'">
