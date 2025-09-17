@@ -4,18 +4,22 @@
   relative flex w-full bottom-0 px-[40px] my-4 lg:h-116 2xl:h-140
   items-center justify-center perspective-1000">
     <!-- stack div -->
-    <div class="flex h-9/10 w-full rounded-xl shadow-lg shadow-black/20">
+    <div 
+    class="flex h-9/10 w-full shadow-black/20"
+    :class="ChengeStore.PlaneOrSolid ?
+    'shadow-none' : 'shadow-lg'"
+    >
       <!-- stack -->
       <div class="
       flex h-full w-full justify-between 
-      rounded-xl [clip-path:inset(0_0_0_-2rem)]">
+      [clip-path:inset(0_0_0_-2rem)]">
         <!-- 左侧卡片 -->
         <div class="
         transition-all duration-600 ease-in-out
         relative flex h-full w-70 group
-        bg-white shadow-[4px_0_10px_rgba(0,0,0,0.2)]"
+        bg-white"
         :class="ChengeStore.PlaneOrSolid ?
-        'rounded-none' : 'rounded-l-xl' ">
+        'shadow-[4px_0_10px_rgba(0,0,0,0)]' : 'shadow-[4px_0_10px_rgba(0,0,0,0.2)]' ">
           <!-- 介绍句 -->
           <div class="
           absolute bottom-0 left-0 w-full h-1/4 px-2 py-5">
@@ -180,8 +184,6 @@
           transition-all duration-600 ease-in-out
           flex flex-1 relative h-full justify-center
           overflow-hidden bg-blue-100/20"
-          :class="ChengeStore.PlaneOrSolid ?
-          'rounded-none' : 'rounded-r-xl' "
         >
             <img class="absolute z-0  lg:w-10/12 2xl:w-6/12 -top-30" src="/img/egubule.png" alt="">
             <img class="absolute z-40 lg:w-10/12 2xl:w-6/12 -top-30" src="/img/egubuleindex.png" alt="">
