@@ -92,16 +92,16 @@
       <div class="w-full h-96 mt-4 px-[20px]">
         <div
         class=" 
-        relative flex flex-col w-full h-full rounded-lg">
+        relative flex flex-col w-full h-full rounded-2xl">
           <!-- 遮罩 -->
           <div class="
           transition-all duration-600 ease-in-out
           absolute flex z-10 inset-0
-          justify-center items-center rounded-lg
+          justify-center items-center
           bg-gradient-to-bl from-gray-50 to-white ring-0"
           :class="ChengeStore.PlaneOrSolid ? 
           'rounded-none shadow-none ring-black/0' :
-          'rounded-lg shadow-lg ring-gray-300'"
+          'rounded-xl shadow-lg ring-gray-300'"
           >
             <!-- 列表项容器 -->
             <div 
