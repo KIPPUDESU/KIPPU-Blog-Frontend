@@ -41,6 +41,7 @@ export default defineContentConfig({
         cover:   z.string().optional(),
         url: z.string().optional(),
         id:   z.string(),
+        bvid: z.string().optional(),
       })
   }),
   shares:defineCollection({

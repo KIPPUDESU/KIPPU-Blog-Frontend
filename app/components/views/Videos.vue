@@ -1,8 +1,7 @@
 <template>
   <div 
   class="
-  flex flex-col justify-between items-center
-  w-full">
+  flex flex-col justify-between items-center w-full">
     <Transition :name="isNextPage ? 'fade-left' : 'fade-right'" mode="out-in">
       <div 
       :key="PageNum"
@@ -14,7 +13,7 @@
       >
         <!-- 视频列表 -->
         <VideoCard 
-        v-for="video in videos"
+        v-for="video in processedVideos"
         :key="video.id" 
         :video="video" />
         <div 
@@ -69,6 +68,25 @@ await useAsyncData(
     .skip( PageNum.value * MaxVideoCard )
     .all(),
 )
+
+// +++ START OF NEW, NON-INVASIVE LOGIC +++
+const processedVideos = ref<any[]>([])
+
+watch(videos, async (newVideos) => {
+  if (newVideos && newVideos.length > 0) {
+    try {
+        const videoDetails = await Promise.all(
+          newVideos.map(bvidObj => bvidObj.bvid ? $fetch(`/api/bilibili/${bvidObj.bvid}`) : Promise.resolve(null))
+        )
+        processedVideos.value = videoDetails.filter(Boolean)
+    } catch (error) {
+      // Suppress error logging
+    }
+  } else {
+    processedVideos.value = []
+  }
+}, { immediate: true }) // immediate: true ensures it runs on initial load
+// +++ END OF NEW LOGIC +++
 
 // 检测本页过后是否依旧有视频存在
 const { data: haveNextPage, refresh: refreshHaveNextPage } =

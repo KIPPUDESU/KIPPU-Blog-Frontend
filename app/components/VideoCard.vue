@@ -8,21 +8,21 @@
      :class="ChengeStore.PlaneOrSolid ? 
      'rounded-none shadow-black/0' : 'rounded-lg shadow-black/20' ">
         <!-- 封面图片 -->
-        <img
-          :src="video.cover || '/img/egusleep.png'"
+        <div class="flex w-1/3 h-full overflow-hidden bg-gray-200">
+          <img
+          :src="video.coverUrl || '/img/egusleep.png'"
           alt="Video cover"
-          class="h-full"
+          class="object-cover scale-104"
+          referrerpolicy="no-referrer"
           />
+        </div>
+   
         <!-- 视频信息 -->
-        <div class="flex flex-col flex-grow">
+        <div class="flex flex-1 flex-col">
           <h2 
           class="text-lg font-semibold text-gray-800">
             {{ video.title }}
           </h2>
-          <p 
-          class="text-md text-gray-600 mt-1">
-            作者: {{ video.author }}
-          </p>
           <a 
           :href="video.url"
           target="_blank"
@@ -41,8 +41,7 @@ const ChengeStore = useTestStore()
 interface Video {
   id: string;
   title: string;
-  author: string;
-  cover?: string;
+  coverUrl?: string;
   url?: string;
 }
 
