@@ -21,10 +21,10 @@ export default defineEventHandler(async (event) => {
     const coverUrl = $('meta[property="og:image"]').attr('content') || ''
 
     // 清理URL，去掉可能存在的@参数
-    const cleanedCoverUrl = coverUrl.split('@')[0]
+    const cleanedCoverUrl = coverUrl ? coverUrl.split('@')[0] : ''
 
     // Bilibili 的封面 URL 可能不包含协议头，需要补充
-    const finalCoverUrl = cleanedCoverUrl.startsWith('//') ? `https:${cleanedCoverUrl}` : cleanedCoverUrl
+    const finalCoverUrl = (cleanedCoverUrl ?? '').startsWith('//') ? `https:${cleanedCoverUrl}` : cleanedCoverUrl
 
     return {
       id: videoId,

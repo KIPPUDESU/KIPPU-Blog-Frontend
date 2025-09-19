@@ -13,7 +13,7 @@
       >
         <!-- 视频列表 -->
         <VideoCard 
-        v-for="video in validVideos"
+        v-for="video in Videos"
         :key="video.id" 
         :video="video" />
         <div 
@@ -83,18 +83,21 @@ await useAsyncData(
         if (!originalVideos || originalVideos.length === 0) {
             return [];
         }
-
+        // 得到一个 Promise 数组，交给 Promise.all 并行
         const videoDetails = await Promise.all(
+          // 遍历原始视频列表：有 bvid 的发起 $fetch 请求，无 bvid 的返回 null
             originalVideos.map(video => video.bvid ? $fetch(`/api/bilibili/${video.bvid}`) : Promise.resolve(null))
         );
 
         // 返回最终处理好的数据
         return videoDetails.filter(Boolean);
     },
+    // 页面变化重新执行上面的整个 async
     { watch: [PageNum] } 
 )
 
-const validVideos = computed(() => {
+// 过滤掉 null 值并显式说明处理后的数据一定是 Video
+const Videos = computed(() => {
   if (!videos.value) return []
   return videos.value.filter((video): video is Video => !!video)
 })
@@ -108,7 +111,6 @@ await useAsyncData(
     .limit(1)
     .select('title')
     .all(),
-    { watch: [PageNum] }
 )
 
 // 加减方法
@@ -126,7 +128,11 @@ function addPage() {
     }
 }
 
-// 旧的 watch(PageNum, ...) 已被 useAsyncData 的 watch 选项取代，不再需要
+// 页面变化启动启动两个 refresh 重启查询
+watch(PageNum, () => {
+    refreshVideos()
+    refreshHaveNextPage()
+})
 </script>
 
 <style scoped>
