@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
     const html = await ofetch(url)
     const $ = cheerio.load(html)
 
-    const title = $('title').text()
+    const title = $('title').text().replace(/_哔哩哔哩_bilibili$/, '').trim()
     const description = $('meta[name="description"]').attr('content') || ''
     const coverUrl = $('meta[property="og:image"]').attr('content') || ''
 

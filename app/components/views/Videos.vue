@@ -13,7 +13,7 @@
       >
         <!-- 视频列表 -->
         <VideoCard 
-        v-for="video in processedVideos"
+        v-for="video in validVideos"
         :key="video.id" 
         :video="video" />
         <div 
@@ -33,10 +33,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useTestStore } from '#imports'
 
 const ChengeStore = useTestStore()
+
+interface Video {
+  id: string;
+  title: string;
+  description: string;
+  coverUrl: string | undefined;
+  url: string;
+}
+
 
 // 动画
 const isNextPage = ref<boolean>(true)
@@ -60,33 +69,35 @@ const PageNum = ref(
     })()
 )
 
+// 视频数据获取
 const { data: videos, refresh: refreshVideos } =
 await useAsyncData(
     `videos-page-${PageNum.value}`,
-    () => queryCollection('videos')
-    .limit(MaxVideoCard)
-    .skip( PageNum.value * MaxVideoCard )
-    .all(),
+    async () => {
+        const originalVideos = await queryCollection('videos')
+            .limit(MaxVideoCard)
+            .skip(PageNum.value * MaxVideoCard)
+            .all();
+
+        // 处理查询结果
+        if (!originalVideos || originalVideos.length === 0) {
+            return [];
+        }
+
+        const videoDetails = await Promise.all(
+            originalVideos.map(video => video.bvid ? $fetch(`/api/bilibili/${video.bvid}`) : Promise.resolve(null))
+        );
+
+        // 返回最终处理好的数据
+        return videoDetails.filter(Boolean);
+    },
+    { watch: [PageNum] } 
 )
 
-// +++ START OF NEW, NON-INVASIVE LOGIC +++
-const processedVideos = ref<any[]>([])
-
-watch(videos, async (newVideos) => {
-  if (newVideos && newVideos.length > 0) {
-    try {
-        const videoDetails = await Promise.all(
-          newVideos.map(bvidObj => bvidObj.bvid ? $fetch(`/api/bilibili/${bvidObj.bvid}`) : Promise.resolve(null))
-        )
-        processedVideos.value = videoDetails.filter(Boolean)
-    } catch (error) {
-      // Suppress error logging
-    }
-  } else {
-    processedVideos.value = []
-  }
-}, { immediate: true }) // immediate: true ensures it runs on initial load
-// +++ END OF NEW LOGIC +++
+const validVideos = computed(() => {
+  if (!videos.value) return []
+  return videos.value.filter((video): video is Video => !!video)
+})
 
 // 检测本页过后是否依旧有视频存在
 const { data: haveNextPage, refresh: refreshHaveNextPage } =
@@ -96,7 +107,8 @@ await useAsyncData(
     .skip( (PageNum.value + 1 ) * MaxVideoCard )
     .limit(1)
     .select('title')
-    .all()
+    .all(),
+    { watch: [PageNum] }
 )
 
 // 加减方法
@@ -114,10 +126,7 @@ function addPage() {
     }
 }
 
-watch(PageNum, () => {
-    refreshVideos()
-    refreshHaveNextPage()
-})
+// 旧的 watch(PageNum, ...) 已被 useAsyncData 的 watch 选项取代，不再需要
 </script>
 
 <style scoped>
