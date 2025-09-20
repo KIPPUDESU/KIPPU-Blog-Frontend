@@ -77,7 +77,7 @@ await useAsyncData(
         const originalVideos = await queryCollection('videos')
             .limit(MaxVideoCard)
             .skip(PageNum.value * MaxVideoCard)
-            .all();
+            .all()
 
         // 处理查询结果
         if (!originalVideos || originalVideos.length === 0) {
@@ -87,7 +87,7 @@ await useAsyncData(
         const videoDetails = await Promise.all(
           // 遍历原始视频列表：有 bvid 的发起 $fetch 请求，无 bvid 的返回 null
             originalVideos.map(video => video.bvid ? $fetch(`/api/bilibili/${video.bvid}`) : Promise.resolve(null))
-        );
+        )
 
         // 返回最终处理好的数据
         return videoDetails.filter(Boolean);

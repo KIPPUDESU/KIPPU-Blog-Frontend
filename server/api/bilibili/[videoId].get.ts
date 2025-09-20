@@ -13,7 +13,10 @@ export default defineEventHandler(async (event) => {
 
   try {
     const url = `https://www.bilibili.com/video/${videoId}`
-    const html = await ofetch(url)
+    // const html = await ofetch(url)
+    // 用 ofetch 获取 HTML 内容
+    const html = await ofetch(url, { responseType: 'text' })
+    // 然后用 cheerio 解析 HTML
     const $ = cheerio.load(html)
 
     const title = $('title').text().replace(/_哔哩哔哩_bilibili$/, '').trim()
