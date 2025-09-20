@@ -21,7 +21,7 @@
         </div>
    
         <!-- 视频信息 -->
-        <div class="flex flex-1 flex-col w-full h-full px-4 pt-2">
+        <div class="flex flex-1 flex-col w-full h-full px-4 pb-4 justify-center relative">
           <h2 
           class="text-lg font-semibold text-gray-800 z-10">
             {{ video.title }}
@@ -40,7 +40,11 @@
             <div
                 ref="tooltipRef"
                 v-if="isDescriptionVisible"
-                class="fixed z-50 px-2 pt-1 bg-white rounded-md shadow-lg text-md text-gray-600 line-clamp-8 pointer-events-none max-w-60 break-words transition-opacity duration-800"
+                class="
+                fixed z-50 px-4 pt-1 rounded-xl shadow-lg text-md text-gray-800 
+                pointer-events-none max-w-sm break-words line-clamp-8
+                transition-opacity duration-100 
+                bg-white/60 backdrop-blur-lg border border-white/30"
                 :style="{ top: descriptionY + 'px', left: descriptionX + 'px', opacity: isTooltipReady ? 1 : 0 }"
             >
                 {{ video.description }}

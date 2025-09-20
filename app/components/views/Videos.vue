@@ -11,16 +11,28 @@
       "
       :class="isIre ? 'opacity-100' : 'opacity-0' "
       >
-        <!-- 视频列表 -->
-        <VideoCard 
-        v-for="video in Videos"
-        :key="video.id" 
-        :video="video" />
-        <div 
-        v-if="!videos || videos.length === 0" 
-        class="text-center text-gray-500 mt-8">
-          <p>未能找到任何视频...</p>
-        </div>
+        <!-- 加载状态：显示骨架屏 -->
+        <template v-if="isVideosLoading">
+          <VideoCardSkeleton 
+          v-for="n in MaxVideoCard" 
+          :key="`skel-${n}`" />
+        </template>
+
+        <!-- 加载完成：显示视频列表或未找到提示 -->
+        <template v-else>
+          <VideoCard 
+          v-for="(video, index) in Videos"
+          :key="video.id" 
+          :video="video" 
+          class="opacity-0 animate-[fade-in_0.8s_ease-out_forwards]"
+          :style="{ animationDelay: `${index * 100}ms` }"
+          />
+          <div 
+          v-if="!Videos || Videos.length === 0" 
+          class="text-center text-gray-500 mt-8 col-span-2">
+            <p>未能找到任何视频...</p>
+          </div>
+        </template>
       </div>
     </Transition>
     <!-- 分页按钮 -->
@@ -33,7 +45,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
 import { useTestStore } from '#imports'
 
 const ChengeStore = useTestStore()
@@ -57,7 +68,7 @@ onMounted(() => {
   },50)
 })
 
-const MaxVideoCard = 20
+const MaxVideoCard = 10
 const PageNum = ref(
     (() => {
         const PageNum = (0)
@@ -70,8 +81,9 @@ const PageNum = ref(
 )
 
 // 视频数据获取
-const { data: videos, refresh: refreshVideos } =
-await useAsyncData(
+const { data: videos, pending: isVideosLoading, refresh: refreshVideos } =
+// 去掉阻塞式加载确保加载动画可以显示
+useAsyncData(
     `videos-page-${PageNum.value}`,
     async () => {
         const originalVideos = await queryCollection('videos')
@@ -135,7 +147,12 @@ watch(PageNum, () => {
 })
 </script>
 
-<style scoped>
+<style>
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .fade-left-enter-active,
 .fade-left-leave-active {
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;

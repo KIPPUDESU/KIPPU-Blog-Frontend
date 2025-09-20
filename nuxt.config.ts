@@ -35,6 +35,10 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
     {
+      path: '~/components/skeletons',
+      pathPrefix: false,
+    },
+    {
       path: '~/layouts',
       pathPrefix: false,
     }
