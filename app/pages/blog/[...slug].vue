@@ -67,7 +67,12 @@
       </div>
     </div>
     <button 
-      class="fixed left-6 bottom-6 z-50 bg-pink-400 hover:bg-pink-500 text-white rounded-full p-3 shadow-lg transition-all duration-200"
+      ref="scrollTopButton"
+      class="
+        fixed left-6 bottom-6 z-50 
+        bg-pink-300 hover:bg-pink-200 text-white 
+        rounded-full p-3 shadow-lg 
+        transition-all duration-200"
       style="box-shadow: 0 4px 24px rgba(236,72,153,0.2);"
       @click="scrollToTop"
       aria-label="回到顶部">
@@ -80,7 +85,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, watch, nextTick } from 'vue';
+import Headroom from 'headroom.js'
 
 const route = useRoute()
 const { data: page } = await useAsyncData(route.path, () => {
@@ -143,6 +148,16 @@ onMounted(addCopyButtons);
 
 // 监听文章数据变化，当切换文章时重新执行
 watch(page, addCopyButtons);
+
+const scrollTopButton = ref<HTMLElement | null>(null)
+
+onMounted(() => {
+  if (scrollTopButton.value) {
+    const headroom = new Headroom(scrollTopButton.value, {
+    })
+    headroom.init()
+  }
+})
 
 function scrollToTop() {
   // 平滑滚动到页面顶部
@@ -267,5 +282,15 @@ function scrollToTop() {
 
 .prose :deep(h3::before) {
   background-color: #22c55e;
+}
+
+/* 按钮是否显示 */
+.headroom--unpinned {
+  opacity: 1;
+}
+
+.headroom--pinned {
+  opacity: 0;
+
 }
 </style>

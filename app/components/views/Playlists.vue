@@ -2,7 +2,7 @@
   <div 
   class="
   transition-all duration-800 ease-in-out
-  px-4 sm:px-6 md:px-8  w-full h-full 
+  px-4 sm:px-6 md:px-8  w-full h-full
   overflow-y-scroll scrollbar-hide"
   :class="isIre ? 'opacity-100 py-4 sm:py-6 md:py-8' : 'opacity-0 py-100' "
   >
@@ -24,7 +24,7 @@
       flex justify-center items-end 
       w-full h-48  
       bg-gradient-to-t pointer-events-auto group cursor-pointer
-      from-gray-100 via-gray-100/95 to-gary-100/0 
+      from-white via-white/95 to-white/0 
       hover:from-gray-200 hover:via-gray-200/95 hover:to-gary-200/0"
       >
         <!-- 箭头 -->

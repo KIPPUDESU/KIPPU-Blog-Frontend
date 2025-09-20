@@ -69,7 +69,6 @@ class="
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
 import Headroom from 'headroom.js'
 
 // 全局

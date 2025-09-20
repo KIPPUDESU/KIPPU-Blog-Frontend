@@ -73,7 +73,7 @@
                 <div 
                 class="
                 transition-all duration-600 ease-in-out
-                flex overflow-y-auto z-20 w-full rounded-t-xl"
+                flex relative overflow-y-auto z-20 w-full rounded-t-xl"
                 :class="ChengeStore.PlaneOrSolid?
                 'h-316 bg-gray-100' :
                 'h-300 bg-white' "
