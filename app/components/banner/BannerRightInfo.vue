@@ -16,7 +16,7 @@ hidden sm:flex"
   ref="glowWrapper" 
   class="
   transition-all duration-600 ease-in-out
-  absolute top-1 font-bold
+  absolute font-bold
   object-cover hover:scale-104
   bg-clip-text text-transparent bg-black/80"
   :class="ChengeStore.PlaneOrSolid? 

@@ -10,16 +10,16 @@ object-cover mt-6 hover:scale-104"
     <div 
     class="
     transition-all duration-500 ease-in-out
-    flex flex-col items-center w-full h-full ring-4"
+    flex flex-col items-center w-full h-full ring-2"
     :class="PlaneOrSolid ? 
     'bg-blue-50/0 hover:bg-blue-50 ring-gray-200' :
-    'bg-pink-100/0 hover:bg-pink-100/40 ring-pink-200/50 shadow-md shadow-black/20 hover:shadow-pink-500/80 rounded-lg'">   
+    'bg-pink-100/0 hover:bg-pink-100/40 ring-pink-200/50 shadow-sm shadow-black/20 hover:shadow-pink-500/80 rounded-lg'">   
         <!-- 图片容器 -->
         <div 
             class="
             transition-all duration-500 ease-in-out group
             flex justify-center items-center overflow-hidden
-            w-50 h-36 mx-4 mt-5 object-cover group: ring-3 ring-gray-200"
+            w-50 h-36 mx-4 mt-5 object-cover group: ring-2 ring-gray-200"
             :class="PlaneOrSolid 
             ? 'rounded-none ring-gray-200' 
             : 'rounded-lg ring-pink-200/50'"
