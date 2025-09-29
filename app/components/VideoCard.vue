@@ -15,7 +15,7 @@
           <img
           :src="video.coverUrl || '/img/egusleep.png'"
           alt="Video cover"
-          class="object-cover scale-110 z-10"
+          class="object-cover scale-110 z-30"
           referrerpolicy="no-referrer"
           />
         </div>
@@ -31,7 +31,7 @@
           :href="video.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="absolute inset-0 z-0">
+          class="absolute inset-0 z-20">
           </a>
         </div>
 

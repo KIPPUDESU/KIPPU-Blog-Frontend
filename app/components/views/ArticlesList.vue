@@ -5,7 +5,8 @@ flex flex-col justify-between items-center
 w-full h-full">
     <!-- 翻页动画容器 -->
     <Transition :name="isNextPage ? 'fade-left' : 'fade-right'" mode="out-in">
-        <div 
+        <div
+        v-if="!articlesPending"
         :key="PageNum"
         class="
         transition-all duration-800 ease-in-out
@@ -27,6 +28,17 @@ w-full h-full">
             :to="`/`"
             />
         </div>
+        <div
+        v-else
+        key="skeleton"
+        class="
+        transition-all duration-800 ease-in-out
+        flex flex-wrap w-full justify-center
+        "
+        :class="isIre ? 'opacity-100' : 'opacity-0' "
+        >
+            <ArticleCardSkeleton v-for="i in MaxArticleCard" :key="i" />
+        </div>
     </Transition>
         <!-- 分页按钮 -->
         <!-- 使用双重否定 !! 将表达式强制转换为一个严格的布尔值 -->
@@ -39,7 +51,6 @@ w-full h-full">
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue'
 // 全局状态管理
 import { useTestStore } from '#imports'
 
@@ -84,8 +95,8 @@ const PageNum = ref(
 // )
 
 // 返回值：refresh/execute：可用于刷新函数返回的数据的函数
-const { data: articles, refresh: refreshArticles } =
-await useAsyncData(
+const { data: articles, refresh: refreshArticles, pending: articlesPending } =
+useAsyncData(
     `articles-page-${PageNum.value}`,
     () => queryCollection('blog')
     // sql风格
@@ -97,7 +108,7 @@ await useAsyncData(
 
 // 检测本页过后是否依旧有文章存在
 const { data: haveNextPage, refresh: refreshHaveNextPage } =
-await useAsyncData(
+useAsyncData(
     `articles-haveNext-${PageNum.value}`,
     () => queryCollection('blog')
     .order('date', 'DESC')
