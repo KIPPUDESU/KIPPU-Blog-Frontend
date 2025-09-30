@@ -4,10 +4,19 @@
     transition-all duration-500 ease-in-out
     flex relative items-center gap-4 p-4 w-full h-32
     hover:scale-101 cursor-pointer
-    shadow-lg hover:shadow-xl"
-     :style="{ background: getGradientBackground(song.id) }"
-     :class="ChengeStore.PlaneOrSolid ? 
-     'rounded-none shadow-black/0' : 'rounded-lg shadow-black/20' ">
+    shadow-lg hover:shadow-xl overflow-hidden"
+     :style="{ background: !isColorLoading ? getGradientBackground(song.id) : '' }"
+     :class="[
+        isColorLoading ? 'bg-gray-200' : '',
+        ChengeStore.PlaneOrSolid ? 
+        'rounded-none shadow-black/0' : 'rounded-lg shadow-black/20' 
+     ]">
+        <!-- Shimmer Layer -->
+        <div v-if="isColorLoading" class="absolute top-0 left-0 w-full h-full
+                    bg-gradient-to-r from-transparent via-white/50 to-transparent
+                    animate-[shimmer_1.5s_infinite]">
+        </div>
+
         <!-- 封面图片 -->
         <img
           :src="song.image || '/img/egusleep.png'"
@@ -52,6 +61,9 @@ interface Song {
 const props = defineProps<{
     song: Song
 }>()
+
+// 判断颜色是否正在加载
+const isColorLoading = computed(() => !songColors.value[props.song.id]);
 
 // 使用一个响应式对象来存储每首歌的颜色, 键是 song.id
 const songColors = ref<Record<string, string>>({})
@@ -109,3 +121,15 @@ function adjustColor(color: string, amount: number): string {
    return (usePound ? '#' : '') + result
  }
 </script>
+
+<style>
+/* 使渐变光效从左到右移动。 */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+</style>
