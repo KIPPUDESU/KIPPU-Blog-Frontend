@@ -6,8 +6,8 @@
     <div class="mx-auto max-w-18/20 lg:max-w-14/20">
       <div 
       class="
-      bg-pink-50 rounded-2xl shadow-lg shadow-black/20
-      overflow-hidden">
+      shadow-black/20 overflow-hidden"
+      :class="ChengeStore.PlaneOrSolid ? 'rounded-none shadow-none bg-pink-100' : 'rounded-2xl shadow-lg bg-pink-50'">
         <div 
         class="
         flex relative w-full overflow-hidden h-64 lg:h-92">
@@ -86,6 +86,8 @@
 
 <script setup lang="ts">
 import Headroom from 'headroom.js'
+import { useTestStore } from '#imports'
+const ChengeStore = useTestStore()
 
 const route = useRoute()
 const { data: page } = await useAsyncData(route.path, () => {
