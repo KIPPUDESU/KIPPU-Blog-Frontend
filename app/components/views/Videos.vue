@@ -68,7 +68,7 @@ onMounted(() => {
   },50)
 })
 
-const MaxVideoCard = 10
+const MaxVideoCard = 12
 const PageNum = ref(
     (() => {
         const PageNum = (0)
