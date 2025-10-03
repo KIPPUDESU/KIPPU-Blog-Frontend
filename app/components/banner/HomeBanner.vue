@@ -1,25 +1,28 @@
 <template>
-<div class="relative w-full h-94">
-  <!-- 延伸 Header -->
-   <HeaderAdd />
+  <div class="relative h-94 w-full">
+    <!-- 延伸 Header -->
+    <HeaderAdd />
     <!-- 首页图容器 -->
-    <div 
-     class="
-     relative bg-gray-200/30 h-94 overflow-hidden">
+    <div class="relative h-94 overflow-hidden bg-gray-200/30">
       <!-- 填充父容器的透明absolute添加图片上层添加shadow-inner -->
-      <div 
-      class="
-      transition-all duration-600 ease-in-out
-      absolute z-20 w-full h-full" 
-      :class="ChengeStore.PlaneOrSolid?
-      'shadow-[inset_0_-4px_6px_rgba(0,0,0,0.0)]' :
-      'shadow-[inset_0_-5px_6px_rgba(0,0,0,0.2)]'"></div>
-        <img 
-        class="absolute z-10 transition-all duration-600 linear -left-4
-        sm:w-262 w-94 "
-        :class="ChengeStore.PlaneOrSolid?
-        'bottom-100' : 'xl:-bottom-192 lg:-bottom-144'"
-        src="/img/eguegugang.png" alt="">
+      <div
+        class="absolute z-20 h-full w-full transition-all duration-600 ease-in-out"
+        :class="
+          ChengeStore.PlaneOrSolid
+            ? 'shadow-[inset_0_-4px_6px_rgba(0,0,0,0.0)]'
+            : 'shadow-[inset_0_-5px_6px_rgba(0,0,0,0.2)]'
+        "
+      ></div>
+      <img
+        class="absolute z-10 -left-4 w-94 transition-all duration-600 linear sm:w-262"
+        :class="
+          ChengeStore.PlaneOrSolid
+            ? 'bottom-100'
+            : 'xl:-bottom-192 lg:-bottom-144'
+        "
+        src="/img/eguegugang.png"
+        alt=""
+      />
     </div>
     <!-- 左侧文字容器 -->
     <BannerLeftInfo />
