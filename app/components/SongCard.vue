@@ -1,5 +1,5 @@
 <template>
-    <div 
+    <NuxtLink :to="song.path"
     class="
     transition-all duration-500 ease-in-out
     flex relative items-center gap-4 p-4 w-full h-32
@@ -40,7 +40,7 @@
             曲风: {{ song.classify }}
           </p>
         </div>
-    </div>
+    </NuxtLink>
 </template>
 
 
@@ -56,6 +56,7 @@ interface Song {
   vocalist: string;
   image?: string;
   classify?: string;
+  path: string;
 }
 
 const props = defineProps<{
