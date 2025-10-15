@@ -4,14 +4,14 @@
   w-max h-326 justify-center items-center
   hidden sm:block">
     <!-- 外壳 -->
-    <div class="sticky top-0 w-full h-max pb-4 px-[20px] flex flex-col items-center">
+    <div class="sticky top-0 w-full h-max xl:pb-4 2xl:pb-8 xl:px-[20px] 2xl:px-[30px] flex flex-col items-center">
       <!-- 头像 -->
       <div 
       class="
       transition-all duration-600 ease-in-out
-      relative mt-8 flex w-40 h-40 rounded-full 
+      relative mt-8 flex xl:w-40 2xl:w-68 xl:h-40 2xl:h-68 rounded-full 
       justify-center items-center overflow-hidden 
-      shadow-lg ring-4 ring-gray-300 "
+      shadow-lg xl:ring-4 2xl:ring-8 ring-gray-300 "
       :class="ChengeStore.PlaneOrSolid ?
       'shadow-black/0' : 'shadow-black/20' "
       >
@@ -25,20 +25,20 @@
         />
       </div>
       <!-- id 简介 -->
-      <div class="relative flex flex-col w-50 h-18 mt-2 justify-center items-center">
-        <span class="text-2xl text-gray-800 font-bold">切符</span>
-        <p class="text-md text-gray-600/80 font-extrabold">もっと Elegant になりたい</p>
+      <div class="relative flex flex-col xl:w-50 2xl:w-100 xl:h-18 2xl:h-36 xl:mt-2 2xl:mt-4 justify-center items-center">
+        <span class="xl:text-[24px] 2xl:text-[48px] text-gray-800 font-bold">切符</span>
+        <p class="xl:text-[16px] 2xl:text-[32px]  text-gray-600/80 font-extrabold">もっと Elegant になりたい</p>
       </div>
       <!-- 联系方式 -->
       <div 
     class="
-    relative flex flex-row w-40 h-10 px-4
+    relative flex flex-row xl:w-40 2xl:w-80 xl:h-10 2xl:h-20 xl:px-4 2xl:px-8
     justify-between items-center
     ">
       <a 
       class="
       transition-all duration-600 ease-in-out
-      w-8 h-8 text-blue-500/50 hover:text-blue-500/90" 
+      xl:w-8 2xl:w-16 xl:h-8 2xl:h-16 text-blue-500/50 hover:text-blue-500/90" 
       href="https://x.com/aKIPPUz" target="_blank">
         <svg 
         version="1.1" 
@@ -60,7 +60,7 @@
       <a 
       class="
       transition-all duration-600 ease-in-out
-      w-8 h-8 text-blue-500/50 hover:text-blue-500/90" 
+      xl:w-8 2xl:w-16 xl:h-8 2xl:h-16 text-blue-500/50 hover:text-blue-500/90" 
       href="https://t.me/aKIPPUDESUz" target="_blank">
         <svg 
         xmlns="http://www.w3.org/2000/svg" 
@@ -74,7 +74,7 @@
       <a 
       class="
       transition-all duration-600 ease-in-out
-      w-8 h-8 text-blue-500/50 hover:text-blue-600/90" 
+      xl:w-8 2xl:w-16 xl:h-8 2xl:h-16 text-blue-500/50 hover:text-blue-600/90" 
       href="https://discord.gg/F22fCZtr" target="_blank1">
         <svg 
         xmlns="http://www.w3.org/2000/svg" 
@@ -89,7 +89,7 @@
     </div>
 
       <!-- 分类 -->
-      <div class="w-full h-96 mt-4 px-[20px]">
+      <div class="w-full xl:h-96 2xl:h-192 xl:mt-4 2xl:mt-8 xl:px-[20px] 2xl:px-[40px]">
         <div
         class=" 
         relative flex flex-col w-full h-full rounded-2xl">
@@ -114,9 +114,9 @@
                 @click="onChangeClass(item.compName)"
                 class="
                 transition-all duration-300 ease-in-out
-                flex flex-row flex-1 items-center gap-3 px-6 w-full
+                flex flex-row flex-1 items-center xl:gap-3 2xl:gap-6 xl:px-6 2xl:px-12 w-full
                 object-cover bg-white/0 
-                text-[16px] text-blue-300 font-bold cursor-pointer
+                xl:text-[16px] 2xl:text-[32px] text-blue-300 font-bold cursor-pointer
                 hover:scale-110 hover:text-blue-400
                 hover:bg-blue-300/10
                 active:scale-90"
