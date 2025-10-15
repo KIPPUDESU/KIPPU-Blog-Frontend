@@ -10,11 +10,11 @@
 
   <!-- 分页 -->
   <div 
-  class="flex relative bg-gray-100 w-full h-340">
+  class="flex relative bg-gray-100 w-full xl:h-340 2xl:h-680">
     <!-- 左侧信息容器 -->
     <LeftInfoPanel @change-class="onChangeClass" />
     <!-- 文章预览卡片 -->
-    <div class="w-full h-full py-5 px-5">
+    <div class="w-full h-full xl:py-5 2xl:py-10 xl:px-5 2xl:px-10">
       <div class="relative flex flex-col w-full h-full">
         <!-- 封顶 -->
         <div class="flex flex-row">
@@ -22,30 +22,30 @@
             <div 
               class="
               transition-all duration-600 ease-in-out
-              w-[22px] h-[22px] -translate-x-[1.5px] -translate-y-[1.5px]
-              border-t-[3.5px] border-l-[3.5px] border-black/20
+              xl:w-[22px] 2xl:w-[44px] xl:h-[22px] 2xl:h-[44px] -translate-x-[1.5px] -translate-y-[1.5px]
+              xl:border-t-[3.5px] 2xl:border-t-[7px] xl:border-l-[3.5px] 2xl:border-l-[7px] border-black/20
               hidden sm:block"
               :class="ChengeStore.PlaneOrSolid?
               'rounded-tl-none' : 'rounded-tl-xl'">
             </div>
             <!-- 横线 -->
-            <div class="w-full h-[3px] mx-6 -translate-y-[1.5px] bg-black/20"></div>
+            <div class="w-full xl:h-[3px] 2xl:h-[6px] xl:mx-6 2xl:mx-12 -translate-y-[1.5px] bg-black/20"></div>
             <!-- 圆球 -->
-            <div class="w-4 h-4 bg-black/20 rounded-full translate-x-1.5 -translate-y-1.5"></div>
+            <div class="xl:w-4 2xl:w-8 xl:h-4 2xl:h-8 bg-black/20 rounded-full xl:translate-x-1.5 2xl:translate-x-2.5 xl:-translate-y-1.5 2xl:-translate-y-2.5"></div>
         </div>
         <!-- 页面 -->
         <div class="relative flex flex-row w-full h-full">
           <!-- 左侧分页标题 -->
           <div 
             class="
-            flex flex-col w-[3px] h-full -translate-x-[1.5px]
-            justify-between items-center py-6">
+            flex flex-col xl:w-[3px] 2xl:w-[6px] h-full -translate-x-[1.5px]
+            justify-between items-center xl:py-6 2xl:py-12">
               <div 
                 class="
-                w-[3px] h-1/18 z-20 mb-2 bg-black/20 rounded-2xl hidden sm:block"></div>
-                <span class="sm:flex flex-col text-black/20 text-[20px] hidden">{{ titleMap[defaultComp] }}</span>
-              <div class="w-[3px] h-full z-20 mt-4 bg-black/20 rounded-2xl hidden sm:block"></div>
-            <div class="w-2 h-2 mt-4 bg-black/20 rounded-full hidden sm:block"></div>
+                xl:w-[3px] 2xl:w-[6px] h-1/18 z-20 xl:mb-2 2xl:mb-4 bg-black/20 rounded-2xl hidden sm:block"></div>
+                <span class="sm:flex flex-col text-black/20 xl:text-[20px] 2xl:text-[40px] hidden">{{ titleMap[defaultComp] }}</span>
+              <div class="w-[3px] h-full z-20 xl:mt-4 2xl:mt-8 bg-black/20 rounded-2xl hidden sm:block"></div>
+            <div class="xl:w-2 2xl:w-4 xl:h-2 2xl:h-4 xl:mt-4 2xl:mt-8 bg-black/20 rounded-full hidden sm:block"></div>
           </div>
           <!-- 中间 display -->
           <div class="flex justify-center w-full h-full">
@@ -53,7 +53,7 @@
             <div 
             class="
             transition-all duration-600 ease-in-out
-            flex-row z-10 mx-4 w-full h-316
+            flex-row z-10 xl:mx-4 2xl:mx-8 w-full xl:h-316 2xl:h-632
             justify-center items-center 
             bg-pink-100 rounded-t-xl
             flex"
@@ -67,16 +67,16 @@
               bg-gray-50 rounded-t-xl
               "
               :class="ChengeStore.PlaneOrSolid?
-              'h-316' :
-              'h-308' "
+              'xl:h-316 2xl:h-632' :
+              'xl:h-308 2xl:h-616' "
               >
                 <div 
                 class="
                 transition-all duration-600 ease-in-out
                 flex relative overflow-y-auto z-20 w-full rounded-t-xl"
                 :class="ChengeStore.PlaneOrSolid?
-                'h-316 bg-gray-100' :
-                'h-300 bg-white' "
+                'xl:h-316 2xl:h-632 bg-gray-100' :
+                'xl:h-300 2xl:h-600 bg-white' "
                 >
                   <component :is="compMap[defaultComp]" />
                 </div>
@@ -84,40 +84,12 @@
             </div>
           </div>
           <!-- 右侧线条 -->
-          <div class="flex flex-col w-[3px] h-full translate-x-[1.5px] justify-center items-center py-6">
-            <div class="w-[3px] h-full bg-black/20 rounded-2xl hidden sm:block"></div>
-            <div class="w-2 h-2 mt-4 bg-black/20 rounded-full hidden sm:block"></div>
+          <div class="flex flex-col xl:w-[3px] 2xl:w-[6px] h-full translate-x-[1.5px] justify-center items-center xl:py-6 2xl:py-12">
+            <div class="xl:w-[3px] 2xl:w-[6px] h-full bg-black/20 rounded-2xl hidden sm:block"></div>
+            <div class="xl:w-2 2xl:w-4 xl:h-2 2xl:h-4 xl:mt-4 2xl:mt-8 bg-black/20 rounded-full hidden sm:block"></div>
           </div>
         </div>
       </div>
-    <!-- <div class="bg-gray-500 w-full h-20">
-    </div> -->
-    
-
-      <!-- 右侧包围线条 -->
-      <!-- <div>
-        <div
-        class="
-        absolute w-284 h-[3px] bg-black/20 rounded-xl
-        right-12 top-5 hidden sm:block
-        "></div>
-        <div 
-        class="
-        absolute w-4 h-4 bg-black/20 rounded-full
-        right-4 top-4 hidden sm:block
-        "></div>
-        <div
-        class="
-        absolute w-[3px] h-308 bg-black/20 rounded-xl
-        right-5 top-12 hidden sm:block
-        "></div>
-        <div 
-        class="
-        w-2 h-2 absolute bg-black/20 rounded-full
-        right-4.5 top-324.5 hidden sm:block
-        "></div>
-      </div> -->
-
     </div>
   </div>
   <!-- 下层容器 -->
