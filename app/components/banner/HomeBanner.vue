@@ -1,9 +1,9 @@
 <template>
-  <div class="relative h-94 w-full">
+  <div class="relative xl:h-94 2xl:h-180 w-full">
     <!-- 延伸 Header -->
     <HeaderAdd />
     <!-- 首页图容器 -->
-    <div class="relative h-94 overflow-hidden bg-gray-200/30">
+    <div class="relative xl:h-94 2xl:h-180 overflow-hidden bg-gray-200/30">
       <!-- 填充父容器的透明absolute添加图片上层添加shadow-inner -->
       <div
         class="absolute z-20 h-full w-full transition-all duration-600 ease-in-out"
@@ -14,11 +14,11 @@
         "
       ></div>
       <img
-        class="absolute z-10 -left-4 w-94 transition-all duration-600 linear sm:w-262"
+        class="absolute z-10 xl:-left-4 2xl:-left-8 w-94 2xl:w-460 transition-all duration-600 linear sm:w-262"
         :class="
           ChengeStore.PlaneOrSolid
             ? 'bottom-100'
-            : 'xl:-bottom-192 lg:-bottom-144'
+            : 'xl:-bottom-192 lg:-bottom-144 2xl:-bottom-334'
         "
         src="/img/eguegugang.png"
         alt=""
