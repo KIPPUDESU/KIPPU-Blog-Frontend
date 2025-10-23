@@ -35,7 +35,6 @@
           </a>
         </div>
 
-        <!-- 悬浮简介 (通过 Teleport 移动到 body) -->
         <Teleport to="body">
             <div
                 ref="tooltipRef"

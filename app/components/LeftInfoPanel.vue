@@ -222,8 +222,4 @@ function onChangeClass(compName: string) {
 
 // 创建一个用来存储当前点击的分类组件名称的变量
 const activeItemName = ref('ArticlesList')
-
-// cosnt setActiev = (copName: string) => {
-  
-// }
 </script>

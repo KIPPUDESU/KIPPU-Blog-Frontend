@@ -13,7 +13,6 @@
 </template>
 
 <script setup lang="ts">
-// 因为在服务端运行所以先给个 onMounted 钩子
 import { onMounted } from 'vue'
 
 onMounted(() => {
@@ -33,7 +32,6 @@ onMounted(() => {
   stroke-width: 14; 
   stroke-linecap: round;
   stroke-linejoin: round;
-  /* 描边 */
   stroke-dasharray: var(--l);
   stroke-dashoffset: var(--l);
   animation: draw-line 2.0s ease-in-out forwards;

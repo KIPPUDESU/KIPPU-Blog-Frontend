@@ -2,7 +2,7 @@
 <NuxtLink :to="card.path" 
 class="
 transition-all duration-600 ease-in-out
-xl:w-58 2xl:w-116 xl:h-72 2xl:h-144 object-cover xl:mt-6 2xl:mt-12 hover:scale-104 "
+xl:w-58 2xl:w-116 xl:h-72 2xl:h-144 object-cover xl:mt-4 2xl:mt-10 hover:scale-104 "
 :class="PlaneOrSolid ?
 'mx-6 ' : 'mx-4' ">
     <!-- 纯展示组件，只接收 props -->
