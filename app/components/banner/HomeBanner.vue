@@ -18,7 +18,7 @@
         :class="
           ChengeStore.PlaneOrSolid
             ? 'bottom-100'
-            : 'xl:-bottom-192 lg:-bottom-144 2xl:-bottom-334'
+            : 'xl:-bottom-192  lg:-bottom-144 2xl:-bottom-334'
         "
         src="/img/eguegugang.png"
         alt=""

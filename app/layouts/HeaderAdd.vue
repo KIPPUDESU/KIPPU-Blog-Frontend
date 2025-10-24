@@ -4,7 +4,7 @@ class="
  transition-all duration-600 linear
  absolute z-20 -top-12 flex w-full justify-between"
 :class="ChengeStore.PlaneOrSolid ?
- 'h-106 bg-gray-100':
+ 'xl:h-106 2xl:h-194 bg-gray-100':
  'h-12 bg-gray-300/20'" 
  >
 </div>
