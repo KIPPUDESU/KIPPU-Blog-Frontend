@@ -14,7 +14,7 @@
         "
       ></div>
       <img
-        class="absolute z-10 xl:-left-4 2xl:-left-8 w-94 2xl:w-460 transition-all duration-600 linear sm:w-262"
+        class="absolute z-10 xl:-left-4 2xl:-left-26 w-94 2xl:w-460 transition-all duration-600 linear sm:w-262"
         :class="
           ChengeStore.PlaneOrSolid
             ? 'bottom-100'

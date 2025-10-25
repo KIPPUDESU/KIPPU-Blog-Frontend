@@ -16,7 +16,7 @@
         :class="
           ChengeStore.PlaneOrSolid
             ? 'xl:right-18 lg:right-12 xl:text-[92px] 2xl:text-[184px] lg:text-[84px]'
-            : 'xl:right-18 lg:right-14 xl:text-[94px] 2xl:text-[184px] lg:text-[86px]'
+            : 'xl:right-20 lg:right-14 xl:text-[94px] 2xl:text-[184px] lg:text-[86px]'
         "
         @mouseenter="onEnter"
         @mousemove="onMove"
@@ -73,15 +73,16 @@
     <div
       class="relative flex flex-col transition-all duration-600 ease-in-out"
       :class="
-        ChengeStore.PlaneOrSolid ? 'xl:mt-[126px] 2xl:mt-[222px] xl:ml-6 2xl:ml-12' : 'xl:mt-[134px] 2xl:mt-[260px] xl:ml-12 2xl:ml-44'
+        ChengeStore.PlaneOrSolid ? 'xl:mt-[126px] 2xl:mt-[222px] xl:ml-6 2xl:ml-12' : 'xl:mt-[134px] 2xl:mt-[254px] xl:ml-12 2xl:ml-44'
       "
     >
+      <!-- 1 -->
       <svg
-        class="absolute mx-2 transition-all duration-600 ease-in-out"
+        class="absolute xl:mx-2 2xl:mx-8 transition-all duration-600 ease-in-out"
         :class="
           ChengeStore.PlaneOrSolid
             ? 'w-[0px] h-[0px] top-8'
-            : 'w-[12px] h-[12px] top-0'
+            : 'xl:w-[12px] 2xl:w-[22px] xl:h-[12px] 2xl:h-[22px] top-0'
         "
         viewBox="0 0 12 12"
         fill="none"
@@ -89,21 +90,25 @@
       >
         <circle cx="5" cy="5" r="5" fill="#636364" />
       </svg>
+      <!-- 2 -->
       <svg
-        class="absolute mx-2 top-8 transition-all duration-600 ease-in-out"
-        :class="ChengeStore.PlaneOrSolid ? 'w-[0px] h-[0px]' : 'w-[12px] h-[12px]'"
+        class="absolute xl:mx-2 2xl:mx-8 transition-all duration-600 ease-in-out"
+        :class="ChengeStore.PlaneOrSolid ? 
+        'w-[0px] h-[0px] top-8' 
+        :'xl:w-[12px] 2xl:w-[20px] xl:h-[12px] 2xl:h-[20px] xl:top-8 2xl:top-14'"
         viewBox="0 0 12 12"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <circle cx="5" cy="5" r="5" fill="#636364" />
       </svg>
+      <!-- 3 -->
       <svg
-        class="absolute mx-2 transition-all duration-600 ease-in-out"
+        class="absolute xl:mx-2 2xl:mx-8 transition-all duration-600 ease-in-out"
         :class="
           ChengeStore.PlaneOrSolid
-            ? 'top-8 w-[0px] h-[0px]'
-            : 'top-16 w-[12px] h-[12px]'
+            ? 'w-[0px] h-[0px] top-8'
+            : 'xl:w-[12px] 2xl:w-[22px] xl:h-[12px] 2xl:h-[22px] xl:top-16 2xl:top-28'
         "
         viewBox="0 0 12 12"
         fill="none"
