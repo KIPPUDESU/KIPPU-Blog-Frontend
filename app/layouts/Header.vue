@@ -3,7 +3,7 @@
 ref="headerRef"
 class="
  transition-all duration-600 linear 
- top-0 z-30 xl:h-12 flex w-full justify-between backdrop-blur-lg
+ top-0 z-30 lg:h-12 flex w-full justify-between backdrop-blur-lg
  shadow-md sticky"
 :class="ChengeStore.PlaneOrSolid ?
  'bg-gray-100 shadow-black/0':
@@ -21,7 +21,7 @@ class="
     <!-- 左侧logo -->
     <div 
     class="
-    flex p-0 xl:p-6 xl:mx-4 2xl:mx-8 w-40 lg:w-60 h-12 justify-center items-center">
+    flex p-0 lg:p-6 lg:mx-4 lg:w-60 h-12 justify-center items-center">
        <NuxtLink to="/">
             <img src="/img/blog-header.svg" alt="">
        </NuxtLink>
@@ -30,7 +30,7 @@ class="
     <div 
     class="
     relative flex justify-between items-center 
-    h-12 lg:h-12 w-40 lg:w-58 px-2 lg:px-4 mx-2 xl:mx-4 2xl:mx-8">
+    lg:h-12 lg:w-58 lg:px-4 lg:mx-4">
         <div 
         class="
         relative w-1/2 h-full overflow-hidden">

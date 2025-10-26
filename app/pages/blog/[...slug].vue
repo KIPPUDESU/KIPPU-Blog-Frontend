@@ -10,7 +10,7 @@
       :class="ChengeStore.PlaneOrSolid ? 'rounded-none shadow-none bg-pink-100' : 'rounded-2xl shadow-lg bg-pink-50'">
         <div 
         class="
-        flex relative w-full overflow-hidden h-64 lg:h-92">
+        flex relative w-full overflow-hidden lg:h-92">
           <img 
           :src="page?.image" 
           alt="Article img" 
@@ -22,9 +22,9 @@
           shadow-[inset_0_-5px_6px_rgba(0,0,0,0.1)]
           ">
             <div 
-            class="relative flex flex-col w-full h-auto mt-24 px-6 lg:mt-36 lg:px-14 gap-2">
+            class="relative flex flex-col w-full h-auto lg:mt-36 lg:px-14 gap-2">
               <!-- 文章标题 -->
-              <h1 class="text-3xl lg:text-[40px] text-white font-bold">{{ page?.title }}</h1>
+              <h1 class="lg:text-[40px] text-white font-bold">{{ page?.title }}</h1>
               <div class="relative flex flex-col items-start gap-2 lg:flex-row lg:items-center lg:gap-6 w-full h-auto">
                 <!-- 发布日期 -->
                 <div class="flex gap-2 justify-center items-center h-full w-max">
