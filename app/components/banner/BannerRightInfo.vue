@@ -4,8 +4,8 @@
     class="absolute right-0 z-20 hidden flex-col rounded-l-xl transition-all duration-600 ease-in-out sm:flex"
     :class="
       ChengeStore.PlaneOrSolid
-        ? 'bottom-0 bg-gradient-to-bl xl:h-70 2xl:h-140 lg:h-62 xl:w-146 2xl:w-292 lg:w-120'
-        : 'bottom-12 bg-gray-300/10 shadow-black/20 backdrop-blur-sm shadow-lg xl:h-62 2xl:h-124 lg:h-54 xl:w-156 2xl:w-300 lg:w-120'
+        ? 'bottom-0 bg-gradient-to-bl lg:h-70 lg:w-146'
+        : 'bottom-12 bg-gray-300/10 shadow-black/20 backdrop-blur-sm shadow-lg lg:h-62 lg:w-156'
     "
   >
     <!-- 点击大标题 -->
@@ -15,8 +15,8 @@
         class="absolute bg-clip-text bg-black/80 object-cover text-transparent transition-all duration-600 ease-in-out hover:scale-104 font-bold"
         :class="
           ChengeStore.PlaneOrSolid
-            ? 'xl:right-18 lg:right-12 xl:text-[92px] 2xl:text-[184px] lg:text-[84px]'
-            : 'xl:right-20 lg:right-14 xl:text-[94px] 2xl:text-[184px] lg:text-[86px]'
+            ? 'lg:right-18 lg:text-[92px]'
+            : 'lg:right-20 lg:text-[94px]'
         "
         @mouseenter="onEnter"
         @mousemove="onMove"
@@ -30,19 +30,19 @@
       class="absolute flex flex-col items-end gap-2 font-medium text-gray-600/90 transition-all duration-600 ease-in-out xl:text-[16px] 2xl:text-[32px] lg:text-[14px]"
       :class="
         ChengeStore.PlaneOrSolid
-          ? 'xl:right-18 lg:right-12 xl:top-30 2xl:top-60 lg:top-28'
-          : 'xl:right-20 lg:right-14 xl:top-32 2xl:top-60 lg:top-30'
+          ? 'lg:right-18 lg:top-30'
+          : 'lg:right-20 lg:top-32'
       "
     >
       <p class="flex flex-row">
         Frontend Dev [
-        <span class="inline-flex items-center justify-center xl:text-[11px] 2xl:text-[20px]"
+        <span class="inline-flex items-center justify-center lg:text-[11px]"
           >> >
         </span>
         ] Backend Dev / Graphic Designer / Writing
       </p>
       <p class="">16 November 2005 — My first commit, the day I became me</p>
-      <div class="flex xl:h-7 2xl:h-14 w-full flex-row gap-1">
+      <div class="flex lg:h-7 w-full flex-row gap-1">
         <p class="w-max">If okay.. mail me, maybe? 💌 :</p>
         <!-- 邮箱容器 -->
         <div class="relative w-max">
@@ -63,7 +63,7 @@
             >
             <!-- 下划线 -->
             <div
-              class="xl:h-0.5 2xl:h-1 w-full rounded-4xl bg-gray-400 transition-all duration-600 ease-in-out ml-0 group-hover:w-0 group-hover:ml-auto"
+              class="lg:h-0.5 w-full rounded-4xl bg-gray-400 transition-all duration-600 ease-in-out ml-0 group-hover:w-0 group-hover:ml-auto"
             ></div>
           </div>
         </div>
@@ -73,16 +73,16 @@
     <div
       class="relative flex flex-col transition-all duration-600 ease-in-out"
       :class="
-        ChengeStore.PlaneOrSolid ? 'xl:mt-[126px] 2xl:mt-[222px] xl:ml-6 2xl:ml-12' : 'xl:mt-[134px] 2xl:mt-[254px] xl:ml-12 2xl:ml-44'
+        ChengeStore.PlaneOrSolid ? 'lg:mt-[126px] lg:ml-6' : 'lg:mt-[134px] lg:ml-12'
       "
     >
       <!-- 1 -->
       <svg
-        class="absolute xl:mx-2 2xl:mx-8 transition-all duration-600 ease-in-out"
+        class="absolute lg:mx-2 transition-all duration-600 ease-in-out"
         :class="
           ChengeStore.PlaneOrSolid
             ? 'w-[0px] h-[0px] top-8'
-            : 'xl:w-[12px] 2xl:w-[22px] xl:h-[12px] 2xl:h-[22px] top-0'
+            : 'lg:w-[12px] lg:h-[12px] top-0'
         "
         viewBox="0 0 12 12"
         fill="none"
@@ -92,10 +92,10 @@
       </svg>
       <!-- 2 -->
       <svg
-        class="absolute xl:mx-2 2xl:mx-8 transition-all duration-600 ease-in-out"
+        class="absolute lg:mx-2 transition-all duration-600 ease-in-out"
         :class="ChengeStore.PlaneOrSolid ? 
         'w-[0px] h-[0px] top-8' 
-        :'xl:w-[12px] 2xl:w-[20px] xl:h-[12px] 2xl:h-[20px] xl:top-8 2xl:top-14'"
+        :'lg:w-[12px] lg:h-[12px] lg:top-8'"
         viewBox="0 0 12 12"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -104,11 +104,11 @@
       </svg>
       <!-- 3 -->
       <svg
-        class="absolute xl:mx-2 2xl:mx-8 transition-all duration-600 ease-in-out"
+        class="absolute lg:mx-2 transition-all duration-600 ease-in-out"
         :class="
           ChengeStore.PlaneOrSolid
             ? 'w-[0px] h-[0px] top-8'
-            : 'xl:w-[12px] 2xl:w-[22px] xl:h-[12px] 2xl:h-[22px] xl:top-16 2xl:top-28'
+            : 'lg:w-[12px] lg:h-[12px] lg:top-16'
         "
         viewBox="0 0 12 12"
         fill="none"
