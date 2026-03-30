@@ -14,13 +14,43 @@
     <!-- 左侧信息容器 -->
     <LeftInfoPanel @change-class="onChangeClass" />
     <!-- 文章预览卡片 -->
-    <div class="relative w-full h-full py-5 px-5 bg-red-500">
+    <div class="relative w-full h-full py-5 px-5">
       <!-- 为线条边框容器设定大小 -->
-      <div class="relative flex flex-col w-full h-full py-[22px] px-[19px] bg-green-400">
+      <div class="relative flex flex-col w-full h-full py-[20px] px-[20px]">
         <!-- 放边框线条的地方，用 absolute -->
-        <div class=" absolute flex inset-0 bg-white"></div>
+        <div class="absolute flex flex-col inset-0">
+          <!-- 顶边框 -->
+          <div class="flex flex-row w-full h-[20px]">
+            <!-- 左上角 -->
+            <div 
+            class="
+            transition-all duration-600 ease-in-out
+            w-[22px] h-[22px] -translate-x-[1.5px] -translate-y-[1.5px]
+            border-t-[3.5px] border-l-[3.5px] border-black/20"
+            :class="ChengeStore.PlaneOrSolid?
+            'rounded-tl-none' : 'rounded-tl-xl'">
+            </div>
+            <!-- 顶横 -->
+            <div class="w-full h-[3px] mx-6 -translate-y-[1.5px] bg-black/20"></div>
+            <!-- 右上圆 -->
+            <div class="w-4 h-4 bg-black/20 rounded-full translate-x-1.5 -translate-y-1.5"></div>
+          </div>
+          <!-- 左右边框 -->
+          <div class="flex flex-1 flex-row justify-between">
+            <!-- 左边竖线 -->
+            <div class="flex flex-col w-[3px] inset-y-0 pt-6 gap-6">
+              <div class="flex w-[3px] h-full -translate-x-[1.5px] bg-black/20 rounded-b-2xl"></div>
+              <div class="w-2 h-2 -translate-x-1 -translate-y-2 bg-black/20 rounded-full"></div>
+            </div>
+            <!-- 右边 -->
+            <div class="flex flex-col w-[3px] inset-y-0 pt-6 gap-6">
+              <div class="flex w-[3px] h-full translate-x-[1.5px] bg-black/20 rounded-b-2xl"></div>
+              <div class="w-2 h-2 -translate-y-2 bg-black/20 rounded-full"></div>
+            </div>      
+          </div>
+        </div>
           <!-- 中间 display -->
-          <div class="relative flex justify-center w-full h-full bg-blue-500">
+          <div class="relative flex justify-center w-full h-full">
             <!-- 三层背景容器 -->
             <div 
             class="
