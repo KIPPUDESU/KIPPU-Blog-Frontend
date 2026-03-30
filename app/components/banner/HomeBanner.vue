@@ -14,11 +14,11 @@
         "
       ></div>
       <img
-        class="absolute z-10 -left-4 w-94 transition-all duration-600 linear sm:w-262"
+        class="absolute z-10 -left-4 transition-all duration-600 linear w-262"
         :class="
           ChengeStore.PlaneOrSolid
             ? 'bottom-100'
-            : 'xl:-bottom-192 lg:-bottom-144'
+            : '-bottom-192'
         "
         src="/img/eguegugang.png"
         alt=""

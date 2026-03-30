@@ -4,7 +4,7 @@
     class="absolute right-0 z-20 hidden flex-col rounded-l-xl transition-all duration-600 ease-in-out sm:flex"
     :class="
       ChengeStore.PlaneOrSolid
-        ? 'bottom-0 bg-gradient-to-bl lg:h-70 lg:w-146'
+        ? 'bottom-0 bg-gradient-to-bl h-70 w-146'
         : 'bottom-12 bg-gray-300/10 shadow-black/20 backdrop-blur-sm shadow-lg lg:h-62 lg:w-156'
     "
   >
@@ -34,16 +34,16 @@
           : 'lg:right-20 lg:top-32'
       "
     >
-      <p class="flex flex-row">
+      <!-- <p class="flex flex-row">
         Frontend Dev [
         <span class="inline-flex items-center justify-center lg:text-[11px]"
           >> >
         </span>
         ] Backend Dev / Graphic Designer / Writing
       </p>
-      <p class="">16 November 2005 — My first commit, the day I became me</p>
+      <p class="">16 November 2005 — My first commit, the day I became me</p> -->
       <div class="flex lg:h-7 w-full flex-row gap-1">
-        <p class="w-max">If okay.. mail me, maybe? 💌 :</p>
+        <!-- <p class="w-max">If okay.. mail me, maybe? 💌 :</p> -->
         <!-- 邮箱容器 -->
         <div class="relative w-max">
           <!-- 动画效果容器 -->
@@ -51,7 +51,7 @@
             class="group flex h-full w-full flex-col transition-all duration-600 ease-in-out"
           >
             <!-- 邮箱 -->
-            <a
+            <!-- <a
               href="mailto:KIPPUDESU@OUTLOOK.COM?subject=Hello%20Kippu"
               target="_blank"
               class="z-20 hover:text-gray-400"
@@ -60,7 +60,7 @@
               "
             >
               KIPPUDESU@OUTLOOK.COM</a
-            >
+            > -->
             <!-- 下划线 -->
             <div
               class="lg:h-0.5 w-full rounded-4xl bg-gray-400 transition-all duration-600 ease-in-out ml-0 group-hover:w-0 group-hover:ml-auto"

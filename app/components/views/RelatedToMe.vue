@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <h1>与我相关</h1>
-    <p>这里是与我相关页面。</p>
+  <div class="flex w-full h-full">
+    <div class="flex flex-col w-full min-h-dvh">
+      <h1>我还没想好写什么呢</h1>
+    </div>
   </div>
 </template>
 
@@ -9,7 +10,4 @@
 </script>
 
 <style scoped>
-h1 {
-  color: #42b983;
-}
 </style>
