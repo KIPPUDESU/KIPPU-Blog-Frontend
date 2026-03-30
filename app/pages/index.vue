@@ -14,45 +14,18 @@
     <!-- 左侧信息容器 -->
     <LeftInfoPanel @change-class="onChangeClass" />
     <!-- 文章预览卡片 -->
-    <div class="w-full h-full py-5 px-5">
-      <div class="relative flex flex-col w-full h-full bg-blue-500">
-        <!-- 封顶 -->
-        <div class="flex flex-row bg-red-500">
-            <!-- 边角 -->
-            <div 
-              class="
-              transition-all duration-600 ease-in-out
-              w-[22px] h-[22px] -translate-x-[1.5px] -translate-y-[1.5px]
-              border-t-[3.5px] border-l-[3.5px] border-black/20"
-              :class="ChengeStore.PlaneOrSolid?
-              'rounded-tl-none' : 'rounded-tl-xl'">
-            </div>
-            <!-- 横线 -->
-            <div class="w-full h-[3px] mx-6 -translate-y-[1.5px] bg-black/20"></div>
-            <!-- 圆球 -->
-            <div class="w-4 h-4 bg-black/20 rounded-full translate-x-1.5 -translate-y-1.5"></div>
-        </div>
-        <!-- 页面 -->
-        <div class="relative flex flex-row w-full h-full">
-          <!-- 左侧分页标题 -->
-          <div 
-            class="
-            flex flex-col w-[3px] h-full -translate-x-[1.5px]
-            justify-between items-center py-6">
-              <div 
-                class="
-                w-[3px] h-1/18 z-20 mb-2 bg-black/20 rounded-2xl"></div>
-                <!-- <span class="sm:flex flex-col text-black/20 xl:text-[20px] 2xl:text-[40px] hidden">{{ titleMap[defaultComp] }}</span> -->
-              <div class="w-[3px] h-full z-20 mt-4 bg-black/20 rounded-2xl"></div>
-            <div class="w-2 h-2 mt-4 bg-black/20 rounded-full"></div>
-          </div>
+    <div class="relative w-full h-full py-5 px-5 bg-red-500">
+      <!-- 为线条边框容器设定大小 -->
+      <div class="relative flex flex-col w-full h-full py-[22px] px-[19px] bg-green-400">
+        <!-- 放边框线条的地方，用 absolute -->
+        <div class=" absolute flex inset-0 bg-white"></div>
           <!-- 中间 display -->
-          <div class="flex justify-center w-full h-full">
+          <div class="relative flex justify-center w-full h-full bg-blue-500">
             <!-- 三层背景容器 -->
             <div 
             class="
             transition-all duration-600 ease-in-out
-            flex-row z-10 mx-4 w-full h-316
+            absolute flex-row z-10 w-full h-316
             justify-center items-center 
             bg-pink-100 rounded-t-xl
             flex"
@@ -62,7 +35,7 @@
               <div 
               class="
               transition-all duration-600 ease-in-out
-              flex flex-row w-full z-20 justify-center items-center 
+              relative flex flex-row w-full z-20 justify-center items-center 
               bg-gray-50 rounded-t-xl
               "
               :class="ChengeStore.PlaneOrSolid?
@@ -82,12 +55,7 @@
               </div>
             </div>
           </div>
-          <!-- 右侧线条 -->
-          <div class="flex flex-col w-[3px] h-full translate-x-[1.5px] justify-center items-center py-6">
-            <div class="w-[3px] h-full bg-black/20 rounded-2xl"></div>
-            <div class="w-2 h-2 mt-4 bg-black/20 rounded-full"></div>
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>
