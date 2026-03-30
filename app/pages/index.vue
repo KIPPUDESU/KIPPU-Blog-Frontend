@@ -33,7 +33,10 @@
             <!-- 顶横 -->
             <div class="w-full h-[3px] mx-6 -translate-y-[1.5px] bg-black/20"></div>
             <!-- 右上圆 -->
-            <div class="w-4 h-4 bg-black/20 rounded-full translate-x-1.5 -translate-y-1.5"></div>
+            <!-- 容器 -->
+            <div class="relative w-[22px] h-[22px]">
+              <div class="absolute right-0 top-0 w-4 h-4 bg-black/20 rounded-full translate-x-1/2 -translate-y-1/2"></div>
+            </div>
           </div>
           <!-- 左右边框 -->
           <div class="flex flex-1 flex-row justify-between">

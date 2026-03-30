@@ -27,44 +27,7 @@ class="
        </NuxtLink>
     </div>
     <!-- 右侧用户组件 -->
-    <div 
-    class="
-    relative flex justify-between items-center 
-    lg:h-12 lg:w-58 lg:px-4 lg:mx-4">
-        <div 
-        class="
-        relative w-1/2 h-full overflow-hidden">
-            <!-- 使用绝对路径防止渲染 /blog/SignUp -->
-            <NuxtLink 
-            to="/SignUp"
-            class="
-            transition-all duration-600 ease-in-out
-            absolute z-50 flex justify-center items-center w-full h-full
-            bg-gray-400/0 object-cover group
-            hover:scale-110 hover:bg-gray-400/10">
-                <span class="text-[20px] text-gray-900 group-hover:text-gray-700">
-                注册
-                </span>
-            </NuxtLink>
-        </div>
-        <div 
-        class="
-        relative w-1/2 h-full overflow-hidden">
-            <NuxtLink 
-            to="/Login"
-            class="
-            transition-all duration-600 ease-in-out
-            absolute z-50 flex justify-center items-center w-full h-full
-            bg-gray-400/0 object-cover group
-            hover:scale-110 hover:bg-gray-400/10">
-                <span 
-                class="
-                text-[20px] text-gray-900 group-hover:text-gray-700">
-                登录
-                </span>
-            </NuxtLink>
-        </div>
-    </div>
+
 </div>
 </template>
 
