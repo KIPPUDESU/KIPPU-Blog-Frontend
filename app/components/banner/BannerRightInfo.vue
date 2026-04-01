@@ -1,11 +1,11 @@
 <template>
   <!-- banner的右侧文字容器 -->
   <div
-    class="absolute right-0 z-20 hidden flex-col rounded-l-xl transition-all duration-600 ease-in-out sm:flex"
+    class="bg-red-500 absolute right-0 top-0 z-20 flex-col rounded-l-xl transition-all duration-600 ease-in-out"
     :class="
       ChengeStore.PlaneOrSolid
-        ? 'bottom-0 bg-gradient-to-bl h-70 w-146'
-        : 'bottom-12 bg-gray-300/10 shadow-black/20 backdrop-blur-sm shadow-lg lg:h-62 lg:w-156'
+        ? ' bg-gradient-to-bl h-full w-146'
+        : ' bg-gray-300/10 shadow-black/20 backdrop-blur-sm shadow-lg h-62 w-full'
     "
   >
     <!-- 点击大标题 -->
@@ -15,9 +15,8 @@
         class="absolute bg-clip-text bg-black/80 object-cover text-transparent transition-all duration-600 ease-in-out hover:scale-104 font-bold"
         :class="
           ChengeStore.PlaneOrSolid
-            ? 'lg:right-18 lg:text-[92px]'
-            : 'lg:right-20 lg:text-[94px]'
-        "
+            ? 'right-18 text-[clamp(56px,6vw,92px)]'
+            : 'right-20 text-[clamp(60px,6vw,94px)]'        "
         @mouseenter="onEnter"
         @mousemove="onMove"
         @mouseleave="onLeave"
@@ -27,22 +26,22 @@
     </a>
     <!-- 小字简介 -->
     <div
-      class="absolute flex flex-col items-end gap-2 font-medium text-gray-600/90 transition-all duration-600 ease-in-out xl:text-[16px] lg:text-[14px]"
+      class="absolute flex flex-col items-end gap-2 font-medium text-gray-600/90 transition-all duration-600 ease-in-out text-[clamp(14px,1.2vw,16px)] whitespace-nowrap"
       :class="
         ChengeStore.PlaneOrSolid
-          ? 'lg:right-18 lg:top-30'
-          : 'lg:right-20 lg:top-32'
+          ? 'right-18 top-30'
+          : 'right-20 top-32'
       "
     >
       <p class="flex flex-row">
         Frontend Dev [
-        <span class="inline-flex items-center justify-center lg:text-[11px]"
+        <span class="inline-flex items-center justify-center text-[11px] whitespace-nowrap"
           >> >
         </span>
         ] Backend Dev / Graphic Designer / Writing
       </p>
       <p class="">16 November 2005 — My first commit, the day I became me</p>
-      <div class="flex lg:h-7 w-full flex-row gap-1">
+      <div class="flex h-7 w-full flex-row gap-1">
         <p class="w-max">If okay.. mail me, maybe? 💌 :</p>
         <!-- 邮箱容器 -->
         <div class="relative w-max">
@@ -63,7 +62,7 @@
             >
             <!-- 下划线 -->
             <div
-              class="lg:h-0.5 w-full rounded-4xl bg-gray-400 transition-all duration-600 ease-in-out ml-0 group-hover:w-0 group-hover:ml-auto"
+              class="h-0.5 w-full rounded-4xl bg-gray-400 transition-all duration-600 ease-in-out ml-0 group-hover:w-0 group-hover:ml-auto"
             ></div>
           </div>
         </div>
@@ -73,16 +72,16 @@
     <div
       class="relative flex flex-col transition-all duration-600 ease-in-out"
       :class="
-        ChengeStore.PlaneOrSolid ? 'lg:mt-[126px] lg:ml-6' : 'lg:mt-[134px] lg:ml-12'
+        ChengeStore.PlaneOrSolid ? 'mt-[126px] ml-6' : 'mt-[134px] ml-12'
       "
     >
       <!-- 1 -->
       <svg
-        class="absolute lg:mx-2 transition-all duration-600 ease-in-out"
+        class="absolute mx-2 transition-all duration-600 ease-in-out"
         :class="
           ChengeStore.PlaneOrSolid
             ? 'w-[0px] h-[0px] top-8'
-            : 'lg:w-[12px] lg:h-[12px] top-0'
+            : 'w-[12px] h-[12px] top-0'
         "
         viewBox="0 0 12 12"
         fill="none"
@@ -92,10 +91,10 @@
       </svg>
       <!-- 2 -->
       <svg
-        class="absolute lg:mx-2 transition-all duration-600 ease-in-out"
+        class="absolute mx-2 transition-all duration-600 ease-in-out"
         :class="ChengeStore.PlaneOrSolid ? 
         'w-[0px] h-[0px] top-8' 
-        :'lg:w-[12px] lg:h-[12px] lg:top-8'"
+        :'w-[12px] h-[12px] top-8'"
         viewBox="0 0 12 12"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -104,11 +103,11 @@
       </svg>
       <!-- 3 -->
       <svg
-        class="absolute lg:mx-2 transition-all duration-600 ease-in-out"
+        class="absolute mx-2 transition-all duration-600 ease-in-out"
         :class="
           ChengeStore.PlaneOrSolid
             ? 'w-[0px] h-[0px] top-8'
-            : 'lg:w-[12px] lg:h-[12px] lg:top-16'
+            : 'w-[12px] h-[12px] top-16'
         "
         viewBox="0 0 12 12"
         fill="none"
