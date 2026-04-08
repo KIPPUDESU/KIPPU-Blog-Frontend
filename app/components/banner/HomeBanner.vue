@@ -23,14 +23,13 @@
         src="/img/eguegugang.png"
         alt=""
       />
-      <div class=" bg-yellow-500/50 absolute flex flex-row w-full inset-y-0 z-20 top-22 overflow-hidden">
+      <div class="absolute flex flex-row w-full inset-y-0 z-20 top-22 overflow-hidden">
         <!-- 左侧文字容器 -->
-        <div class=" relative w-7/12 h-full bg-pink-400">
+        <div class=" relative w-7/12 h-full">
           <BannerLeftInfo />
         </div>
-
         <!-- 右侧文字容器 -->
-        <div class=" relative w-5/12 h-full bg-red-500">
+        <div class=" relative w-5/12 h-full">
           <BannerRightInfo />
         </div>
       </div>

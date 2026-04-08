@@ -1,7 +1,7 @@
 <template>
   <!-- banner的右侧文字容器 -->
   <div
-    class="bg-red-500 absolute right-0 top-0 z-20 flex-col rounded-l-xl transition-all duration-600 ease-in-out"
+    class="absolute right-0 top-0 z-20 flex-col rounded-l-xl transition-all duration-600 ease-in-out"
     :class="
       ChengeStore.PlaneOrSolid
         ? ' bg-gradient-to-bl h-full w-146'
@@ -9,39 +9,58 @@
     "
   >
     <!-- 点击大标题 -->
-    <a class="cursor-pointer" @click="ChengeStore.KippuChenge">
-      <h1
-        ref="glowWrapper"
-        class="absolute bg-clip-text bg-black/80 object-cover text-transparent transition-all duration-600 ease-in-out hover:scale-104 font-bold"
-        :class="
-          ChengeStore.PlaneOrSolid
-            ? 'right-18 text-[clamp(56px,6vw,92px)]'
-            : 'right-20 text-[clamp(60px,6vw,94px)]'        "
-        @mouseenter="onEnter"
-        @mousemove="onMove"
-        @mouseleave="onLeave"
-      >
-        KIPPU
-      </h1>
+     <!-- bg-clip-text -->
+    <div class="flex flex-1 justify-end w-full">
+      <a class="cursor-pointer" @click="ChengeStore.KippuChenge">
+        <h1
+          ref="glowWrapper"
+          class="flex bg-clip-text bg-black/80 object-cover text-transparent transition-all duration-600 ease-in-out hover:scale-104 font-bold"
+          :class="
+            ChengeStore.PlaneOrSolid
+              ? 'mr-18 text-[clamp(11px,6vw,92px)]'
+              : 'mr-20 text-[clamp(12px,6vw,94px)]'        
+              "
+          @mouseenter="onEnter"
+          @mousemove="onMove"
+          @mouseleave="onLeave"
+        >
+          KIPPU
+        </h1>
     </a>
+    </div>
+
     <!-- 小字简介 -->
     <div
-      class="absolute flex flex-col items-end gap-2 font-medium text-gray-600/90 transition-all duration-600 ease-in-out text-[clamp(14px,1.2vw,16px)] whitespace-nowrap"
+      class="relative flex flex-1 flex-col w-full items-end gap-2 font-medium text-gray-600/90 transition-all duration-600 ease-in-out text-[clamp(2px,1.2vw,16px)] whitespace-nowrap">
+      <p class="flex flex-row transition-all duration-600 ease-in-out"
       :class="
         ChengeStore.PlaneOrSolid
-          ? 'right-18 top-30'
-          : 'right-20 top-32'
-      "
-    >
-      <p class="flex flex-row">
+          ? 'mr-18'
+          : 'mr-20'
+        "
+      >
         Frontend Dev [
         <span class="inline-flex items-center justify-center text-[11px] whitespace-nowrap"
           >> >
         </span>
         ] Backend Dev / Graphic Designer / Writing
       </p>
-      <p class="">16 November 2005 — My first commit, the day I became me</p>
-      <div class="flex h-7 w-full flex-row gap-1">
+      <p class="transition-all duration-600 ease-in-out"
+      :class="
+        ChengeStore.PlaneOrSolid
+          ? 'mr-18'
+          : 'mr-20'
+        "
+      >
+        16 November 2005 — My first commit, the day I became me
+      </p>
+      <div class="flex flex-row justify-end h-7 w-full gap-1 transition-all duration-600 ease-in-out"
+      :class="
+        ChengeStore.PlaneOrSolid
+          ? 'mr-18'
+          : 'mr-20'
+        "
+      >
         <p class="w-max">If okay.. mail me, maybe? 💌 :</p>
         <!-- 邮箱容器 -->
         <div class="relative w-max">
