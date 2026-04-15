@@ -21,7 +21,7 @@ class="
     <!-- 左侧logo -->
     <div 
     class="
-    flex p-0 lg:p-6 lg:mx-4 lg:w-60 h-12 justify-center items-center">
+    flex p-6 mx-4 w-60 h-12 justify-center items-center">
        <NuxtLink to="/">
             <img src="/img/blog-header.svg" alt="">
        </NuxtLink>

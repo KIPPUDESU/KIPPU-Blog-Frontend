@@ -14,22 +14,22 @@
         "
       ></div>
       <img
-        class="absolute z-10 -left-4 transition-all duration-600 linear w-262"
+        class="absolute z-10 sm:-left-4 -left-2 sm:scale-100 scale-104 transition-all duration-600 linear sm:w-262 w-full origin-top-left"
         :class="
           ChengeStore.PlaneOrSolid
-            ? 'bottom-100'
-            : '-bottom-192'
+            ? 'sm:-top-280'
+            : 'sm:-top-54 -top-10'
         "
         src="/img/eguegugang.png"
         alt=""
       />
       <div class="absolute flex flex-row w-full inset-y-0 z-20 top-22 overflow-hidden">
         <!-- 左侧文字容器 -->
-        <div class=" relative w-7/12 h-full">
+        <div class="hidden md:flex-1 md:block h-full">          
           <BannerLeftInfo />
         </div>
         <!-- 右侧文字容器 -->
-        <div class=" relative w-5/12 h-full">
+        <div class="hidden md:block md:relative md:w-152 h-full md:bg-blue-500/0">
           <BannerRightInfo />
         </div>
       </div>
