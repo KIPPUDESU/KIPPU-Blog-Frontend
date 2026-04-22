@@ -1,7 +1,7 @@
 <template>
   <div class="flex w-full h-full">
     <div class="flex flex-col w-full min-h-dvh">
-      <div class="flex w-full h-64 bg-green-400 rounded-t-2xl overflow-hidden">
+      <div class="flex w-full h-64 bg-green-400 overflow-hidden">
         <img class="w-full h-full object-cover object-[center_35%]" src="/img/egukek.png" alt="">
       </div>
       <div class="relative flex flex-row w-full h-44 -translate-y-1/2 gap-6">

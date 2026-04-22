@@ -78,10 +78,10 @@
                 <div 
                 class="
                 transition-all duration-600 ease-in-out
-                flex relative z-20 w-full rounded-t-xl"
+                flex relative z-20 w-full overflow-hidden"
                 :class="ChengeStore.PlaneOrSolid?
-                'h-316 bg-gray-100' :
-                'h-300 bg-white' "
+                'h-316 bg-gray-100 rounded-t-none' :
+                'h-300 bg-white rounded-t-xl' "
                 >
                   <component :is="compMap[defaultComp]" />
                 </div>
